@@ -12,9 +12,10 @@ Everything below is public. The **Repo** link takes you to the source; where a h
 | --- | --- | --- |
 | **cotel** | Claude Code OpenTelemetry — a single-container OTLP ingest endpoint plus an interactive dashboard for Claude Code usage (sessions, models, tools, cost, timings). | [Repo](https://github.com/Flopsstuff/cotel) |
 | **flugins** | Claude Code plugin marketplace — a curated plugins repository you can point your Claude Code install at. | [Repo](https://github.com/Flopsstuff/flugins) |
-| **soulgrep** | `grep` the human signal from the noise — a tool for surfacing what actually matters in large bodies of text. | [Repo](https://github.com/Flopsstuff/soulgrep) |
-| **coqu** | Code Query — query and explore codebases. | [Repo](https://github.com/Flopsstuff/coqu) |
-| **chaiba** | Chess AI Battle Arena — pit chess engines/AIs against each other and watch them play. | [Repo](https://github.com/Flopsstuff/chaiba) |
+| **soulgrep** | `grep` the human signal from the noise — a tool for surfacing what actually matters in large bodies of text. | [Repo](https://github.com/Flopsstuff/soulgrep) · [Web](https://soulgrep.aignite.pl) |
+| **coqu** | Code Query — query and explore codebases. | [Repo](https://github.com/Flopsstuff/coqu) · [Web](https://coqu.aimost.pl) |
+| **chaiba** | Chess AI Battle Arena — pit chess engines/AIs against each other and watch them play. | [Repo](https://github.com/Flopsstuff/chaiba) · [Web](https://flopsstuff.github.io/chaiba/) |
+| **aimaf** | AI Mafia — a client-only React SPA that runs a Mafia-style social deduction game between multiple LLM "players" via OpenRouter. | [Repo](https://github.com/Flopsstuff/aimaf) · [Web](https://flopsstuff.github.io/aimaf/) |
 
 ## 🧾 Polish e-Invoicing (KSeF)
 

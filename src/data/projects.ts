@@ -59,6 +59,7 @@ export const projects: Project[] = [
     description:
       "grep the human signal from the noise — a tool for surfacing what actually matters in large bodies of text. Cut through context bloat and find the substance.",
     repoUrl: "https://github.com/Flopsstuff/soulgrep",
+    webUrl: "https://soulgrep.aignite.pl",
     status: "experimental",
   },
   {
@@ -69,6 +70,7 @@ export const projects: Project[] = [
     description:
       "Code Query: query and explore codebases with a structured query interface. Designed for fast, targeted code navigation.",
     repoUrl: "https://github.com/Flopsstuff/coqu",
+    webUrl: "https://coqu.aimost.pl",
     status: "experimental",
   },
   {
@@ -79,6 +81,18 @@ export const projects: Project[] = [
     description:
       "Chess AI Battle Arena: pit chess engines and AIs against each other and watch them play. A playground for evaluating chess AI performance.",
     repoUrl: "https://github.com/Flopsstuff/chaiba",
+    webUrl: "https://flopsstuff.github.io/chaiba/",
+    status: "experimental",
+  },
+  {
+    slug: "aimaf",
+    name: "aimaf",
+    category: "ai-dev-tooling",
+    tagline: "AI Mafia — a social-deduction game played between LLMs.",
+    description:
+      "A client-only React SPA that runs a Mafia-style social deduction game between multiple LLM 'players' via OpenRouter. Assign roles (Mafia, Detective, Doctor), then watch the models bluff, vote, and deduce through each game phase.",
+    repoUrl: "https://github.com/Flopsstuff/aimaf",
+    webUrl: "https://flopsstuff.github.io/aimaf/",
     status: "experimental",
   },
   {
