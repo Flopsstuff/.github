@@ -29,7 +29,7 @@ This keeps the architecture simple: browser terminal frontend + WebSocket bridge
 | Runtime | Node.js (`>=18`) |
 | Language | TypeScript (compiled to `build/`) |
 | Server stack | Express + Socket.IO |
-| Terminal emulation | `@xterm/xterm` |
+| Terminal emulation | xterm.js (`xterm`) |
 | Process bridge | `node-pty` |
 | Packaging | npm package (`wetty`) and Docker image (`wettyoss/wetty`) |
 | License | MIT |
