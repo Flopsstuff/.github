@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
+import NotFound from "./components/NotFound";
 import "./index.css";
 
 function Layout() {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/projects/:slug", element: <ProjectDetail /> },
+      { path: "*", element: <NotFound /> },
     ],
   },
 ]);

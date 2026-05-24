@@ -4,6 +4,7 @@ import {
   getProjectsByCategory,
   CATEGORY_LABELS,
 } from "../data/projects";
+import NotFound from "../components/NotFound";
 import ProjectCard from "../components/ProjectCard";
 import styles from "./ProjectDetail.module.css";
 
@@ -13,22 +14,10 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className={styles.notFound}>
-        <img
-          src="/logo.svg"
-          alt=""
-          className={styles.notFoundLogo}
-          width="80"
-          height="80"
-        />
-        <h1 className={styles.notFoundTitle}>No such project (yet).</h1>
-        <p className={styles.notFoundSub}>
-          {slug ? `"${slug}"` : "That slug"} doesn't match anything here.
-        </p>
-        <Link to="/" className={styles.notFoundBack}>
-          ← Back to all projects
-        </Link>
-      </div>
+      <NotFound
+        title="No such project (yet)."
+        message={`"${slug ?? "That slug"}" doesn't match anything here.`}
+      />
     );
   }
 
