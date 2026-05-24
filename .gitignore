@@ -5,6 +5,10 @@
 # misc
 .DS_Store
 
+# build output
+/dist
+*.tsbuildinfo
+
 # wrangler
 .wrangler
 .dev.vars

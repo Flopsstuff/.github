@@ -1,0 +1,252 @@
+/* ============================================================================
+   Flopsstuff — Design Tokens
+   ----------------------------------------------------------------------------
+   Single source of truth for the landing site (https://fs.aignite.pl).
+   Owner: Iris (Design). Consumed by: Wayland (frontend), per ADR 0001.
+
+   Destination: copy/move to `src/styles/tokens.css` and import once at the app
+   root (e.g. in `main.tsx` or the top-level CSS) BEFORE any component styles.
+
+   Layers:
+     1. PRIMITIVES  — raw palette + scales. Never reference these in components.
+     2. SEMANTIC    — role-based tokens (`--color-bg`, `--color-primary`, …).
+                      Components consume ONLY these. Re-theming = remap semantics.
+
+   Theme model: DARK is canonical (:root). Light is an opt-in override via
+   `[data-theme="light"]` and also auto-applies under `prefers-color-scheme:
+   light` unless the user has explicitly chosen a theme (`[data-theme="dark"]`).
+
+   Brand law: red (--red-500 / #ff2d2d) is the LOGO color. It is exposed as
+   --color-accent for SPARING use only (focus garnish, a single live-dot, a
+   hover hairline). It must NEVER be --color-primary or fill a CTA. See README.
+   ============================================================================ */
+
+:root {
+  /* ---- PRIMITIVES : neutrals (warm-black, tuned to the logo panel #0c0c0e) -- */
+  --zinc-950: #0a0a0b;
+  --zinc-900: #141417;
+  --zinc-850: #1a1a1f;
+  --zinc-800: #242429;
+  --zinc-700: #34343c;
+  --zinc-600: #52525b;
+  --zinc-500: #71717a;
+  --zinc-400: #a1a1aa;
+  --zinc-300: #d4d4d8;
+  --zinc-200: #e4e4e7;
+  --zinc-100: #f4f4f5;
+  --zinc-50:  #fafafa;
+  --white:    #ffffff;
+
+  /* ---- PRIMITIVES : primary (electric cyan — complement of the reserved red) */
+  --cyan-100: #cffafe;
+  --cyan-200: #a5f0fb;
+  --cyan-300: #67e8f9;
+  --cyan-400: #34d3ee;  /* brand primary on DARK */
+  --cyan-500: #15bdd9;
+  --cyan-600: #0e97b0;
+  --cyan-700: #0e7490;  /* primary on LIGHT — AA text on white (~4.8:1) */
+  --cyan-800: #155e75;
+
+  /* ---- PRIMITIVES : accent (LOGO red — reserved, sparing only) ------------- */
+  --red-500:  #ff2d2d;  /* lit segment / logo / sparing accent ONLY */
+  --red-900:  #3a0c0c;  /* unlit segment — decorative dark red */
+
+  /* ---- PRIMITIVES : status (semantic states; muted, never the brand) ------- */
+  --green-400:  #34d399;  /* active / live   */
+  --amber-400:  #fbbf24;  /* experimental    */
+  --violet-400: #a78bfa;  /* fork / external */
+
+  /* =========================== SEMANTIC (DARK) ============================== */
+  /* Surfaces */
+  --color-bg:             var(--zinc-950);
+  --color-surface:        var(--zinc-900);
+  --color-surface-raised: var(--zinc-850);
+  --color-surface-hover:  var(--zinc-800);
+  --color-border:         #26262c;
+  --color-border-strong:  var(--zinc-700);
+
+  /* Text */
+  --color-text:        var(--zinc-100);  /* ~17:1 on bg */
+  --color-text-muted:  var(--zinc-400);  /* ~7:1  on bg */
+  --color-text-subtle: var(--zinc-500);  /* labels/meta */
+  --color-text-invert: var(--zinc-950);
+
+  /* Primary / interactive */
+  --color-primary:          var(--cyan-400);
+  --color-primary-hover:    var(--cyan-300);
+  --color-primary-contrast: var(--zinc-950);  /* text on a primary fill */
+  --color-link:             var(--cyan-400);
+  --color-link-hover:       var(--cyan-300);
+
+  /* Accent (logo red — sparing) */
+  --color-accent: var(--red-500);
+
+  /* Status */
+  --color-status-active:       var(--green-400);
+  --color-status-experimental: var(--amber-400);
+  --color-status-fork:         var(--violet-400);
+
+  /* Focus */
+  --color-focus: var(--cyan-400);
+
+  /* ============================= TYPOGRAPHY ================================= */
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-sans:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Type scale — base 16px, ~1.25 (major third) */
+  --text-xs:   0.75rem;   /* 12 — mono labels, meta            */
+  --text-sm:   0.875rem;  /* 14 — secondary copy, captions     */
+  --text-base: 1rem;      /* 16 — body                         */
+  --text-lg:   1.125rem;  /* 18 — lead paragraph               */
+  --text-xl:   1.375rem;  /* 22 — card title / h3              */
+  --text-2xl:  1.75rem;   /* 28 — section heading / h2         */
+  --text-3xl:  2.25rem;   /* 36 — page title                   */
+  --text-4xl:  3rem;      /* 48 — hero (mobile→tablet)         */
+  --text-5xl:  3.75rem;   /* 60 — hero (desktop)               */
+
+  --leading-tight:   1.1;
+  --leading-snug:    1.25;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --tracking-tight: -0.02em;   /* display headings            */
+  --tracking-normal: 0;
+  --tracking-wide:  0.08em;    /* uppercase mono labels       */
+
+  /* ============================== SPACING =================================== */
+  /* 4px base. Use these only — no stray pixel values. */
+  --space-0:  0;
+  --space-1:  0.25rem;  /*  4 */
+  --space-2:  0.5rem;   /*  8 */
+  --space-3:  0.75rem;  /* 12 */
+  --space-4:  1rem;     /* 16 */
+  --space-5:  1.5rem;   /* 24 */
+  --space-6:  2rem;     /* 32 */
+  --space-7:  3rem;     /* 48 */
+  --space-8:  4rem;     /* 64 */
+  --space-9:  6rem;     /* 96 */
+  --space-10: 8rem;     /* 128 */
+
+  /* ============================== RADIUS ==================================== */
+  /* logo panel uses rx≈6.6% → mirror that softness */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* ============================== SHADOWS =================================== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.40);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 14px 38px rgba(0, 0, 0, 0.55);
+
+  /* Cyan focus glow — the ONE place the LED-glow motif is reused for UI. */
+  --glow-focus: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-focus),
+                0 0 18px -2px var(--cyan-400);
+  /* Red logo glow — decorative, logo/monogram only. */
+  --glow-logo:  0 0 16px -2px var(--red-500);
+
+  /* =============================== MOTION =================================== */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ============================== LAYOUT ==================================== */
+  --container-max: 1120px;
+  --container-pad: clamp(1rem, 4vw, 2rem);
+
+  /* Breakpoints — reference values for JS / documentation. CSS @media queries
+     cannot read custom properties, so hard-code the same numbers there:
+       sm 480px · md 768px · lg 1024px · xl 1280px                              */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+
+  /* ============================== Z-INDEX =================================== */
+  --z-base:    0;
+  --z-header:  100;
+  --z-overlay: 200;
+  --z-toast:   300;
+
+  color-scheme: dark;
+}
+
+/* ============================= SEMANTIC (LIGHT) ============================= */
+/* Explicit opt-in. */
+[data-theme="light"] {
+  --color-bg:             #fbfbfc;
+  --color-surface:        var(--white);
+  --color-surface-raised: var(--white);
+  --color-surface-hover:  var(--zinc-50);
+  --color-border:         var(--zinc-200);
+  --color-border-strong:  var(--zinc-300);
+
+  --color-text:        #18181b;          /* ~16:1 on bg  */
+  --color-text-muted:  var(--zinc-600);  /* ~7:1  on bg  */
+  --color-text-subtle: var(--zinc-500);
+  --color-text-invert: var(--white);
+
+  --color-primary:          var(--cyan-700);  /* AA on white */
+  --color-primary-hover:    var(--cyan-800);
+  --color-primary-contrast: var(--white);
+  --color-link:             var(--cyan-700);
+  --color-link-hover:       var(--cyan-800);
+
+  --color-accent: var(--red-500);
+
+  --shadow-sm: 0 1px 2px rgba(24, 24, 27, 0.06);
+  --shadow-md: 0 4px 14px rgba(24, 24, 27, 0.08);
+  --shadow-lg: 0 14px 38px rgba(24, 24, 27, 0.12);
+
+  --glow-focus: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-focus);
+
+  color-scheme: light;
+}
+
+/* Auto light for users who prefer it AND have not explicitly chosen dark. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --color-bg:             #fbfbfc;
+    --color-surface:        var(--white);
+    --color-surface-raised: var(--white);
+    --color-surface-hover:  var(--zinc-50);
+    --color-border:         var(--zinc-200);
+    --color-border-strong:  var(--zinc-300);
+
+    --color-text:        #18181b;
+    --color-text-muted:  var(--zinc-600);
+    --color-text-subtle: var(--zinc-500);
+    --color-text-invert: var(--white);
+
+    --color-primary:          var(--cyan-700);
+    --color-primary-hover:    var(--cyan-800);
+    --color-primary-contrast: var(--white);
+    --color-link:             var(--cyan-700);
+    --color-link-hover:       var(--cyan-800);
+
+    --shadow-sm: 0 1px 2px rgba(24, 24, 27, 0.06);
+    --shadow-md: 0 4px 14px rgba(24, 24, 27, 0.08);
+    --shadow-lg: 0 14px 38px rgba(24, 24, 27, 0.12);
+    --glow-focus: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-focus);
+
+    color-scheme: light;
+  }
+}
+
+/* Honor reduced-motion: components should gate transitions/animations on this. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+  }
+}
