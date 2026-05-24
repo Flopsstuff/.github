@@ -1,9 +1,12 @@
 import { useParams, Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import {
   getProjectBySlug,
   getProjectsByCategory,
   CATEGORY_LABELS,
 } from "../data/projects";
+import { getProjectContent } from "../content";
 import NotFound from "../components/NotFound";
 import ProjectCard from "../components/ProjectCard";
 import styles from "./ProjectDetail.module.css";
@@ -20,6 +23,8 @@ export default function ProjectDetail() {
       />
     );
   }
+
+  const body = getProjectContent(project.slug);
 
   const related = getProjectsByCategory(project.category)
     .filter((p) => p.slug !== project.slug)
@@ -82,6 +87,21 @@ export default function ProjectDetail() {
         </div>
 
         <p className={styles.description}>{project.description}</p>
+
+        {body && (
+          <article className={styles.body}>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                a: ({ node: _node, ...props }) => (
+                  <a target="_blank" rel="noreferrer" {...props} />
+                ),
+              }}
+            >
+              {body}
+            </ReactMarkdown>
+          </article>
+        )}
 
         {related.length > 0 && (
           <section className={styles.related}>
