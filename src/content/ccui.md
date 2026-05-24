@@ -28,7 +28,7 @@ The repository also documents plugin support, where additional tabs/services can
 | CLI coverage (documented) | Claude Code, Cursor CLI, Codex, Gemini CLI |
 | Deployment options | npm (`npx`), Docker Compose, managed CloudCLI |
 | Notable integrations | AWS Bedrock mode, Cloudflare tunnel guidance, plugin system |
-| License | MIT (`LICENSE` in repo) |
+| License | AGPL-3.0-or-later (`LICENSE` in repo) |
 
 ## Links
 
