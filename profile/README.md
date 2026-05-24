@@ -1,3 +1,5 @@
+<img src="logo.svg" width="80" alt="Flopsstuff logo">
+
 # Flopsstuff
 
 Open-source experiments and tools, mostly around **AI developer tooling**, **agent orchestration**, and a few hardware/integration side quests.
