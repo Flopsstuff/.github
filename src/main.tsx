@@ -1,13 +1,30 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
 import "./index.css";
 
+function Layout() {
+  return (
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  );
+}
+
 const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
-  { path: "/projects/:slug", element: <ProjectDetail /> },
+  {
+    element: <Layout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/projects/:slug", element: <ProjectDetail /> },
+    ],
+  },
 ]);
 
 const root = document.getElementById("root");

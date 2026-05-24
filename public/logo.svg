@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 273 273" width="273" height="273">
+  <defs>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="273" height="273" rx="18" fill="#0c0c0e"/>
+  <g transform="translate(29.449321259959735,71.53099553702233)">
+    <polygon class="seg seg-a on" data-seg="a" points="31.63,0.00 41.33,-8.00 87.33,-8.00 93.63,0.00 83.93,8.00 37.93,8.00" fill="#ff2d2d" filter="url(#glow)"/>
+    <polygon class="seg seg-g on" data-seg="g" points="17.82,65.00 27.52,57.00 73.52,57.00 79.82,65.00 70.12,73.00 24.12,73.00" fill="#ff2d2d" filter="url(#glow)"/>
+    <polygon class="seg seg-d off" data-seg="d" points="4.00,130.00 13.70,122.00 59.70,122.00 66.00,130.00 56.30,138.00 10.30,138.00" fill="#3a0c0c"/>
+    <polygon class="seg seg-f on" data-seg="f" points="26.78,4.00 33.08,12.00 24.37,53.00 14.67,61.00 8.37,53.00 17.08,12.00" fill="#ff2d2d" filter="url(#glow)"/>
+    <polygon class="seg seg-b off" data-seg="b" points="96.78,4.00 103.08,12.00 94.37,53.00 84.67,61.00 78.37,53.00 87.08,12.00" fill="#3a0c0c"/>
+    <polygon class="seg seg-e on" data-seg="e" points="12.97,69.00 19.27,77.00 10.55,118.00 0.85,126.00 -5.45,118.00 3.27,77.00" fill="#ff2d2d" filter="url(#glow)"/>
+    <polygon class="seg seg-c off" data-seg="c" points="82.97,69.00 89.27,77.00 80.55,118.00 70.85,126.00 64.55,118.00 73.27,77.00" fill="#3a0c0c"/>
+  </g>
+  <g transform="translate(145.98031679698207,71.53099553702233)">
+    <polygon class="seg seg-a on" data-seg="a" points="31.63,0.00 41.33,-8.00 87.33,-8.00 93.63,0.00 83.93,8.00 37.93,8.00" fill="#ff2d2d" filter="url(#glow)"/>
+    <polygon class="seg seg-g on" data-seg="g" points="17.82,65.00 27.52,57.00 73.52,57.00 79.82,65.00 70.12,73.00 24.12,73.00" fill="#ff2d2d" filter="url(#glow)"/>
+    <polygon class="seg seg-d on" data-seg="d" points="4.00,130.00 13.70,122.00 59.70,122.00 66.00,130.00 56.30,138.00 10.30,138.00" fill="#ff2d2d" filter="url(#glow)"/>
+    <polygon class="seg seg-f on" data-seg="f" points="26.78,4.00 33.08,12.00 24.37,53.00 14.67,61.00 8.37,53.00 17.08,12.00" fill="#ff2d2d" filter="url(#glow)"/>
+    <polygon class="seg seg-b off" data-seg="b" points="96.78,4.00 103.08,12.00 94.37,53.00 84.67,61.00 78.37,53.00 87.08,12.00" fill="#3a0c0c"/>
+    <polygon class="seg seg-e off" data-seg="e" points="12.97,69.00 19.27,77.00 10.55,118.00 0.85,126.00 -5.45,118.00 3.27,77.00" fill="#3a0c0c"/>
+    <polygon class="seg seg-c on" data-seg="c" points="82.97,69.00 89.27,77.00 80.55,118.00 70.85,126.00 64.55,118.00 73.27,77.00" fill="#ff2d2d" filter="url(#glow)"/>
+  </g>
+</svg>

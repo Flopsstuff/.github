@@ -1,12 +1,40 @@
-import { useParams, Link, Navigate } from "react-router-dom";
-import { getProjectBySlug, CATEGORY_LABELS } from "../data/projects";
+import { useParams, Link } from "react-router-dom";
+import {
+  getProjectBySlug,
+  getProjectsByCategory,
+  CATEGORY_LABELS,
+} from "../data/projects";
+import ProjectCard from "../components/ProjectCard";
 import styles from "./ProjectDetail.module.css";
 
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? getProjectBySlug(slug) : undefined;
 
-  if (!project) return <Navigate to="/" replace />;
+  if (!project) {
+    return (
+      <div className={styles.notFound}>
+        <img
+          src="/logo.svg"
+          alt=""
+          className={styles.notFoundLogo}
+          width="80"
+          height="80"
+        />
+        <h1 className={styles.notFoundTitle}>No such project (yet).</h1>
+        <p className={styles.notFoundSub}>
+          {slug ? `"${slug}"` : "That slug"} doesn't match anything here.
+        </p>
+        <Link to="/" className={styles.notFoundBack}>
+          ← Back to all projects
+        </Link>
+      </div>
+    );
+  }
+
+  const related = getProjectsByCategory(project.category)
+    .filter((p) => p.slug !== project.slug)
+    .slice(0, 3);
 
   return (
     <div className={styles.page}>
@@ -17,16 +45,32 @@ export default function ProjectDetail() {
       </nav>
 
       <header className={styles.header}>
-        <span className={styles.category}>
-          {CATEGORY_LABELS[project.category]}
-        </span>
+        <div className={styles.meta}>
+          <span className={styles.category}>
+            {CATEGORY_LABELS[project.category]}
+          </span>
+          {project.status === "active" && (
+            <span className={styles.chip} data-status="active">
+              <span className={styles.chipDot} aria-hidden />
+              active
+            </span>
+          )}
+          {project.status === "experimental" && (
+            <span className={styles.chip} data-status="experimental">
+              experimental
+            </span>
+          )}
+          {project.status === "fork" && (
+            <span className={styles.chip} data-status="fork">
+              fork
+            </span>
+          )}
+        </div>
         <h1 className={styles.title}>{project.name}</h1>
         <p className={styles.tagline}>{project.tagline}</p>
       </header>
 
       <main className={styles.main}>
-        <p className={styles.description}>{project.description}</p>
-
         <div className={styles.links}>
           <a
             href={project.repoUrl}
@@ -47,6 +91,21 @@ export default function ProjectDetail() {
             </a>
           )}
         </div>
+
+        <p className={styles.description}>{project.description}</p>
+
+        {related.length > 0 && (
+          <section className={styles.related}>
+            <h2 className={styles.relatedTitle}>
+              More in {CATEGORY_LABELS[project.category]}
+            </h2>
+            <div className={styles.relatedGrid}>
+              {related.map((p) => (
+                <ProjectCard key={p.slug} project={p} />
+              ))}
+            </div>
+          </section>
+        )}
       </main>
     </div>
   );

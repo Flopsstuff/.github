@@ -1,27 +1,40 @@
-import { Link } from "react-router-dom";
-import {
-  CATEGORY_LABELS,
-  CATEGORY_ORDER,
-  getProjectsByCategory,
-} from "../data/projects";
+import { CATEGORY_LABELS, CATEGORY_ORDER, getProjectsByCategory } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import styles from "./Home.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <header className={styles.hero}>
-        <Link to="/" className={styles.logoLink}>
-          <img src="/favicon.svg" alt="" className={styles.logo} />
-        </Link>
-        <h1 className={styles.title}>Flopsstuff</h1>
-        <p className={styles.subtitle}>
-          Open-source experiments and tools — AI developer tooling, agent
-          orchestration, and a few hardware side quests.
-        </p>
-      </header>
+      <section className={styles.hero} aria-label="Introduction">
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>
+            Open-source experiments<br />
+            and <span className={styles.highlight}>tools</span>.
+          </h1>
+          <p className={styles.heroSubtitle}>
+            AI developer tooling, agent orchestration,
+            and a few hardware side quests.
+          </p>
+          <div className={styles.heroCtas}>
+            <a href="#projects" className={styles.ctaPrimary}>
+              Browse projects →
+            </a>
+            <a
+              href="https://github.com/Flopsstuff"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.ctaGhost}
+            >
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+        <div className={styles.heroDecor} aria-hidden>
+          <img src="/logo.svg" alt="" className={styles.heroLogo} />
+        </div>
+      </section>
 
-      <main className={styles.main}>
+      <main id="projects" className={styles.main}>
         {CATEGORY_ORDER.map((category) => {
           const items = getProjectsByCategory(category);
           if (items.length === 0) return null;
@@ -39,16 +52,6 @@ export default function Home() {
           );
         })}
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://github.com/Flopsstuff"
-          target="_blank"
-          rel="noreferrer"
-        >
-          github.com/Flopsstuff
-        </a>
-      </footer>
     </div>
   );
 }

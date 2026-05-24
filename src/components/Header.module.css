@@ -1,0 +1,120 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--color-text);
+  flex-shrink: 0;
+}
+
+.brand:hover {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.brand:focus-visible {
+  outline: none;
+  box-shadow: var(--glow-focus);
+  border-radius: var(--radius-sm);
+}
+
+.logo {
+  display: block;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.navLink {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.navLink:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.navLink:focus-visible {
+  outline: none;
+  box-shadow: var(--glow-focus);
+  border-radius: var(--radius-sm);
+}
+
+.navLink.active {
+  color: var(--color-text);
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+  line-height: 1;
+}
+
+.themeToggle:hover {
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.themeToggle:focus-visible {
+  outline: none;
+  box-shadow: var(--glow-focus);
+}
+
+@media (max-width: 480px) {
+  .wordmark {
+    display: none;
+  }
+  .nav {
+    gap: var(--space-3);
+  }
+}
