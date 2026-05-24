@@ -27,9 +27,9 @@ Interface connector. Because the typewriter's bus runs at 5 V while the Teensy
 operates at 3.3 V, a 4-channel bidirectional level shifter sits between them. The
 Teensy's Serial2 peripheral (TX pin 8, RX pin 7) handles the actual bus traffic.
 
-**Protocol layer.** The Wheelwriter uses a 3-byte command packet format inherited from
-the typewriter's internal 8051-family MCU: an address word (`0x121`) followed by a
-command code and optional data bytes. Words are transmitted one at a time and each
+**Protocol layer.** The Wheelwriter uses a compact, word-oriented command format inherited from
+the typewriter's internal 8051-family MCU (Intel 8051 UART Mode 2): an address word (`0x121`)
+followed by a command code and zero to two data words. Words are transmitted one at a time and each
 must be acknowledged by the typewriter before the next is sent — a software
 handshake over the shared open-collector bus.
 
@@ -73,4 +73,4 @@ Arduino Nano RP2040 project) to verify the reverse-engineered spec.
 ## Links
 
 - [Repository](https://github.com/Flopsstuff/neonka)
-- [Wheelwriter bus protocol docs](https://github.com/Flopsstuff/neonka/blob/main/docs/wheelwriter-bus-protocol.md)
+- [Wheelwriter bus protocol docs](https://github.com/Flopsstuff/neonka/blob/master/docs/wheelwriter-bus-protocol.md)
