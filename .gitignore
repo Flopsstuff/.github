@@ -19,3 +19,4 @@
 
 # ignore gitpmoji directory
 gitpmoji
+.playwright-mcp/
