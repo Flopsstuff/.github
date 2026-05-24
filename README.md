@@ -1,58 +1,82 @@
-# Next.js Framework Starter
+# Flopsstuff Landing
 
-<!-- dash-content-start -->
+The landing site at **https://fs.aignite.pl** — a React SPA deployed on Cloudflare Workers.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's deployed on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
+## Stack
 
-<!-- dash-content-end -->
+- **Vite + React 19 + React Router v7** — SPA, client-side routing.
+- **Plain CSS with design tokens** — `src/styles/tokens.css` is the single source of truth for color, typography, spacing, radius, shadows, and motion. Components consume only semantic tokens (`--color-primary`, not `--cyan-400`).
+- **Cloudflare Workers static assets** — served via `wrangler.json`; SPA not-found handling re-routes all 404s to `index.html`.
+- **Domain** — `fs.aignite.pl` (subdomain of `aignite.pl`, same CF account).
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
+## Adding a project
 
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/aignite
+All projects live in **`src/data/projects.ts`**. Add a new entry to the `projects` array:
+
+```ts
+{
+  slug: "my-project",          // URL slug — must be unique
+  name: "my-project",          // display name
+  category: "ai-dev-tooling",  // "ai-dev-tooling" | "ksef" | "hardware" | "forks"
+  tagline: "One sentence.",    // shown on the card (clamped to 2 lines)
+  description: "Longer…",      // shown on the detail page
+  repoUrl: "https://github.com/Flopsstuff/my-project",
+  webUrl: "https://optional.example.com",   // omit if none
+  status: "active",            // "active" | "experimental" | "fork" — omit if unknown
+}
 ```
 
-A live public deployment of this template is available at [https://aignite.templates.workers.dev](https://aignite.templates.workers.dev)
+The home page and detail pages pick it up automatically — no other changes needed.
 
-## Getting Started
+## Commands
 
-First, run:
+| Command | Action |
+| --- | --- |
+| `yarn install --immutable` | Install dependencies (pinned Yarn 4.6.0 via Corepack) |
+| `yarn build` | TypeScript check + Vite production build → `dist/` |
+| `yarn preview` | `wrangler dev` — serve the `dist/` build locally at `http://localhost:8787` |
+| `yarn deploy` | Deploy to Cloudflare Workers (sources `.env` for credentials) |
+| `yarn deploy --dry-run` | Validate config and asset bundle without actually deploying |
 
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
+## Local credentials
+
+Copy `.env.example` to `.env` and fill in:
+
+```
+CLOUDFLARE_API_TOKEN=...
+CLOUDFLARE_ACCOUNT_ID=42548ca95c85a68b4ce20ad79b805334
 ```
 
-Then run the development server (using the package manager of your choice):
+`yarn deploy` sources `.env` automatically. The file is gitignored.
 
-```bash
-npm run dev
+## CI / Deploy on push
+
+`.github/workflows/deploy.yml` deploys on every push to `main`:
+Node 22 → Corepack → `yarn install --immutable` → `wrangler deploy` (via `cloudflare/wrangler-action@v3`).
+
+Required GitHub Actions secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` (both already set).
+
+## Design system
+
+The brand guide and design tokens live in `docs/brand/`:
+
+- `docs/brand/tokens.css` → copied to `src/styles/tokens.css` (Iris owns this file).
+- `docs/brand/README.md` — palette, typography, spacing, logo usage, do/don't.
+
+Primary palette: electric cyan (`--color-primary`). Red (`#ff2d2d`) is the logo/accent color only — never a primary CTA or body link color.
+
+## File structure
+
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Deploying To Production
-
-| Command           | Action                                       |
-| :---------------- | :------------------------------------------- |
-| `npm run build`   | Build your production site                   |
-| `npm run preview` | Preview your build locally, before deploying |
-| `npm run deploy`  | Deploy your production site to Cloudflare    |
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+src/
+  components/     Header, Footer, ProjectCard
+  pages/          Home, ProjectDetail (includes in-app 404 state)
+  data/           projects.ts — the project registry
+  styles/         tokens.css — design tokens (import once at root)
+  index.css       global resets + token import
+  main.tsx        router + Layout (Header + Outlet + Footer)
+docs/
+  brand/          Design system (Iris)
+  decisions/      Architecture Decision Records
+public/           logo.svg, favicon.svg
+```
