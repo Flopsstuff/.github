@@ -1,0 +1,17 @@
+# dependencies
+/node_modules
+.yarn/install-state.gz
+
+# misc
+.DS_Store
+
+# wrangler
+.wrangler
+.dev.vars
+
+# local env
+.env
+.env*.local
+
+# ignore gitpmoji directory
+gitpmoji

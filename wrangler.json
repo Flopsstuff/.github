@@ -1,0 +1,14 @@
+{
+  "name": "flopsstuff",
+  "compatibility_date": "2024-11-01",
+  "assets": {
+    "directory": "./static",
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [
+    { "pattern": "fs.aignite.pl", "custom_domain": true }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

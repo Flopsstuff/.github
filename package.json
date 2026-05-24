@@ -1,0 +1,13 @@
+{
+  "name": "flopsstuff",
+  "private": true,
+  "description": "Flopsstuff — static stub on Cloudflare Workers",
+  "devDependencies": {
+    "wrangler": "3.107.3"
+  },
+  "scripts": {
+    "deploy": "bash -c 'set -a; [ -f .env ] && . ./.env; set +a; wrangler deploy \"$@\"' bash",
+    "preview": "wrangler dev"
+  },
+  "packageManager": "yarn@4.6.0"
+}
