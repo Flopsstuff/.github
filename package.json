@@ -3,11 +3,23 @@
   "private": true,
   "description": "Flopsstuff — static stub on Cloudflare Workers",
   "devDependencies": {
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14",
     "wrangler": "3.107.3"
   },
   "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
     "deploy": "bash -c 'set -a; [ -f .env ] && . ./.env; set +a; wrangler deploy \"$@\"' bash",
     "preview": "wrangler dev"
   },
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.6.0",
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^7.15.1"
+  }
 }
