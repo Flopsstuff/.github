@@ -1,37 +1,73 @@
 ## Overview
 
-**uemcp** is a [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) server that gives AI assistants direct, structured access to Unreal Engine 5. It pairs a Node.js/TypeScript MCP server with a native C++ Automation Bridge plugin compiled into the engine, exposing 36 tools across 10 categories — from asset management and actor spawning to audio authoring and multiplayer replication — all callable by an AI client like Claude Desktop or Cursor.
+**uemcp** is a fork of [ChiR24/Unreal_mcp](https://github.com/ChiR24/Unreal_mcp)
+that turns Unreal Engine 5 itself into a
+[Model Context Protocol](https://modelcontextprotocol.io/) (MCP) server. Its
+defining change: the MCP server runs **directly inside the engine**, as native
+C++ in the Automation Bridge plugin. An AI client like Claude or Cursor connects
+straight to Unreal over HTTP — there is no separate Node.js/TypeScript process
+sitting in front of it.
 
 ## Why it exists
 
-Unreal Engine 5 is powerful but dense: most complex operations require deep familiarity with the editor's UI, Blueprint graph, and C++ API. AI coding assistants can help with that complexity, but without a structured bridge they can only suggest code — they cannot act on it. uemcp closes that gap by making the engine a first-class MCP tool server. Instead of typing an action into the chat and then manually executing it in the editor, an AI client can call a tool directly, observe the result, and iterate — all without human hand-holding at every step.
+The upstream project ships its MCP server as a TypeScript/Node process that
+relays calls to a C++ "automation bridge" plugin inside Unreal. That works, but
+it means two moving parts to install and keep in sync — a Node server *and* the
+engine plugin — with every tool call making an extra hop between them.
+
+This fork exists to remove that TypeScript shim. By moving the MCP server into
+the plugin's native C++, Unreal speaks MCP itself: no Node.js, no npm, no bridge
+process. The result is one component to install, one fewer translation layer, and
+a tool call that goes straight from the AI client into the engine.
 
 ## How it works
 
-The system has three layers that work together:
+The plugin embeds a built-in **MCP Streamable HTTP server**. Once it loads, the
+editor logs the endpoint it is serving:
 
-1. **MCP server (TypeScript)** — runs as a local Node.js process and speaks the Model Context Protocol. AI clients (Claude Desktop, Cursor) connect to it and discover its tools. The server translates incoming tool calls into JSON payloads and forwards them to Unreal.
-2. **Automation Bridge plugin (C++)** — a native UE5 plugin compiled alongside the project. It listens for the server's messages and dispatches them through Unreal's runtime APIs: spawning actors, modifying materials, loading levels, triggering sequencer, and more. It supports dynamic type discovery so it can introspect engine classes at runtime rather than requiring a rigid fixed schema.
-3. **Action-based dispatch** — every tool call names an action and passes parameters. The bridge resolves the action, executes the corresponding engine operation, and returns a structured result. The server relays that back to the AI client as the tool output.
+```
+LogMcpNativeTransport: Native MCP server started on http://localhost:3000/mcp
+```
 
-The server starts and stays up regardless of whether an Unreal Editor instance is running — it retries the connection with exponential backoff when the engine isn't available, so the AI client always has a stable endpoint to talk to.
+and any MCP client points at that endpoint directly:
 
-**Safety** is built in: dangerous console commands are rejected by pattern validation before they reach the engine, the metrics endpoint is rate-limited to 60 requests per minute per IP, and the server binds to `127.0.0.1` by default so it is not exposed on the LAN without explicit opt-in.
+```bash
+claude mcp add unreal-engine --transport http http://localhost:3000/mcp
+```
+
+- **Native transport (C++)** — a Streamable HTTP + SSE endpoint (`/mcp`)
+  implemented in the plugin handles the protocol's JSON-RPC in-process. A
+  persistent `GET /mcp` SSE stream carries server-to-client notifications.
+- **Self-describing tools** — each tool is a C++ class that declares its own
+  schema, so the tool list is generated at runtime from the engine itself. This
+  replaced the JSON schema file the TypeScript server used to load.
+- **Action-based dispatch** — every tool call names an action; the plugin
+  resolves it, runs the corresponding engine operation, and returns a structured
+  result. Tools span assets, actors, levels, blueprints, materials, effects,
+  sequencer, audio, AI, and gameplay systems, plus editor control.
+- **TypeScript bridge (optional)** — the original Node transport is still
+  available as a fallback for setups that prefer it, but it is no longer
+  required.
+
+Tool discovery is dynamic: a client calls `manage_tools` to list categories and
+enable the ones it needs; the `core` tools (`manage_tools`, `inspect`) are always
+on. Console-command safety, runtime type discovery, and the C++ automation layer
+are inherited from upstream.
 
 ## Technical details
 
 | Aspect | Detail |
 |---|---|
-| Languages | C++ (72 %) — the UE plugin; TypeScript (24 %) — the MCP server |
-| Runtime | Node.js 18+, MCP SDK |
+| Fork of | [ChiR24/Unreal_mcp](https://github.com/ChiR24/Unreal_mcp) |
+| Native server | MCP Streamable HTTP + SSE, served in-engine from the C++ plugin at `http://localhost:3000/mcp` |
+| Language | C++ for the plugin and native MCP server; TypeScript only for the optional legacy bridge |
 | Engine support | Unreal Engine 5.0 – 5.7 |
-| Tool surface | 36 tools: assets, actors, levels, animation, physics, VFX, sequencer, audio, gameplay systems, editor control |
-| Connection | Local loopback only by default; opt-in LAN access |
-| Optional features | GraphQL API (disabled by default), Docker packaging |
+| Install | Plugin from source (a code project) or pre-built per-UE-version binaries — no Node.js needed in native mode |
+| Tooling | Dynamic, self-describing tool classes; `manage_tools` enables/disables categories at runtime |
 | License | MIT |
 
 ## Links
 
 - [Repository](https://github.com/Flopsstuff/uemcp)
-- [Model Context Protocol specification](https://modelcontextprotocol.io/specification)
 - [Upstream project (ChiR24/Unreal_mcp)](https://github.com/ChiR24/Unreal_mcp)
+- [Model Context Protocol specification](https://modelcontextprotocol.io/specification)
