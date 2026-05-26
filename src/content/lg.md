@@ -2,7 +2,7 @@
 
 Liquid Glass (`lg`) is an iOS demo app that simulates a draggable magnifying lens over images using custom Metal-powered CoreImage filters. Instead of applying a simple blur, it creates a displacement map and uses that map to bend background pixels so the lens looks like curved glass. The app also adds optional chromatic aberration and color adjustments, so the effect can range from subtle magnification to stylized distortion.
 
-![Liquid Glass demo](https://raw.githubusercontent.com/Flopsstuff/lg/master/img/githubPreview.gif)
+![Liquid Glass demo](https://media.githubusercontent.com/media/Flopsstuff/lg/master/img/githubPreview.gif)
 
 ## Why it exists
 
