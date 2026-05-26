@@ -97,12 +97,12 @@ export const projects: Project[] = [
   },
   {
     slug: "huemcp",
-    name: "HUEMCP",
+    name: "huemcp",
     category: "ai-dev-tooling",
     tagline: "MCP server for controlling Philips Hue smart lights.",
     description:
       "An MCP server that lets Claude (and other MCP clients) control Philips Hue lights: automatic bridge discovery via mDNS, API-key setup, on/off/brightness/color control, and zone/room/grouped-light management. Ships as an MCPB bundle for Claude Desktop.",
-    repoUrl: "https://github.com/Flopsstuff/HUEMCP",
+    repoUrl: "https://github.com/Flopsstuff/huemcp",
     status: "active",
   },
   {
