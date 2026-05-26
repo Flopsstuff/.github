@@ -96,6 +96,16 @@ export const projects: Project[] = [
     status: "experimental",
   },
   {
+    slug: "huemcp",
+    name: "HUEMCP",
+    category: "ai-dev-tooling",
+    tagline: "MCP server for controlling Philips Hue smart lights.",
+    description:
+      "An MCP server that lets Claude (and other MCP clients) control Philips Hue lights: automatic bridge discovery via mDNS, API-key setup, on/off/brightness/color control, and zone/room/grouped-light management. Ships as an MCPB bundle for Claude Desktop.",
+    repoUrl: "https://github.com/Flopsstuff/HUEMCP",
+    status: "active",
+  },
+  {
     slug: "ksef-client-ts",
     name: "ksef-client-ts",
     category: "ksef",
@@ -123,6 +133,16 @@ export const projects: Project[] = [
     description:
       "An IBM Wheelwriter electric typewriter hacking project written in embedded C++. Connects classic electromechanical hardware to modern interfaces.",
     repoUrl: "https://github.com/Flopsstuff/neonka",
+    status: "experimental",
+  },
+  {
+    slug: "lg",
+    name: "Liquid Glass",
+    category: "hardware",
+    tagline: "iOS magnifying-glass lens effect built with Metal shaders.",
+    description:
+      "An iOS app implementing a realistic magnifying-glass / liquid-glass lens effect using custom Metal shaders and CoreImage: displacement-map distortion, chromatic aberration, and live-tunable lens parameters.",
+    repoUrl: "https://github.com/Flopsstuff/lg",
     status: "experimental",
   },
   {
