@@ -31,6 +31,8 @@ Everything below is public. The **Repo** link takes you to the source; where a h
 | Project | What it is | Links |
 | --- | --- | --- |
 | **neonka** | IBM Wheelwriter electric typewriter hacking project (embedded C++). | [Repo](https://github.com/Flopsstuff/neonka) |
+| **HUEMCP** | MCP server for controlling Philips Hue smart lights — mDNS bridge discovery, API-key setup, and control of lights, rooms, zones and grouped lights. | [Repo](https://github.com/Flopsstuff/HUEMCP) |
+| **lg** | Liquid Glass — an iOS app implementing a realistic magnifying-glass lens effect with Metal shaders and CoreImage (displacement maps, chromatic aberration). | [Repo](https://github.com/Flopsstuff/lg) |
 
 ## 🍴 Forks & Contributions
 
