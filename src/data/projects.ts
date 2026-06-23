@@ -96,6 +96,18 @@ export const projects: Project[] = [
     status: "experimental",
   },
   {
+    slug: "korovany",
+    name: "korovany",
+    category: "ai-dev-tooling",
+    tagline:
+      "3D caravan-raiding action game in the browser, built with Babylon.js.",
+    description:
+      "A browser-based 3D action game: raid caravans through a forest with a full-window Babylon.js canvas, a world map with fast-travel, and a dismemberment/bleeding health system. Built as a React 19 SPA where the objective is to raid three caravans, tracked by a unit-tested win/lose state machine, with saved progress you can continue.",
+    repoUrl: "https://github.com/Flopsstuff/korovany",
+    webUrl: "https://korovany.aimost.pl",
+    status: "experimental",
+  },
+  {
     slug: "huemcp",
     name: "huemcp",
     category: "ai-dev-tooling",
