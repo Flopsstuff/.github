@@ -175,6 +175,16 @@
   margin-top: 0;
 }
 
+.body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: var(--space-6) 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
 .body h2 {
   font-family: var(--font-display);
   font-size: var(--text-2xl);

@@ -2,6 +2,8 @@
 
 **korovany** is a 3D action game that runs entirely in the browser. You play a raider in a forest whose objective is simple — *raid 3 caravans* — while a running score tracks your kills and loot. The whole game renders into a full-window 3D canvas with React overlays for the HUD, main menu, and pause screen.
 
+![Korovany gameplay: the in-game HUD (HP, stamina, score, carried bandage) over a low-poly forest scene with the player character, raidable caravans, and the caravan minimap.](/korovany-gameplay.jpeg)
+
 ## Why it exists
 
 It's a from-scratch playground for building a real-time 3D game on the modern web stack — no game engine binary, no native build, just TypeScript and a browser. It exists to see how far a strictly-typed React + Babylon.js SPA can be pushed toward a playable action game: a proper engine lifecycle, a save system, a world map with fast-travel, and a win/lose loop that's modelled as testable game logic rather than scattered UI state.
