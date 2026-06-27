@@ -118,6 +118,18 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    slug: "otp",
+    name: "otp",
+    category: "ai-dev-tooling",
+    tagline:
+      "Offline, private TOTP (2FA) code generator that runs entirely in your browser.",
+    description:
+      "A secure, offline TOTP (Time-based One-Time Password) generator for two-factor authentication and trusted identity verification. All codes are computed locally in the browser with the Web Crypto API — nothing is sent to a server or stored. Generate Base32 secrets, tune algorithm/digits/period, copy codes, or scan a QR into any standard authenticator app.",
+    repoUrl: "https://github.com/Flopsstuff/otp",
+    webUrl: "https://flopsstuff.github.io/otp/",
+    status: "active",
+  },
+  {
     slug: "ksef-client-ts",
     name: "ksef-client-ts",
     category: "ksef",
