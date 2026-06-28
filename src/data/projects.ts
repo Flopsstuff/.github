@@ -12,6 +12,7 @@ export interface Project {
   description: string;
   repoUrl: string;
   webUrl?: string;
+  npmUrl?: string;
   status?: "active" | "experimental" | "fork";
 }
 
@@ -137,6 +138,7 @@ export const projects: Project[] = [
     description:
       "A TypeScript client for the Polish National e-Invoice System (KSeF) API. Covers the full KSeF interface for issuing, querying, and managing e-invoices.",
     repoUrl: "https://github.com/Flopsstuff/ksef-client-ts",
+    npmUrl: "https://www.npmjs.com/package/ksef-client-ts",
     status: "active",
   },
   {
@@ -169,6 +171,7 @@ export const projects: Project[] = [
       "Notes, tooling, and a Web Bluetooth client for the Żabka Triki — a collectible BLE token (nRF52810 + LSM6DSL IMU) shaped like a bottle cap. Reads the token's accelerometer/gyroscope over BLE and reuses it as a motion controller, with a live in-browser 3D orientation demo and a published dependency-free TypeScript client package.",
     repoUrl: "https://github.com/Flopsstuff/triki",
     webUrl: "https://flopsstuff.github.io/triki/",
+    npmUrl: "https://www.npmjs.com/package/triki-controller",
     status: "experimental",
   },
   {
