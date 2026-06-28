@@ -44,6 +44,16 @@ export default function ProjectCard({ project }: Props) {
         >
           Repo ↗
         </a>
+        {project.npmUrl && (
+          <a
+            href={project.npmUrl}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.link}
+          >
+            npm ↗
+          </a>
+        )}
         {project.webUrl && (
           <a
             href={project.webUrl}

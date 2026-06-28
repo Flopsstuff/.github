@@ -74,6 +74,16 @@ export default function ProjectDetail() {
           >
             View on GitHub ↗
           </a>
+          {project.npmUrl && (
+            <a
+              href={project.npmUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={`${styles.linkBtn} ${styles.linkBtnSecondary}`}
+            >
+              npm ↗
+            </a>
+          )}
           {project.webUrl && (
             <a
               href={project.webUrl}
