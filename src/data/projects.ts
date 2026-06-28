@@ -160,6 +160,18 @@ export const projects: Project[] = [
     status: "experimental",
   },
   {
+    slug: "triki",
+    name: "triki",
+    category: "hardware",
+    tagline:
+      "Reverse-engineering the Żabka Triki BLE token and reusing it as a motion controller.",
+    description:
+      "Notes, tooling, and a Web Bluetooth client for the Żabka Triki — a collectible BLE token (nRF52810 + LSM6DSL IMU) shaped like a bottle cap. Reads the token's accelerometer/gyroscope over BLE and reuses it as a motion controller, with a live in-browser 3D orientation demo and a published dependency-free TypeScript client package.",
+    repoUrl: "https://github.com/Flopsstuff/triki",
+    webUrl: "https://flopsstuff.github.io/triki/",
+    status: "experimental",
+  },
+  {
     slug: "lg",
     name: "Liquid Glass",
     category: "hardware",
