@@ -19,28 +19,34 @@ These are unrelated to each other; a change to one rarely touches the other.
 
 ## Landing site (repo root)
 
-Static site, no framework — just `static/index.html` + `static/favicon.svg`, served by Cloudflare Workers' static-assets handler.
+A **Vite + React 19 + React Router** single-page app (`src/`), built to `dist/` and served by Cloudflare Workers' static-assets handler with SPA not-found fallback. See [ADR 0001](docs/decisions/0001-landing-spa-architecture.md) for why. Plain CSS with design tokens — no CSS framework.
 
-- `static/` — what gets deployed (`wrangler.json` → `assets.directory`). Currently a placeholder `<h1>Flopsstuff</h1>`.
-- `docs/flopsstuff.md` — content source for the landing copy (mirrors `aignite`'s `Docs/aignite.md`); placeholder for now. Build the real page in `static/` from this.
-- `README.md` (root) — a generic Cloudflare "Next.js Framework Starter" template readme carried over verbatim from `aignite`. **It is inaccurate** (this repo has no Next.js, just static files) — treat the section below as the source of truth, not that README.
+- `index.html` (repo root) — Vite entry; mounts `src/main.tsx` into `#root`.
+- `src/data/projects.ts` — **the project catalogue** (the source of truth for cards + links). One `Project` per public org repo: `slug`, `name`, `category`, `tagline`, `description`, `repoUrl`, optional `webUrl`/`npmUrl`, `status`. Grouped into four categories (AI & dev tooling, KSeF, hardware, forks). Keep this in sync with the org's public repos and with `profile/README.md`.
+- `src/content/<slug>.md` — long-form detail-page body per project, loaded eagerly as raw strings via `import.meta.glob` (`src/content/index.ts`). A project with no `.md` (or an empty one) simply renders without a long body. Authoring structure: `docs/content-authoring.md`.
+- `src/pages/` (`Home`, `ProjectDetail`), `src/components/` (`Header`, `Footer`, `ProjectCard`, `NotFound`), `src/styles/tokens.css` — the UI. Detail pages live at `/project/<slug>`.
+- `dist/` — Vite build output; this is what `wrangler.json` deploys (`assets.directory: ./dist`). Generated, but committed.
+- `docs/flopsstuff.md` — narrative content source for the landing copy; `docs/brand/` holds the brand/design-system reference.
+- `README.md` (root) — a generic Cloudflare "Next.js Framework Starter" template readme carried over verbatim from `aignite`. **It is inaccurate** (this repo is Vite + React, not Next.js) — treat the section below as the source of truth, not that README.
 
 ### Tooling & commands
 
 - Package manager: **Yarn 4.6.0** via Corepack (`corepack enable`), pinned by `.yarnrc.yml` (`yarnPath: .yarn/releases/yarn-4.6.0.cjs`). That release binary and `yarn.lock` are committed on purpose — CI breaks without them.
-- `yarn install --immutable` — install (`wrangler` is the only dep).
-- `yarn preview` — `wrangler dev`, local server.
-- `yarn deploy` — `wrangler deploy`. The script sources `.env` first (`set -a; . ./.env`), so local deploys pick up credentials from there automatically.
+- `yarn install --immutable` — install (React, React Router, react-markdown, Vite, wrangler).
+- `yarn dev` — Vite dev server with HMR (day-to-day local work).
+- `yarn build` — `tsc -b && vite build` → `dist/` (typecheck + production bundle).
+- `yarn preview` — `wrangler dev`, serves the built `dist/` the way Workers will.
+- `yarn deploy` — `wrangler deploy`. The script sources `.env` first (`set -a; . ./.env`), so local deploys pick up credentials from there automatically. Run `yarn build` first — `deploy` ships whatever is in `dist/`.
 
 ### Deploy & domain
 
-- `wrangler.json`: worker name `flopsstuff`, `assets.directory: ./static`, SPA not-found handling, and a route `fs.aignite.pl` with `custom_domain: true`.
+- `wrangler.json`: worker name `flopsstuff`, `assets.directory: ./dist`, SPA not-found handling, and a route `fs.aignite.pl` with `custom_domain: true`.
 - `fs.aignite.pl` is a **subdomain** of the existing `aignite.pl` zone (same Cloudflare account) — not a separately registered domain. `custom_domain: true` makes wrangler create the DNS record + TLS cert on first deploy.
 - Cloudflare account: `serg.flop@gmail.com`, account ID `42548ca95c85a68b4ce20ad79b805334`.
 
 ### CI
 
-- `.github/workflows/deploy.yml` deploys on push to `main` (and `workflow_dispatch`): Node 22 → Corepack → `yarn install --immutable` → `cloudflare/wrangler-action@v3` with `command: deploy`.
+- `.github/workflows/deploy.yml` deploys on push to `main` (and `workflow_dispatch`): Node 22 → Corepack → `yarn install --immutable` → `yarn build` → `cloudflare/wrangler-action@v3` with `command: deploy`. CI rebuilds `dist/` itself, so the committed `dist/` is a convenience for local `yarn preview`/`deploy`, not load-bearing for CI.
 - CI auth uses two repo secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. Both are already set.
 - The API token needs: **Account › Workers Scripts: Edit**, **Account › Account Settings: Read**, **Zone › Workers Routes: Edit**, and **Zone › DNS: Edit** on `aignite.pl` (DNS Edit is required whenever the custom domain is (re)created).
 
@@ -51,4 +57,4 @@ Static site, no framework — just `static/index.html` + `static/favicon.svg`, s
 
 ## Validation
 
-No automated tests. Verify: `yarn deploy --dry-run` for config/asset sanity; `curl -I https://fs.aignite.pl` after a deploy; preview the profile README's Markdown and open the SVG in a browser.
+No automated tests. Verify: `yarn build` (typecheck + bundle) is the primary gate; `yarn dev` to eyeball changes locally, or `yarn deploy --dry-run` for config/asset sanity; `curl -I https://fs.aignite.pl` after a deploy; preview the profile README's Markdown and open the SVG in a browser. When adding/removing a project, update `src/data/projects.ts`, `profile/README.md`, and (optionally) `src/content/<slug>.md` together.
