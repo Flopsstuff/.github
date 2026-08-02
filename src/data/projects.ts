@@ -131,6 +131,17 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    slug: "ram",
+    name: "ram",
+    category: "ai-dev-tooling",
+    tagline:
+      "Random Agents Memories — a shared, always-on \"second brain\" for AI agents across machines.",
+    description:
+      "A central, always-on shared memory (\"second brain\") for AI agents running on different machines. A single markdown-vault-mcp server owns a git-backed Markdown vault — auto-committing, pushing, and pulling — and exposes it over the public internet through a Cloudflare Tunnel, with hybrid semantic + full-text search and local embeddings. Multi-auth lets headless agents connect with a static bearer token while GUI clients (ChatGPT, Claude web/mobile) log in via OAuth 2.1 through a self-hosted Authelia identity provider, so every agent reads and writes the same knowledge across sessions.",
+    repoUrl: "https://github.com/Flopsstuff/ram",
+    status: "active",
+  },
+  {
     slug: "ksef-client-ts",
     name: "ksef-client-ts",
     category: "ksef",
