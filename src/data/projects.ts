@@ -26,10 +26,10 @@ export const CATEGORY_LABELS: Record<ProjectCategory, string> = {
 };
 
 export const CATEGORY_ORDER: ProjectCategory[] = [
+  "art",
   "ai-dev-tooling",
   "ksef",
   "hardware",
-  "art",
   "forks",
 ];
 
@@ -187,18 +187,6 @@ export const projects: Project[] = [
     status: "experimental",
   },
   {
-    slug: "korovany",
-    name: "korovany",
-    category: "art",
-    tagline:
-      "3D caravan-raiding action game in the browser, built with Babylon.js.",
-    description:
-      "A browser-based 3D action game: raid caravans through a forest with a full-window Babylon.js canvas, a world map with fast-travel, and a dismemberment/bleeding health system. Built as a React 19 SPA where the objective is to raid three caravans, tracked by a unit-tested win/lose state machine, with saved progress you can continue.",
-    repoUrl: "https://github.com/Flopsstuff/korovany",
-    webUrl: "https://korovany.aimost.pl",
-    status: "experimental",
-  },
-  {
     slug: "flopcoin",
     name: "FlopCoin",
     category: "art",
@@ -209,6 +197,18 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/Flopsstuff/flop.hr",
     webUrl: "https://flopcoin.art",
     status: "active",
+  },
+  {
+    slug: "korovany",
+    name: "korovany",
+    category: "art",
+    tagline:
+      "3D caravan-raiding action game in the browser, built with Babylon.js.",
+    description:
+      "A browser-based 3D action game: raid caravans through a forest with a full-window Babylon.js canvas, a world map with fast-travel, and a dismemberment/bleeding health system. Built as a React 19 SPA where the objective is to raid three caravans, tracked by a unit-tested win/lose state machine, with saved progress you can continue.",
+    repoUrl: "https://github.com/Flopsstuff/korovany",
+    webUrl: "https://korovany.aimost.pl",
+    status: "experimental",
   },
   {
     slug: "ccui",

@@ -8,6 +8,13 @@ Everything below is public. The **Repo** link takes you to the source; where a h
 
 ---
 
+## 🎨 Art & Experiments
+
+| Project | What it is | Links |
+| --- | --- | --- |
+| **FlopCoin** | A physical silver coin (single issuance of ~100 unique pieces) that redeems for one hour of Flop's time — an art object and collectible whose only way in is from an existing holder. | [Repo](https://github.com/Flopsstuff/flop.hr) · [Web](https://flopcoin.art) |
+| **korovany** | 3D caravan-raiding action game in the browser — a Babylon.js + React SPA with a full-window canvas, world map fast-travel, and a unit-tested win/lose loop. | [Repo](https://github.com/Flopsstuff/korovany) · [Web](https://korovany.aimost.pl/) |
+
 ## 🤖 AI & Developer Tooling
 
 | Project | What it is | Links |
@@ -36,13 +43,6 @@ Everything below is public. The **Repo** link takes you to the source; where a h
 | **triki** | Reverse-engineering the Żabka Triki BLE token (nRF52810 + LSM6DSL) and reusing it as a motion controller — hardware notes, BLE protocol docs, Python tooling, and a Web Bluetooth client with a live 3D orientation demo. | [Repo](https://github.com/Flopsstuff/triki) · [npm](https://www.npmjs.com/package/triki-controller) · [Web](https://flopsstuff.github.io/triki/) |
 | **huemcp** | MCP server for controlling Philips Hue smart lights — mDNS bridge discovery, API-key setup, and control of lights, rooms, zones and grouped lights. | [Repo](https://github.com/Flopsstuff/huemcp) |
 | **lg** | Liquid Glass — an iOS app implementing a realistic magnifying-glass lens effect with Metal shaders and CoreImage (displacement maps, chromatic aberration). | [Repo](https://github.com/Flopsstuff/lg) |
-
-## 🎨 Art & Experiments
-
-| Project | What it is | Links |
-| --- | --- | --- |
-| **korovany** | 3D caravan-raiding action game in the browser — a Babylon.js + React SPA with a full-window canvas, world map fast-travel, and a unit-tested win/lose loop. | [Repo](https://github.com/Flopsstuff/korovany) · [Web](https://korovany.aimost.pl/) |
-| **FlopCoin** | A physical silver coin (single issuance of ~100 unique pieces) that redeems for one hour of Flop's time — an art object and collectible whose only way in is from an existing holder. | [Repo](https://github.com/Flopsstuff/flop.hr) · [Web](https://flopcoin.art) |
 
 ## 🍴 Forks & Contributions
 
