@@ -1,6 +1,6 @@
 ## Overview
 
-**neonka** (internally called *TKB — Teensy Keyboard Bridge*) is a firmware and
+**neonka** (internally called *TKB - Teensy Keyboard Bridge*) is a firmware and
 hardware project that transforms an **IBM Wheelwriter 6** electric typewriter into
 a USB-connected computer peripheral. With neonka running, a modern computer can
 send text to the typewriter over USB serial and it will print it; the typewriter's
@@ -10,7 +10,7 @@ Teensy 4.0 microcontroller wired into the typewriter's **Option Interface** port
 ## Why it exists
 
 The IBM Wheelwriter series has a proprietary 9-bit serial bus on its Option Interface
-connector — an interface originally intended for external peripherals like a memory
+connector - an interface originally intended for external peripherals like a memory
 module or an additional keyboard. The bus operates at an unusual 187,500 bps with
 inverted open-collector signalling, making it incompatible with standard UART
 hardware out of the box.
@@ -18,7 +18,7 @@ hardware out of the box.
 neonka exists to make that interface useful to a modern developer: reverse-engineer the
 protocol, implement it cleanly in firmware, and end up with a typewriter that can act
 as a printer (receive text from a PC) *and* a keyboard (send keypresses to a PC) over
-a plain USB connection — no modification to the typewriter itself required.
+a plain USB connection - no modification to the typewriter itself required.
 
 ## How it works
 
@@ -30,7 +30,7 @@ Teensy's Serial2 peripheral (TX pin 8, RX pin 7) handles the actual bus traffic.
 **Protocol layer.** The Wheelwriter uses a compact, word-oriented command format inherited from
 the typewriter's internal 8051-family MCU (Intel 8051 UART Mode 2): an address word (`0x121`)
 followed by a command code and zero to two data words. Words are transmitted one at a time and each
-must be acknowledged by the typewriter before the next is sent — a software
+must be acknowledged by the typewriter before the next is sent - a software
 handshake over the shared open-collector bus.
 
 **Firmware.** `firmware/src/main.cpp` implements:

@@ -6,9 +6,9 @@ The Flopsstuff namespace hosts a fork of the [upstream project](https://github.c
 
 ## Why it exists
 
-When you run many AI agents in parallel — a CEO, a CTO, several coders, a designer — the coordination overhead quickly becomes unmanageable. Context gets lost between sessions, costs spiral with no guardrails, and there is no natural place for governance: who approves a hire, who can pause a runaway agent, who signs off on a strategy change.
+When you run many AI agents in parallel - a CEO, a CTO, several coders, a designer - the coordination overhead quickly becomes unmanageable. Context gets lost between sessions, costs spiral with no guardrails, and there is no natural place for governance: who approves a hire, who can pause a runaway agent, who signs off on a strategy change.
 
-Paperclip exists to replace the pile of open terminal tabs and ad-hoc prompts with something that feels like a proper task manager for an autonomous company. It is aimed at developers and solo founders who want agents running 24/7 on real goals, with cost visibility and the ability to step in — pause, reassign, override — without losing state.
+Paperclip exists to replace the pile of open terminal tabs and ad-hoc prompts with something that feels like a proper task manager for an autonomous company. It is aimed at developers and solo founders who want agents running 24/7 on real goals, with cost visibility and the ability to step in - pause, reassign, override - without losing state.
 
 ## How it works
 
@@ -16,10 +16,10 @@ The central mechanism is the **heartbeat**: each agent wakes on a schedule (or o
 
 A typical flow looks like this:
 
-1. **Define goals** — a CEO agent breaks the company mission into projects and tasks.
-2. **Hire agents** — assign roles (CTO, engineer, marketer) and connect them via an adapter (Claude Code, Codex, Cursor, HTTP webhook, or a plain bash script). Any agent that can receive a heartbeat signal is compatible.
-3. **Work proceeds autonomously** — agents check out tasks, do the work, post results, and delegate subtasks to each other via the issue system. Blocked work auto-resumes when dependencies close.
-4. **Board oversight** — approval gates require a human (board member) to sign off before key actions proceed. You can pause, resume, or terminate any agent at any time from the dashboard or mobile.
+1. **Define goals** - a CEO agent breaks the company mission into projects and tasks.
+2. **Hire agents** - assign roles (CTO, engineer, marketer) and connect them via an adapter (Claude Code, Codex, Cursor, HTTP webhook, or a plain bash script). Any agent that can receive a heartbeat signal is compatible.
+3. **Work proceeds autonomously** - agents check out tasks, do the work, post results, and delegate subtasks to each other via the issue system. Blocked work auto-resumes when dependencies close.
+4. **Board oversight** - approval gates require a human (board member) to sign off before key actions proceed. You can pause, resume, or terminate any agent at any time from the dashboard or mobile.
 
 The architecture is a single control plane process with twelve subsystems: Identity & Access, Org Chart & Agents, Work & Tasks, Heartbeat Execution, Workspaces & Runtime, Governance & Approvals, Budget & Cost Control, Routines & Schedules, Plugins, Secrets & Storage, Activity & Events, and Company Portability.
 
@@ -43,7 +43,7 @@ Getting started takes one command:
 npx paperclipai onboard --yes
 ```
 
-This starts the API server at `http://localhost:3100` with an embedded PostgreSQL database — no separate database setup required. Bind to LAN or Tailscale for mobile access.
+This starts the API server at `http://localhost:3100` with an embedded PostgreSQL database - no separate database setup required. Bind to LAN or Tailscale for mobile access.
 
 ## Links
 

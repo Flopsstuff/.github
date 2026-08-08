@@ -8,10 +8,10 @@ In modern development environments with numerous microservices and repositories,
 
 ## How it works
 
-1. **Query Interface** — Users can interact with codebases via a clean Chat UI, while external tools and agents connect through a standard REST API or the Model Context Protocol (MCP).
-2. **Project Targeting** — Each query is scoped to a specific project and agent, allowing for fine-grained control over the context retrieved.
-3. **Flexible Modes** — Supports various query modes, from quick one-line answers to exhaustive architectural analysis, depending on the user's needs.
-4. **Deployment** — Designed for easy setup, **coqu** can run locally for individual developers or be deployed via Docker for teams, with support for secure internet exposure using Cloudflare Tunnels.
+1. **Query Interface** - Users can interact with codebases via a clean Chat UI, while external tools and agents connect through a standard REST API or the Model Context Protocol (MCP).
+2. **Project Targeting** - Each query is scoped to a specific project and agent, allowing for fine-grained control over the context retrieved.
+3. **Flexible Modes** - Supports various query modes, from quick one-line answers to exhaustive architectural analysis, depending on the user's needs.
+4. **Deployment** - Designed for easy setup, **coqu** can run locally for individual developers or be deployed via Docker for teams, with support for secure internet exposure using Cloudflare Tunnels.
 
 ## Technical details
 

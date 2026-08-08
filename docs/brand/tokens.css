@@ -1,5 +1,5 @@
 /* ============================================================================
-   Flop's Stuff — Design Tokens
+   Flop's Stuff - Design Tokens
    ----------------------------------------------------------------------------
    Single source of truth for the landing site (https://stuff.flopbut.pl).
    Owner: Iris (Design). Consumed by: Wayland (frontend), per ADR 0001.
@@ -8,8 +8,8 @@
    root (e.g. in `main.tsx` or the top-level CSS) BEFORE any component styles.
 
    Layers:
-     1. PRIMITIVES  — raw palette + scales. Never reference these in components.
-     2. SEMANTIC    — role-based tokens (`--color-bg`, `--color-primary`, …).
+     1. PRIMITIVES  - raw palette + scales. Never reference these in components.
+     2. SEMANTIC    - role-based tokens (`--color-bg`, `--color-primary`, …).
                       Components consume ONLY these. Re-theming = remap semantics.
 
    Theme model: DARK is canonical (:root). Light is an opt-in override via
@@ -37,19 +37,19 @@
   --zinc-50:  #fafafa;
   --white:    #ffffff;
 
-  /* ---- PRIMITIVES : primary (electric cyan — complement of the reserved red) */
+  /* ---- PRIMITIVES : primary (electric cyan - complement of the reserved red) */
   --cyan-100: #cffafe;
   --cyan-200: #a5f0fb;
   --cyan-300: #67e8f9;
   --cyan-400: #34d3ee;  /* brand primary on DARK */
   --cyan-500: #15bdd9;
   --cyan-600: #0e97b0;
-  --cyan-700: #0e7490;  /* primary on LIGHT — AA text on white (~4.8:1) */
+  --cyan-700: #0e7490;  /* primary on LIGHT - AA text on white (~4.8:1) */
   --cyan-800: #155e75;
 
-  /* ---- PRIMITIVES : accent (LOGO red — reserved, sparing only) ------------- */
+  /* ---- PRIMITIVES : accent (LOGO red - reserved, sparing only) ------------- */
   --red-500:  #ff2d2d;  /* lit segment / logo / sparing accent ONLY */
-  --red-900:  #3a0c0c;  /* unlit segment — decorative dark red */
+  --red-900:  #3a0c0c;  /* unlit segment - decorative dark red */
 
   /* ---- PRIMITIVES : status (semantic states; muted, never the brand) ------- */
   --green-400:  #34d399;  /* active / live   */
@@ -78,7 +78,7 @@
   --color-link:             var(--cyan-400);
   --color-link-hover:       var(--cyan-300);
 
-  /* Accent (logo red — sparing) */
+  /* Accent (logo red - sparing) */
   --color-accent: var(--red-500);
 
   /* Status */
@@ -94,16 +94,16 @@
   --font-sans:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
-  /* Type scale — base 16px, ~1.25 (major third) */
-  --text-xs:   0.75rem;   /* 12 — mono labels, meta            */
-  --text-sm:   0.875rem;  /* 14 — secondary copy, captions     */
-  --text-base: 1rem;      /* 16 — body                         */
-  --text-lg:   1.125rem;  /* 18 — lead paragraph               */
-  --text-xl:   1.375rem;  /* 22 — card title / h3              */
-  --text-2xl:  1.75rem;   /* 28 — section heading / h2         */
-  --text-3xl:  2.25rem;   /* 36 — page title                   */
-  --text-4xl:  3rem;      /* 48 — hero (mobile→tablet)         */
-  --text-5xl:  3.75rem;   /* 60 — hero (desktop)               */
+  /* Type scale - base 16px, ~1.25 (major third) */
+  --text-xs:   0.75rem;   /* 12 - mono labels, meta            */
+  --text-sm:   0.875rem;  /* 14 - secondary copy, captions     */
+  --text-base: 1rem;      /* 16 - body                         */
+  --text-lg:   1.125rem;  /* 18 - lead paragraph               */
+  --text-xl:   1.375rem;  /* 22 - card title / h3              */
+  --text-2xl:  1.75rem;   /* 28 - section heading / h2         */
+  --text-3xl:  2.25rem;   /* 36 - page title                   */
+  --text-4xl:  3rem;      /* 48 - hero (mobile→tablet)         */
+  --text-5xl:  3.75rem;   /* 60 - hero (desktop)               */
 
   --leading-tight:   1.1;
   --leading-snug:    1.25;
@@ -120,7 +120,7 @@
   --tracking-wide:  0.08em;    /* uppercase mono labels       */
 
   /* ============================== SPACING =================================== */
-  /* 4px base. Use these only — no stray pixel values. */
+  /* 4px base. Use these only - no stray pixel values. */
   --space-0:  0;
   --space-1:  0.25rem;  /*  4 */
   --space-2:  0.5rem;   /*  8 */
@@ -146,10 +146,10 @@
   --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 14px 38px rgba(0, 0, 0, 0.55);
 
-  /* Cyan focus glow — the ONE place the LED-glow motif is reused for UI. */
+  /* Cyan focus glow - the ONE place the LED-glow motif is reused for UI. */
   --glow-focus: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-focus),
                 0 0 18px -2px var(--cyan-400);
-  /* Red logo glow — decorative, logo/monogram only. */
+  /* Red logo glow - decorative, logo/monogram only. */
   --glow-logo:  0 0 16px -2px var(--red-500);
 
   /* =============================== MOTION =================================== */
@@ -163,7 +163,7 @@
   --container-max: 1120px;
   --container-pad: clamp(1rem, 4vw, 2rem);
 
-  /* Breakpoints — reference values for JS / documentation. CSS @media queries
+  /* Breakpoints - reference values for JS / documentation. CSS @media queries
      cannot read custom properties, so hard-code the same numbers there:
        sm 480px · md 768px · lg 1024px · xl 1280px                              */
   --bp-sm: 480px;

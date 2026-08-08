@@ -1,10 +1,10 @@
-# Flop's Stuff — Brand & Design System
+# Flop's Stuff - Brand & Design System
 
 Foundation for the landing site at **https://stuff.flopbut.pl** (React SPA, plain CSS
-with design tokens — see [ADR 0001](../decisions/0001-landing-spa-architecture.md)).
+with design tokens - see [ADR 0001](../decisions/0001-landing-spa-architecture.md)).
 
-- **Tokens:** [`tokens.css`](./tokens.css) — copy to `src/styles/tokens.css`, import once at the app root.
-- **Preview:** [`preview.html`](./preview.html) — open in a browser to see the palette, type, and screen mocks live (toggle light/dark).
+- **Tokens:** [`tokens.css`](./tokens.css) - copy to `src/styles/tokens.css`, import once at the app root.
+- **Preview:** [`preview.html`](./preview.html) - open in a browser to see the palette, type, and screen mocks live (toggle light/dark).
 - **Audience:** Wayland implements directly from this; Daedalus signs off on feasibility.
 
 ---
@@ -17,7 +17,7 @@ on a near-black panel (`profile/logo.svg`). The whole system extends that one ob
 - **Dark-first.** The monogram's native habitat is the dark panel, so the site *is* that panel.
   Dark is the canonical theme; light is a faithful, high-contrast alternate.
 - **Display, not decoration.** Type, color, and the focus glow all read as a precise instrument
-  readout — calm, technical, legible. "Clear, modern, beautiful" = restraint, not ornament.
+  readout - calm, technical, legible. "Clear, modern, beautiful" = restraint, not ornament.
 
 **Voice:** plain, confident, engineer-to-engineer. Short lines. No marketing inflation.
 
@@ -27,14 +27,14 @@ on a near-black panel (`profile/logo.svg`). The whole system extends that one ob
 
 ### The red rule (hard constraint)
 
-> **`#ff2d2d` is the logo color.** It may also appear as a *sparing* accent — a single live-status
+> **`#ff2d2d` is the logo color.** It may also appear as a *sparing* accent - a single live-status
 > dot, a hover hairline, a focus garnish. It must **never** be the primary brand color, never fill a
 > button or large surface, never mark body links. If you're reaching for red for emphasis, you're
-> wrong — reach for cyan (`--color-primary`) or weight/space instead.
+> wrong - reach for cyan (`--color-primary`) or weight/space instead.
 
 ### Primary: electric cyan
 
-Cyan is the **complement of the reserved red** — the red/cyan pairing is literally the relationship
+Cyan is the **complement of the reserved red** - the red/cyan pairing is literally the relationship
 between channels on an RGB display, so the palette reinforces the LED-display idea while staying
 unmistakably *not red* (and not generic-AI-blue). Cyan carries all interactivity: links, primary
 buttons, focus, active states.
@@ -43,7 +43,7 @@ buttons, focus, active states.
 
 | Token | Hex | Role |
 | --- | --- | --- |
-| `--color-bg` (dark) | `#0a0a0b` | Page canvas — the panel. Tuned to the logo's `#0c0c0e`. |
+| `--color-bg` (dark) | `#0a0a0b` | Page canvas - the panel. Tuned to the logo's `#0c0c0e`. |
 | `--color-surface` | `#141417` | Cards, header. |
 | `--color-surface-raised` | `#1a1a1f` | Hover / elevated card. |
 | `--color-border` | `#26262c` | Hairlines, card edges. |
@@ -57,13 +57,13 @@ buttons, focus, active states.
 | `--color-status-experimental` | `#fbbf24` | "experimental" badge. |
 | `--color-status-fork` | `#a78bfa` | "fork" badge. |
 
-Status colors are **muted and semantic**, never brand — they distinguish badge meaning without
+Status colors are **muted and semantic**, never brand - they distinguish badge meaning without
 competing with cyan or stealing red.
 
 ### Contrast (WCAG 2.1)
 
 All body and UI text pairs meet **AA**; primary text pairs exceed **AAA**. On dark, cyan `#34d3ee`
-on `#0a0a0b` is ~11:1. On light, cyan `#0e7490` on white is ~4.8:1 (AA) — this is why the light
+on `#0a0a0b` is ~11:1. On light, cyan `#0e7490` on white is ~4.8:1 (AA) - this is why the light
 theme darkens the primary; **do not** use the bright dark-theme cyan for text on white.
 
 ---
@@ -74,7 +74,7 @@ Three families, all free & self-hostable (subset and `font-display: swap`):
 
 | Role | Family | Use |
 | --- | --- | --- |
-| **Display** | **Space Grotesk** | Hero, page & section headings. Techy, geometric — echoes the digital readout. |
+| **Display** | **Space Grotesk** | Hero, page & section headings. Techy, geometric - echoes the digital readout. |
 | **Body** | **Inter** | Paragraphs, card copy, UI. Workhorse; highly legible at small sizes. |
 | **Mono** | **JetBrains Mono** | Category labels, status chips, code, the "FS" wordmark fallback. The segmented-display callback. |
 
@@ -93,14 +93,14 @@ uppercase mono labels use `--tracking-wide`.
 
 ## 4. Spacing, radius, elevation, motion
 
-- **Spacing** — 4px base, tokens `--space-1`…`--space-10` (4→128). Use the scale, nothing else.
+- **Spacing** - 4px base, tokens `--space-1`…`--space-10` (4→128). Use the scale, nothing else.
   No stray `7px` gaps; whitespace is a design element.
-- **Radius** — `sm 6` (chips/inputs) · `md 10` (buttons) · `lg 16` (cards) · `xl 24` (hero panels) ·
+- **Radius** - `sm 6` (chips/inputs) · `md 10` (buttons) · `lg 16` (cards) · `xl 24` (hero panels) ·
   `full` (pills/dots). Mirrors the logo panel's soft `rx≈6.6%`.
-- **Shadows** — `sm/md/lg`; dark theme leans on borders + faint shadow, light theme on shadow.
-- **Glow** — `--glow-focus` (cyan) is the **only** UI reuse of the LED-glow filter; it's the focus
+- **Shadows** - `sm/md/lg`; dark theme leans on borders + faint shadow, light theme on shadow.
+- **Glow** - `--glow-focus` (cyan) is the **only** UI reuse of the LED-glow filter; it's the focus
   ring. `--glow-logo` (red) is decoration for the monogram only.
-- **Motion** — `--duration-fast/base/slow` with `--ease-standard`/`--ease-out`. Hover ≤ `fast`,
+- **Motion** - `--duration-fast/base/slow` with `--ease-standard`/`--ease-out`. Hover ≤ `fast`,
   view transitions ≤ `base`. All gated by `prefers-reduced-motion` (tokens collapse to `0ms`).
 
 ---
@@ -119,7 +119,7 @@ the surrounding UI stays cyan/neutral so the mark always wins the eye.
 
 ---
 
-## 6. Visual direction — Home (`/`)
+## 6. Visual direction - Home (`/`)
 
 Business card + grouped project grid. **Overview → scan → drill in** (Shneiderman): hero states who
 we are; grouped grid lets a visitor self-select by interest; each card is a clear scent trail to a
@@ -168,7 +168,7 @@ hairline, then `Repo ↗` / `Web ↗` links in cyan. Whole card is clickable →
 links stop propagation. Hover: border → `border-strong`, lift `shadow-md`, `fast`. Grid is
 `repeat(auto-fit, minmax(280px, 1fr))` with `--space-5` gap; 1 col mobile → 2 → 3.
 
-## 7. Visual direction — Project detail (`/projects/:slug`)
+## 7. Visual direction - Project detail (`/projects/:slug`)
 
 Single, focused column. Answers "what is this, is it live, where do I get it" above the fold.
 
@@ -180,7 +180,7 @@ Single, focused column. Answers "what is this, is it live, where do I get it" ab
 │                                                                      │
 │   AI & DEVELOPER TOOLING        (mono label, subtle)                 │
 │   cotel                                          ● active            │  ← title 3xl/4xl display,
-│   Claude Code OpenTelemetry — one-container OTLP ingest + dashboard. │    status chip right
+│   Claude Code OpenTelemetry - one-container OTLP ingest + dashboard. │    status chip right
 │                                                                      │
 │   [ View repo ↗ ]   [ Website ↗ ]                                    │  ← primary + ghost button
 │     ^cyan fill        ^only if webUrl                                │
@@ -205,12 +205,12 @@ Reuses the same primitives (header, Card, Button, status chip). Content column m
 
 ## 8. States (not optional)
 
-- **Loading** — skeleton cards (surface + shimmer gated by reduced-motion). Doherty: render the
+- **Loading** - skeleton cards (surface + shimmer gated by reduced-motion). Doherty: render the
   shell instantly; SPA data is local so this is mostly a non-issue, but the skeleton covers font swap.
-- **Empty / 404** — unknown `/projects/:slug`: centered panel, dim logo, "No such project (yet)."
+- **Empty / 404** - unknown `/projects/:slug`: centered panel, dim logo, "No such project (yet)."
   + `← Back to all projects` (cyan). Recovery, not a dead end (Nielsen #9).
-- **Focus** — every interactive element shows `--glow-focus`. Keyboard order follows visual order.
-- **Hover** — borders/lift only; never introduce red on hover.
+- **Focus** - every interactive element shows `--glow-focus`. Keyboard order follows visual order.
+- **Hover** - borders/lift only; never introduce red on hover.
 
 ---
 
@@ -220,7 +220,7 @@ Reuses the same primitives (header, Card, Button, status chip). Content column m
 | --- | --- |
 | Drive emphasis with **weight, size, space, and one cyan**. | Add a second accent hue or use red for emphasis. |
 | Use semantic tokens (`--color-primary`) in components. | Reference primitives (`--cyan-400`) or inline hex. |
-| Keep the grid honest — everything on the 4px scale. | Stray gaps, elements touching edges, off-grid nudges. |
+| Keep the grid honest - everything on the 4px scale. | Stray gaps, elements touching edges, off-grid nudges. |
 | Set labels in mono uppercase with `--tracking-wide`. | Set paragraphs in mono. |
 | Respect `prefers-reduced-motion` and `prefers-color-scheme`. | Animate unconditionally or force a theme. |
 

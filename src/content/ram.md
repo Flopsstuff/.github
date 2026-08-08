@@ -1,6 +1,6 @@
 ## Overview
 
-**ram** — "Random Agents Memories" — is a central, always-on **shared "second
+**ram** - "Random Agents Memories" - is a central, always-on **shared "second
 brain"** for AI agents running across different machines. It is a deployment
 recipe around a single [`markdown-vault-mcp`](https://github.com/pvliesdonk/markdown-vault-mcp)
 server that owns one git-backed Markdown vault and exposes it on the public
@@ -40,7 +40,7 @@ agents ─HTTPS─► Cloudflare edge ─► cloudflared ─┬─► markdown-v
   [Authelia](https://www.authelia.com/) identity provider. The server accepts
   either credential against the same single-tenant vault.
 - **Search built in.** The vault is served with hybrid semantic + full-text
-  search and a wikilink graph, backed by local FastEmbed embeddings — index and
+  search and a wikilink graph, backed by local FastEmbed embeddings - index and
   session state live in a separate `/data` volume, never committed into the vault.
 
 Agents stay out of each other's way by folder convention (`agents/<id>/…`
@@ -53,7 +53,7 @@ private, `shared/…` append-preferred), not server-enforced tenancy.
 | Core          | `markdown-vault-mcp` over a git-backed Markdown vault               |
 | Deployment    | Docker Compose: `markdown-vault-mcp`, `cloudflared`, `authelia`     |
 | Ingress       | Cloudflare Tunnel (streamable HTTP), no published ports, no Access  |
-| Auth          | Multi-auth — static bearer **or** OAuth 2.1 / OIDC via Authelia     |
+| Auth          | Multi-auth - static bearer **or** OAuth 2.1 / OIDC via Authelia     |
 | Embeddings    | Local FastEmbed; hybrid vector + full-text search                   |
 | Persistence   | Private git repo for the vault; `/data` volume for index & sessions |
 

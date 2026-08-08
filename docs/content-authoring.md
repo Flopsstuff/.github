@@ -1,4 +1,4 @@
-# Project page content — authoring guide
+# Project page content - authoring guide
 
 Every project on the landing site (https://stuff.flopbut.pl) has a detail page at
 `/projects/<slug>`. The short tagline + one-paragraph description come from
@@ -10,7 +10,7 @@ src/content/<slug>.md
 ```
 
 Files are loaded at build time (`src/content/index.ts`). If a project has no
-`.md` file, the page just shows the tagline + description — no error. So you can
+`.md` file, the page just shows the tagline + description - no error. So you can
 add pages incrementally, one PR per project, with zero merge conflicts because
 each project is its own file.
 
@@ -28,13 +28,13 @@ Do not invent facts. Before writing, actually look at the source:
 ## Required structure
 
 Write the body in this order. Start with an `## Overview` H2 (the page already
-renders the project name as the H1 and the tagline above your content — do **not**
+renders the project name as the H1 and the tagline above your content - do **not**
 repeat the title as an H1).
 
 ```markdown
 ## Overview
 
-2–4 sentences: what this project is, in plain language, for someone who has
+2-4 sentences: what this project is, in plain language, for someone who has
 never heard of it.
 
 ## Why it exists
@@ -59,13 +59,13 @@ licensing if relevant. A table is fine here. Keep it factual.
 ```
 
 Sections that genuinely don't apply to a project can be dropped, but `Overview`,
-`Why it exists`, and `How it works` are mandatory. Aim for ~200–500 words of
-substance — detailed, not padded.
+`Why it exists`, and `How it works` are mandatory. Aim for ~200-500 words of
+substance - detailed, not padded.
 
 ## Formatting rules
 
 - Use `##` for top-level sections, `###` for sub-sections. No `#` (H1).
-- Links open in a new tab automatically — just write normal Markdown links.
+- Links open in a new tab automatically - just write normal Markdown links.
 - Inline code with backticks; multi-line with triple-fenced blocks. GFM tables
   and task lists are supported (remark-gfm).
 - **Images** are optional. Only use an image you can actually link to: hot-link

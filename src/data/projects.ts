@@ -39,7 +39,7 @@ export const projects: Project[] = [
     name: "cotel",
     category: "ai-dev-tooling",
     tagline:
-      "Claude Code OpenTelemetry — single-container OTLP ingest + interactive dashboard.",
+      "Claude Code OpenTelemetry - single-container OTLP ingest + interactive dashboard.",
     description:
       "A single-container OTLP ingest endpoint plus an interactive dashboard for Claude Code usage: sessions, models, tools, cost, and timings. Drop it next to your Claude Code setup and get immediate observability.",
     repoUrl: "https://github.com/Flopsstuff/cotel",
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     slug: "flugins",
     name: "flugins",
     category: "ai-dev-tooling",
-    tagline: "Claude Code plugin marketplace — curated plugins repository.",
+    tagline: "Claude Code plugin marketplace - curated plugins repository.",
     description:
       "A curated plugins repository you can point your Claude Code install at. Browse, install, and manage community plugins for Claude Code.",
     repoUrl: "https://github.com/Flopsstuff/flugins",
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     category: "ai-dev-tooling",
     tagline: "Surface what actually matters in large bodies of text.",
     description:
-      "grep the human signal from the noise — a tool for surfacing what actually matters in large bodies of text. Cut through context bloat and find the substance.",
+      "grep the human signal from the noise - a tool for surfacing what actually matters in large bodies of text. Cut through context bloat and find the substance.",
     repoUrl: "https://github.com/Flopsstuff/soulgrep",
     webUrl: "https://soulgrep.aignite.pl",
     status: "experimental",
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     slug: "coqu",
     name: "coqu",
     category: "ai-dev-tooling",
-    tagline: "Code Query — query and explore codebases.",
+    tagline: "Code Query - query and explore codebases.",
     description:
       "Code Query: query and explore codebases with a structured query interface. Designed for fast, targeted code navigation.",
     repoUrl: "https://github.com/Flopsstuff/coqu",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     slug: "chaiba",
     name: "chaiba",
     category: "ai-dev-tooling",
-    tagline: "Chess AI Battle Arena — pit chess engines and AIs against each other.",
+    tagline: "Chess AI Battle Arena - pit chess engines and AIs against each other.",
     description:
       "Chess AI Battle Arena: pit chess engines and AIs against each other and watch them play. A playground for evaluating chess AI performance.",
     repoUrl: "https://github.com/Flopsstuff/chaiba",
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     slug: "aimaf",
     name: "aimaf",
     category: "ai-dev-tooling",
-    tagline: "AI Mafia — a social-deduction game played between LLMs.",
+    tagline: "AI Mafia - a social-deduction game played between LLMs.",
     description:
       "A client-only React SPA that runs a Mafia-style social deduction game between multiple LLM 'players' via OpenRouter. Assign roles (Mafia, Detective, Doctor), then watch the models bluff, vote, and deduce through each game phase.",
     repoUrl: "https://github.com/Flopsstuff/aimaf",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     tagline:
       "Offline, private TOTP (2FA) code generator that runs entirely in your browser.",
     description:
-      "A secure, offline TOTP (Time-based One-Time Password) generator for two-factor authentication and trusted identity verification. All codes are computed locally in the browser with the Web Crypto API — nothing is sent to a server or stored. Generate Base32 secrets, tune algorithm/digits/period, copy codes, or scan a QR into any standard authenticator app.",
+      "A secure, offline TOTP (Time-based One-Time Password) generator for two-factor authentication and trusted identity verification. All codes are computed locally in the browser with the Web Crypto API - nothing is sent to a server or stored. Generate Base32 secrets, tune algorithm/digits/period, copy codes, or scan a QR into any standard authenticator app.",
     repoUrl: "https://github.com/Flopsstuff/otp",
     webUrl: "https://flopsstuff.github.io/otp/",
     status: "active",
@@ -126,9 +126,9 @@ export const projects: Project[] = [
     name: "ram",
     category: "ai-dev-tooling",
     tagline:
-      "Random Agents Memories — a shared, always-on \"second brain\" for AI agents across machines.",
+      "Random Agents Memories - a shared, always-on \"second brain\" for AI agents across machines.",
     description:
-      "A central, always-on shared memory (\"second brain\") for AI agents running on different machines. A single markdown-vault-mcp server owns a git-backed Markdown vault — auto-committing, pushing, and pulling — and exposes it over the public internet through a Cloudflare Tunnel, with hybrid semantic + full-text search and local embeddings. Multi-auth lets headless agents connect with a static bearer token while GUI clients (ChatGPT, Claude web/mobile) log in via OAuth 2.1 through a self-hosted Authelia identity provider, so every agent reads and writes the same knowledge across sessions.",
+      "A central, always-on shared memory (\"second brain\") for AI agents running on different machines. A single markdown-vault-mcp server owns a git-backed Markdown vault - auto-committing, pushing, and pulling - and exposes it over the public internet through a Cloudflare Tunnel, with hybrid semantic + full-text search and local embeddings. Multi-auth lets headless agents connect with a static bearer token while GUI clients (ChatGPT, Claude web/mobile) log in via OAuth 2.1 through a self-hosted Authelia identity provider, so every agent reads and writes the same knowledge across sessions.",
     repoUrl: "https://github.com/Flopsstuff/ram",
     status: "active",
   },
@@ -170,7 +170,7 @@ export const projects: Project[] = [
     tagline:
       "Reverse-engineering the Żabka Triki BLE token and reusing it as a motion controller.",
     description:
-      "Notes, tooling, and a Web Bluetooth client for the Żabka Triki — a collectible BLE token (nRF52810 + LSM6DSL IMU) shaped like a bottle cap. Reads the token's accelerometer/gyroscope over BLE and reuses it as a motion controller, with a live in-browser 3D orientation demo and a published dependency-free TypeScript client package.",
+      "Notes, tooling, and a Web Bluetooth client for the Żabka Triki - a collectible BLE token (nRF52810 + LSM6DSL IMU) shaped like a bottle cap. Reads the token's accelerometer/gyroscope over BLE and reuses it as a motion controller, with a live in-browser 3D orientation demo and a published dependency-free TypeScript client package.",
     repoUrl: "https://github.com/Flopsstuff/triki",
     webUrl: "https://flopsstuff.github.io/triki/",
     npmUrl: "https://www.npmjs.com/package/triki-controller",
@@ -191,9 +191,9 @@ export const projects: Project[] = [
     name: "FlopCoin",
     category: "art",
     tagline:
-      "A physical silver coin redeemable for an hour of Flop's time — art object and collectible in one.",
+      "A physical silver coin redeemable for an hour of Flop's time - art object and collectible in one.",
     description:
-      "A FlopCoin is a physical silver coin, minted as a single issuance of around 100 unique pieces. Holding one is a public promise of one hour of Flop's time, spent on whatever the owner asks for; each coin is also an art object in its own right, and the only way to get one is from someone who already has it. The accompanying site — a static Next.js export on Cloudflare Pages — explains what a FlopCoin is, how to redeem it, its limits, and who currently owns one.",
+      "A FlopCoin is a physical silver coin, minted as a single issuance of around 100 unique pieces. Holding one is a public promise of one hour of Flop's time, spent on whatever the owner asks for; each coin is also an art object in its own right, and the only way to get one is from someone who already has it. The accompanying site - a static Next.js export on Cloudflare Pages - explains what a FlopCoin is, how to redeem it, its limits, and who currently owns one.",
     repoUrl: "https://github.com/Flopsstuff/flop.hr",
     webUrl: "https://flopcoin.art",
     status: "active",
@@ -214,7 +214,7 @@ export const projects: Project[] = [
     slug: "ccui",
     name: "ccui",
     category: "forks",
-    tagline: "CloudCLI — open-source web UI for managing Claude Code / Cursor CLI sessions.",
+    tagline: "CloudCLI - open-source web UI for managing Claude Code / Cursor CLI sessions.",
     description:
       "CloudCLI: a free, open-source web UI for managing Claude Code, Cursor CLI, or Codex sessions remotely from mobile or web.",
     repoUrl: "https://github.com/Flopsstuff/ccui",
@@ -259,7 +259,7 @@ export const projects: Project[] = [
     category: "forks",
     tagline: "Terminal in the browser over HTTP/HTTPS.",
     description:
-      "Terminal in the browser over HTTP/HTTPS — an Ajaxterm/Anyterm alternative. Provides full terminal access through any modern browser.",
+      "Terminal in the browser over HTTP/HTTPS - an Ajaxterm/Anyterm alternative. Provides full terminal access through any modern browser.",
     repoUrl: "https://github.com/Flopsstuff/wetty",
     webUrl: "https://butlerx.github.io/wetty",
     status: "fork",

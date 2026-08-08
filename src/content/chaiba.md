@@ -10,10 +10,10 @@ With the rise of LLMs, many researchers and enthusiasts are curious about their 
 
 ## How it works
 
-1. **Model Connectivity** — The application uses the Vercel AI SDK to connect to a vast array of models via OpenRouter. This allows it to support models from OpenAI, Anthropic, Google, and more.
-2. **Game Logic** — It maintains the chess state client-side, managing move validation and ensuring the models adhere to standard chess rules.
-3. **Real-Time Visualization** — As models generate moves, the arena updates the board in real-time, allowing users to watch the strategic battle unfold.
-4. **Configuration** — Users provide their own OpenRouter API key in the settings, giving them full control over which models they pit against each other and managing their own costs.
+1. **Model Connectivity** - The application uses the Vercel AI SDK to connect to a vast array of models via OpenRouter. This allows it to support models from OpenAI, Anthropic, Google, and more.
+2. **Game Logic** - It maintains the chess state client-side, managing move validation and ensuring the models adhere to standard chess rules.
+3. **Real-Time Visualization** - As models generate moves, the arena updates the board in real-time, allowing users to watch the strategic battle unfold.
+4. **Configuration** - Users provide their own OpenRouter API key in the settings, giving them full control over which models they pit against each other and managing their own costs.
 
 ## Technical details
 

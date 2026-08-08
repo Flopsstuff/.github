@@ -12,9 +12,9 @@ soulgrep was built with a **privacy-first** mandate. It performs all data parsin
 
 The analysis workflow is divided into three distinct phases:
 
-1.  **Ingestion & Parsing** — The user uploads a Telegram `result.json` export. A background Web Worker parses the file locally to extract message history and build a "persona corpus" for the target speaker.
-2.  **Signal Extraction** — The application splits the corpus into manageable chunks and executes parallel LLM calls. Each call identifies specific behavioral signals, linguistic patterns, and psychological markers within that chunk.
-3.  **Synthesis** — A final LLM pass aggregates the extracted signals into a cohesive psychological profile, covering communication style, cognitive patterns, and interpersonal dynamics.
+1.  **Ingestion & Parsing** - The user uploads a Telegram `result.json` export. A background Web Worker parses the file locally to extract message history and build a "persona corpus" for the target speaker.
+2.  **Signal Extraction** - The application splits the corpus into manageable chunks and executes parallel LLM calls. Each call identifies specific behavioral signals, linguistic patterns, and psychological markers within that chunk.
+3.  **Synthesis** - A final LLM pass aggregates the extracted signals into a cohesive psychological profile, covering communication style, cognitive patterns, and interpersonal dynamics.
 
 The resulting "psychotype" can be explored in the dashboard or exported as a structured JSON/Markdown report.
 

@@ -1,6 +1,6 @@
 ## Overview
 
-**huemcp** is a Model Context Protocol (MCP) server that enables AI assistants—such as Claude Desktop or Cursor—to control Philips Hue smart lighting systems. It acts as a bridge between high-level natural language instructions and the physical Hue ecosystem, allowing AI agents to "see" your home's lighting layout and interact with it directly over your local network.
+**huemcp** is a Model Context Protocol (MCP) server that enables AI assistants-such as Claude Desktop or Cursor-to control Philips Hue smart lighting systems. It acts as a bridge between high-level natural language instructions and the physical Hue ecosystem, allowing AI agents to "see" your home's lighting layout and interact with it directly over your local network.
 
 ## Why it exists
 
@@ -10,10 +10,10 @@ While smart home integration is common, it usually requires platform-specific ap
 
 ## How it works
 
-1. **Automatic Discovery** — The server utilizes **mDNS (Multicast DNS)** to scan the local network for Philips Hue Bridges. This removes the need for users to manually identify and provide bridge IP addresses.
-2. **Secure Pairing** — It implements the standard Hue authentication flow through two dedicated tools: `discover_bridge` to find available hardware, and `complete_bridge_setup` to finalize the API key generation once the physical link button on the bridge is pressed.
-3. **MCP Tool Exposure** — Once authorized, the server registers a suite of tools with the host AI client. These tools allow for toggling power, adjusting brightness, and setting XY or RGB colors across individual bulbs, rooms, zones, or grouped lights.
-4. **Local Execution** — All commands are translated into local HTTP requests sent directly to the Hue Bridge API. This ensures low-latency response times and keeps your smart home data private within your local network.
+1. **Automatic Discovery** - The server utilizes **mDNS (Multicast DNS)** to scan the local network for Philips Hue Bridges. This removes the need for users to manually identify and provide bridge IP addresses.
+2. **Secure Pairing** - It implements the standard Hue authentication flow through two dedicated tools: `discover_bridge` to find available hardware, and `complete_bridge_setup` to finalize the API key generation once the physical link button on the bridge is pressed.
+3. **MCP Tool Exposure** - Once authorized, the server registers a suite of tools with the host AI client. These tools allow for toggling power, adjusting brightness, and setting XY or RGB colors across individual bulbs, rooms, zones, or grouped lights.
+4. **Local Execution** - All commands are translated into local HTTP requests sent directly to the Hue Bridge API. This ensures low-latency response times and keeps your smart home data private within your local network.
 
 ## Technical details
 

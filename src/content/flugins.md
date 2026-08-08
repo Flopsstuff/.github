@@ -12,16 +12,16 @@ flugins exists to bridge this gap by providing a "marketplace" experience. It al
 
 flugins leverages Claude Code's built-in plugin architecture. Users register the repository as a trusted marketplace source, after which plugins can be installed by their scoped name.
 
-1. **Register** — add the marketplace to your local Claude Code configuration:
+1. **Register** - add the marketplace to your local Claude Code configuration:
    ```bash
    claude plugin marketplace add Flopsstuff/flugins
    ```
-2. **Install** — install specific plugins from the repository using the `@flugins` scope:
+2. **Install** - install specific plugins from the repository using the `@flugins` scope:
    ```bash
    claude plugin install docs@flugins
    claude plugin install git@flugins
    ```
-3. **Execute** — once installed, Claude Code automatically recognizes the new tools and can use them to perform enhanced tasks like searching indexed documentation or managing complex Git operations.
+3. **Execute** - once installed, Claude Code automatically recognizes the new tools and can use them to perform enhanced tasks like searching indexed documentation or managing complex Git operations.
 
 ## Available Plugins
 

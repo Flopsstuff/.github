@@ -1,4 +1,4 @@
-# 0001 — Landing site: React SPA on Cloudflare Workers
+# 0001 - Landing site: React SPA on Cloudflare Workers
 
 - **Status:** Accepted
 - **Date:** 2026-05-24
@@ -44,7 +44,7 @@ the same Cloudflare Workers static-assets handler we use today.
   `not_found_handling: "single-page-application"`, so deep links to `/projects/:slug` resolve to
   `index.html` and the router takes over. No server code.
 - **Styling: CSS custom properties (design tokens) + CSS Modules.** No Tailwind, no CSS-in-JS
-  runtime — plain CSS a maintainer can read at 2am. Iris's design system lands as a tokens file
+  runtime - plain CSS a maintainer can read at 2am. Iris's design system lands as a tokens file
   (CSS custom properties) plus brand guidance; components consume the tokens.
 
 ### Project data architecture (built for expansion)
@@ -68,7 +68,7 @@ the same Cloudflare Workers static-assets handler we use today.
   `profile/README.md`).
 - **Project detail (`/projects/:slug`)** resolves the project from the registry by slug and renders
   a template. Adding a project = appending one registry entry; a detail page exists automatically.
-- Categories are data, not hard-coded layout — new sections are additive.
+- Categories are data, not hard-coded layout - new sections are additive.
 
 ### Deploy (unchanged story)
 - `yarn build` runs Vite → emits to `dist/`.
@@ -82,7 +82,7 @@ the same Cloudflare Workers static-assets handler we use today.
 
 - **Good:** Adding projects/sections is a registry edit; shared layout and components; deploy and
   hosting model are unchanged (static assets on Workers); zero server code to operate.
-- **Cost:** Introduces a build step (Vite) — CI and local deploy must build before `wrangler deploy`.
+- **Cost:** Introduces a build step (Vite) - CI and local deploy must build before `wrangler deploy`.
   This is the only material change to the workflow.
 - **Reversible enough:** framework/styling choices are two-way doors; the hosting model (static on
   Workers) is the part we are committing to, and it matches what already runs.
@@ -90,7 +90,7 @@ the same Cloudflare Workers static-assets handler we use today.
   consumes her tokens rather than inventing colors.
 
 ## Decision lenses applied
-- **Boring tech beats clever tech** — Vite + React + plain CSS over SSR/edge frameworks.
-- **One container, one volume** (here: one worker, static assets) — no new runtime or service.
-- **Reversibility** — committing only to the static-on-Workers hosting model; framework is swappable.
-- **Small-team discipline** — a stack Wayland can implement and I can review without specialist edge-runtime knowledge.
+- **Boring tech beats clever tech** - Vite + React + plain CSS over SSR/edge frameworks.
+- **One container, one volume** (here: one worker, static assets) - no new runtime or service.
+- **Reversibility** - committing only to the static-on-Workers hosting model; framework is swappable.
+- **Small-team discipline** - a stack Wayland can implement and I can review without specialist edge-runtime knowledge.
