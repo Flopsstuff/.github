@@ -1,13 +1,13 @@
 # Flopsstuff Landing
 
-The landing site at **https://fs.aignite.pl** — a React SPA deployed on Cloudflare Workers.
+The landing site at **https://stuff.flopbut.pl** — a React SPA deployed on Cloudflare Workers.
 
 ## Stack
 
 - **Vite + React 19 + React Router v7** — SPA, client-side routing.
 - **Plain CSS with design tokens** — `src/styles/tokens.css` is the single source of truth for color, typography, spacing, radius, shadows, and motion. Components consume only semantic tokens (`--color-primary`, not `--cyan-400`).
 - **Cloudflare Workers static assets** — served via `wrangler.json`; SPA not-found handling re-routes all 404s to `index.html`.
-- **Domain** — `fs.aignite.pl` (subdomain of `aignite.pl`, same CF account).
+- **Domain** — `stuff.flopbut.pl` (subdomain of `flopbut.pl`, same CF account). Moved here from `fs.aignite.pl`.
 
 ## Adding a project
 

@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is the **Flopsstuff** organization `.github` repo (`github.com/Flopsstuff/.github`). It holds two independent things:
 
 1. **The org profile** (`profile/`) — static assets GitHub renders on the org landing page. No build.
-2. **The landing site** (repo root) — a static site deployed to Cloudflare Workers at **https://fs.aignite.pl**, ported from the sibling `aignite` project's stack.
+2. **The landing site** (repo root) — a static site deployed to Cloudflare Workers at **https://stuff.flopbut.pl**, ported from the sibling `aignite` project's stack.
 
 These are unrelated to each other; a change to one rarely touches the other.
 
@@ -40,15 +40,17 @@ A **Vite + React 19 + React Router** single-page app (`src/`), built to `dist/` 
 
 ### Deploy & domain
 
-- `wrangler.json`: worker name `flopsstuff`, `assets.directory: ./dist`, SPA not-found handling, and a route `fs.aignite.pl` with `custom_domain: true`.
-- `fs.aignite.pl` is a **subdomain** of the existing `aignite.pl` zone (same Cloudflare account) — not a separately registered domain. `custom_domain: true` makes wrangler create the DNS record + TLS cert on first deploy.
+- `wrangler.json`: worker name `flopsstuff`, `assets.directory: ./dist`, SPA not-found handling, and a route `stuff.flopbut.pl` with `custom_domain: true`.
+- `stuff.flopbut.pl` is a **subdomain** of the `flopbut.pl` zone (same Cloudflare account) — not a separately registered domain. `custom_domain: true` makes wrangler create the DNS record + TLS cert on first deploy.
+- The site previously lived at `fs.aignite.pl` (zone `aignite.pl`). Dropping it from `routes` and redeploying was enough: wrangler unbound the custom domain **and** deleted its DNS record. The old hostname no longer resolves. Reviving it as a **301 redirect** (still TODO) means, on the `aignite.pl` zone: a proxied `AAAA fs → 100::` record plus a Redirect Rule (`hostname eq fs.aignite.pl` → `https://stuff.flopbut.pl`, preserve path/query, 301).
+- The deploy token is scoped to `flopbut.pl` only, so anything touching the `aignite.pl` zone (that redirect included) has to go through the dashboard.
 - Cloudflare account: `serg.flop@gmail.com`, account ID `42548ca95c85a68b4ce20ad79b805334`.
 
 ### CI
 
 - `.github/workflows/deploy.yml` deploys on push to `main` (and `workflow_dispatch`): Node 22 → Corepack → `yarn install --immutable` → `yarn build` → `cloudflare/wrangler-action@v3` with `command: deploy`. CI rebuilds `dist/` itself, so the committed `dist/` is a convenience for local `yarn preview`/`deploy`, not load-bearing for CI.
 - CI auth uses two repo secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. Both are already set.
-- The API token needs: **Account › Workers Scripts: Edit**, **Account › Account Settings: Read**, **Zone › Workers Routes: Edit**, and **Zone › DNS: Edit** on `aignite.pl` (DNS Edit is required whenever the custom domain is (re)created).
+- The API token needs: **Account › Workers Scripts: Edit**, **Account › Account Settings: Read**, **Zone › Workers Routes: Edit**, and **Zone › DNS: Edit** on `flopbut.pl` (DNS Edit is required whenever the custom domain is (re)created).
 
 ### Credentials
 
@@ -57,4 +59,4 @@ A **Vite + React 19 + React Router** single-page app (`src/`), built to `dist/` 
 
 ## Validation
 
-No automated tests. Verify: `yarn build` (typecheck + bundle) is the primary gate; `yarn dev` to eyeball changes locally, or `yarn deploy --dry-run` for config/asset sanity; `curl -I https://fs.aignite.pl` after a deploy; preview the profile README's Markdown and open the SVG in a browser. When adding/removing a project, update `src/data/projects.ts`, `profile/README.md`, and (optionally) `src/content/<slug>.md` together.
+No automated tests. Verify: `yarn build` (typecheck + bundle) is the primary gate; `yarn dev` to eyeball changes locally, or `yarn deploy --dry-run` for config/asset sanity; `curl -I https://stuff.flopbut.pl` after a deploy; preview the profile README's Markdown and open the SVG in a browser. When adding/removing a project, update `src/data/projects.ts`, `profile/README.md`, and (optionally) `src/content/<slug>.md` together.

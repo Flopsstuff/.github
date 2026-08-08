@@ -6,7 +6,7 @@
     "not_found_handling": "single-page-application"
   },
   "routes": [
-    { "pattern": "fs.aignite.pl", "custom_domain": true }
+    { "pattern": "stuff.flopbut.pl", "custom_domain": true }
   ],
   "observability": {
     "enabled": true

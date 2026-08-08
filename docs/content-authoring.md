@@ -1,6 +1,6 @@
 # Project page content — authoring guide
 
-Every project on the landing site (https://fs.aignite.pl) has a detail page at
+Every project on the landing site (https://stuff.flopbut.pl) has a detail page at
 `/projects/<slug>`. The short tagline + one-paragraph description come from
 `src/data/projects.ts`. The **long-form body** below the description is authored
 as Markdown, one file per project:

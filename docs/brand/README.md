@@ -1,6 +1,6 @@
 # Flopsstuff — Brand & Design System
 
-Foundation for the landing site at **https://fs.aignite.pl** (React SPA, plain CSS
+Foundation for the landing site at **https://stuff.flopbut.pl** (React SPA, plain CSS
 with design tokens — see [ADR 0001](../decisions/0001-landing-spa-architecture.md)).
 
 - **Tokens:** [`tokens.css`](./tokens.css) — copy to `src/styles/tokens.css`, import once at the app root.

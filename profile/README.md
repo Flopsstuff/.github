@@ -4,7 +4,7 @@ Open-source experiments and tools, mostly around **AI developer tooling**, **age
 
 Everything below is public. The **Repo** link takes you to the source; where a hosted version or package exists, the **Web** link points to it.
 
-🌐 **Browse it all at [fs.aignite.pl](https://fs.aignite.pl)** — the same projects with a card per project and detail pages.
+🌐 **Browse it all at [stuff.flopbut.pl](https://stuff.flopbut.pl)** — the same projects with a card per project and detail pages.
 
 ---
 

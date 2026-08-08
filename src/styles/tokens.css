@@ -1,7 +1,7 @@
 /* ============================================================================
    Flopsstuff — Design Tokens
    ----------------------------------------------------------------------------
-   Single source of truth for the landing site (https://fs.aignite.pl).
+   Single source of truth for the landing site (https://stuff.flopbut.pl).
    Owner: Iris (Design). Consumed by: Wayland (frontend), per ADR 0001.
 
    Destination: copy/move to `src/styles/tokens.css` and import once at the app

@@ -40,6 +40,6 @@ Open-source experiments and tools — AI developer tooling, agent orchestration,
 
 ## Site
 
-The landing at **https://fs.aignite.pl** is a React SPA (Vite + React Router) deployed on Cloudflare Workers. See the root `README.md` for development and deployment instructions.
+The landing at **https://stuff.flopbut.pl** is a React SPA (Vite + React Router) deployed on Cloudflare Workers. See the root `README.md` for development and deployment instructions.
 
 To add a project: add one entry to `src/data/projects.ts`. The home and detail pages pick it up automatically.
