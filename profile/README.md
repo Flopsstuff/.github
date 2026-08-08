@@ -18,7 +18,6 @@ Everything below is public. The **Repo** link takes you to the source; where a h
 | **coqu** | Code Query — query and explore codebases. | [Repo](https://github.com/Flopsstuff/coqu) · [Web](https://coqu.aimost.pl) |
 | **chaiba** | Chess AI Battle Arena — pit chess engines/AIs against each other and watch them play. | [Repo](https://github.com/Flopsstuff/chaiba) · [Web](https://flopsstuff.github.io/chaiba/) |
 | **aimaf** | AI Mafia — a client-only React SPA that runs a Mafia-style social deduction game between multiple LLM "players" via OpenRouter. | [Repo](https://github.com/Flopsstuff/aimaf) · [Web](https://flopsstuff.github.io/aimaf/) |
-| **korovany** | 3D caravan-raiding action game in the browser — a Babylon.js + React SPA with a full-window canvas, world map fast-travel, and a unit-tested win/lose loop. | [Repo](https://github.com/Flopsstuff/korovany) · [Web](https://korovany.aimost.pl/) |
 | **otp** | Offline, private TOTP (2FA) code generator — computes codes locally in the browser via the Web Crypto API, nothing sent or stored. | [Repo](https://github.com/Flopsstuff/otp) · [Web](https://flopsstuff.github.io/otp/) |
 | **ram** | Random Agents Memories — a shared, always-on "second brain" for AI agents: a `markdown-vault-mcp` server over a git-backed vault, exposed via Cloudflare Tunnel with bearer + OAuth (Authelia) multi-auth. | [Repo](https://github.com/Flopsstuff/ram) |
 
@@ -43,6 +42,7 @@ Everything below is public. The **Repo** link takes you to the source; where a h
 | Project | What it is | Links |
 | --- | --- | --- |
 | **FlopCoin** | A physical silver coin (single issuance of ~100 unique pieces) that redeems for one hour of Flop's time — an art object and collectible whose only way in is from an existing holder. | [Repo](https://github.com/Flopsstuff/flop.hr) · [Web](https://flopcoin.art) |
+| **korovany** | 3D caravan-raiding action game in the browser — a Babylon.js + React SPA with a full-window canvas, world map fast-travel, and a unit-tested win/lose loop. | [Repo](https://github.com/Flopsstuff/korovany) · [Web](https://korovany.aimost.pl/) |
 
 ## 🍴 Forks & Contributions
 
