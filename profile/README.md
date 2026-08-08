@@ -38,6 +38,12 @@ Everything below is public. The **Repo** link takes you to the source; where a h
 | **huemcp** | MCP server for controlling Philips Hue smart lights — mDNS bridge discovery, API-key setup, and control of lights, rooms, zones and grouped lights. | [Repo](https://github.com/Flopsstuff/huemcp) |
 | **lg** | Liquid Glass — an iOS app implementing a realistic magnifying-glass lens effect with Metal shaders and CoreImage (displacement maps, chromatic aberration). | [Repo](https://github.com/Flopsstuff/lg) |
 
+## 🎨 Art & Experiments
+
+| Project | What it is | Links |
+| --- | --- | --- |
+| **FlopCoin** | A physical silver coin (single issuance of ~100 unique pieces) that redeems for one hour of Flop's time — an art object and collectible whose only way in is from an existing holder. | [Repo](https://github.com/Flopsstuff/flop.hr) · [Web](https://flopcoin.art) |
+
 ## 🍴 Forks & Contributions
 
 Projects we maintain forks of or contribute to. Each **Web** link points to the upstream project home.
