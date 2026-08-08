@@ -211,6 +211,18 @@ export const projects: Project[] = [
     status: "experimental",
   },
   {
+    slug: "flopbut-pl",
+    name: "flopbut.pl",
+    category: "art",
+    tagline:
+      "Flop Butylkin's personal site - the hub the rest of Flop's Stuff hangs off.",
+    description:
+      "The personal site of Flop Butylkin: a trilingual (English/Russian/Polish) Astro site on Cloudflare Workers, static by default with a single dormant serverless contact endpoint. It introduces Flop - twenty years in software, AI agent orchestration and developer tooling now, iOS/Android/React Native delivery behind it - and the crew of AI agents that run the shop. This catalogue is its `stuff.` subdomain.",
+    repoUrl: "https://github.com/Flopsstuff/flopbut.pl",
+    webUrl: "https://flopbut.pl",
+    status: "active",
+  },
+  {
     slug: "ccui",
     name: "ccui",
     category: "forks",
