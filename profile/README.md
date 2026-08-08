@@ -41,8 +41,8 @@ Everything below is public. The **Repo** link takes you to the source; where a h
 
 | Project | What it is | Links |
 | --- | --- | --- |
-| **FlopCoin** | A physical silver coin (single issuance of ~100 unique pieces) that redeems for one hour of Flop's time — an art object and collectible whose only way in is from an existing holder. | [Repo](https://github.com/Flopsstuff/flop.hr) · [Web](https://flopcoin.art) |
 | **korovany** | 3D caravan-raiding action game in the browser — a Babylon.js + React SPA with a full-window canvas, world map fast-travel, and a unit-tested win/lose loop. | [Repo](https://github.com/Flopsstuff/korovany) · [Web](https://korovany.aimost.pl/) |
+| **FlopCoin** | A physical silver coin (single issuance of ~100 unique pieces) that redeems for one hour of Flop's time — an art object and collectible whose only way in is from an existing holder. | [Repo](https://github.com/Flopsstuff/flop.hr) · [Web](https://flopcoin.art) |
 
 ## 🍴 Forks & Contributions
 

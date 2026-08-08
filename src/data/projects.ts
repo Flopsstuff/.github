@@ -187,18 +187,6 @@ export const projects: Project[] = [
     status: "experimental",
   },
   {
-    slug: "flopcoin",
-    name: "FlopCoin",
-    category: "art",
-    tagline:
-      "A physical silver coin redeemable for an hour of Flop's time — art object and collectible in one.",
-    description:
-      "A FlopCoin is a physical silver coin, minted as a single issuance of around 100 unique pieces. Holding one is a public promise of one hour of Flop's time, spent on whatever the owner asks for; each coin is also an art object in its own right, and the only way to get one is from someone who already has it. The accompanying site — a static Next.js export on Cloudflare Pages — explains what a FlopCoin is, how to redeem it, its limits, and who currently owns one.",
-    repoUrl: "https://github.com/Flopsstuff/flop.hr",
-    webUrl: "https://flopcoin.art",
-    status: "active",
-  },
-  {
     slug: "korovany",
     name: "korovany",
     category: "art",
@@ -209,6 +197,18 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/Flopsstuff/korovany",
     webUrl: "https://korovany.aimost.pl",
     status: "experimental",
+  },
+  {
+    slug: "flopcoin",
+    name: "FlopCoin",
+    category: "art",
+    tagline:
+      "A physical silver coin redeemable for an hour of Flop's time — art object and collectible in one.",
+    description:
+      "A FlopCoin is a physical silver coin, minted as a single issuance of around 100 unique pieces. Holding one is a public promise of one hour of Flop's time, spent on whatever the owner asks for; each coin is also an art object in its own right, and the only way to get one is from someone who already has it. The accompanying site — a static Next.js export on Cloudflare Pages — explains what a FlopCoin is, how to redeem it, its limits, and who currently owns one.",
+    repoUrl: "https://github.com/Flopsstuff/flop.hr",
+    webUrl: "https://flopcoin.art",
+    status: "active",
   },
   {
     slug: "ccui",
