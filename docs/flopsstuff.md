@@ -1,4 +1,4 @@
-# Flopsstuff
+# Flop's Stuff
 
 Open-source experiments and tools — AI developer tooling, agent orchestration, and a few hardware side quests.
 

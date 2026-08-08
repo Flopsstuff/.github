@@ -7,7 +7,7 @@ export default function Footer() {
       <div className={styles.inner}>
         <Link to="/" className={styles.brand} aria-label="Back to home">
           <img src="/logo.svg" alt="FS" className={styles.logo} width="24" height="24" />
-          <span className={styles.name}>Flopsstuff</span>
+          <span className={styles.name}>Flop&apos;s Stuff</span>
         </Link>
         <div className={styles.links}>
           <a

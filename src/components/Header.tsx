@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <Link to="/" className={styles.brand} aria-label="Flopsstuff home">
+        <Link to="/" className={styles.brand} aria-label="Flop's Stuff home">
           <img
             src="/logo.svg"
             alt="FS"
@@ -37,7 +37,7 @@ export default function Header() {
             width="36"
             height="36"
           />
-          <span className={styles.wordmark}>Flopsstuff</span>
+          <span className={styles.wordmark}>Flop&apos;s Stuff</span>
         </Link>
 
         <nav className={styles.nav} aria-label="Primary">

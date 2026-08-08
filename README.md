@@ -1,4 +1,4 @@
-# Flopsstuff Landing
+# Flop's Stuff Landing
 
 The landing site at **https://stuff.flopbut.pl** — a React SPA deployed on Cloudflare Workers.
 

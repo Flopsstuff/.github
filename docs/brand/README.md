@@ -1,4 +1,4 @@
-# Flopsstuff — Brand & Design System
+# Flop's Stuff — Brand & Design System
 
 Foundation for the landing site at **https://stuff.flopbut.pl** (React SPA, plain CSS
 with design tokens — see [ADR 0001](../decisions/0001-landing-spa-architecture.md)).
@@ -112,7 +112,7 @@ uppercase mono labels use `--tracking-wide`.
 | Keep the monogram on a dark panel (its `#0c0c0e` rounded rect). | Recolor the lit segments anything but `#ff2d2d`. |
 | Use it as the header mark + favicon, small. | Stretch, rotate, or add a second glow. |
 | Give it clear space ≥ the height of one segment on all sides. | Place it on a busy/low-contrast background or pure white without its panel. |
-| Pair the wordmark "Flopsstuff" in Space Grotesk beside it. | Re-typeset "FS" in another font as a substitute mark. |
+| Pair the wordmark "Flop's Stuff" in Space Grotesk beside it. | Re-typeset "FS" in another font as a substitute mark. |
 
 Minimum size: 24px panel height in the header; 16px favicon export. The red lives **in the logo**;
 the surrounding UI stays cyan/neutral so the mark always wins the eye.
@@ -127,7 +127,7 @@ detail page.
 
 ```
 ┌────────────────────────────────────────────────────────────────────┐
-│  [▦ FS]  Flopsstuff                              Projects   GitHub  ◐│  ← sticky header, surface
+│  [▦ FS]  Flop's Stuff                            Projects   GitHub  ◐│  ← sticky header, surface
 ├────────────────────────────────────────────────────────────────────┤
 │                                                                      │
 │   Open-source experiments and tools.                    ░ hero ░     │  ← Space Grotesk 5xl,
@@ -158,7 +158,7 @@ detail page.
 │   ▍HARDWARE & SYSTEMS        ▍FORKS & CONTRIBUTIONS                  │
 │   …                                                                  │
 ├──────────────────────────────────────────────────────────────────  │
-│   [▦ FS] Flopsstuff · GitHub · © 2026          (quiet mono footer)   │
+│   [▦ FS] Flop's Stuff · GitHub · © 2026        (quiet mono footer)   │
 └──────────────────────────────────────────────────────────────────┘
 ```
 
@@ -174,7 +174,7 @@ Single, focused column. Answers "what is this, is it live, where do I get it" ab
 
 ```
 ┌────────────────────────────────────────────────────────────────────┐
-│  [▦ FS] Flopsstuff                               Projects   GitHub  ◐│
+│  [▦ FS] Flop's Stuff                             Projects   GitHub  ◐│
 ├────────────────────────────────────────────────────────────────────┤
 │   ← All projects                              (cyan back-link, sm)   │
 │                                                                      │

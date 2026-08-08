@@ -25,7 +25,7 @@ A **Vite + React 19 + React Router** single-page app (`src/`), built to `dist/` 
 - `src/data/projects.ts` — **the project catalogue** (the source of truth for cards + links). One `Project` per public org repo: `slug`, `name`, `category`, `tagline`, `description`, `repoUrl`, optional `webUrl`/`npmUrl`, `status`. Grouped into four categories (AI & dev tooling, KSeF, hardware, forks). Keep this in sync with the org's public repos and with `profile/README.md`.
 - `src/content/<slug>.md` — long-form detail-page body per project, loaded eagerly as raw strings via `import.meta.glob` (`src/content/index.ts`). A project with no `.md` (or an empty one) simply renders without a long body. Authoring structure: `docs/content-authoring.md`.
 - `src/pages/` (`Home`, `ProjectDetail`), `src/components/` (`Header`, `Footer`, `ProjectCard`, `NotFound`), `src/styles/tokens.css` — the UI. Detail pages live at `/project/<slug>`.
-- `dist/` — Vite build output; this is what `wrangler.json` deploys (`assets.directory: ./dist`). Generated, but committed.
+- `dist/` — Vite build output; this is what `wrangler.json` deploys (`assets.directory: ./dist`). Gitignored (`.gitignore`: `/dist`), so run `yarn build` before any local `yarn deploy` — wrangler ships whatever happens to be on disk.
 - `docs/flopsstuff.md` — narrative content source for the landing copy; `docs/brand/` holds the brand/design-system reference.
 - `README.md` (root) — a generic Cloudflare "Next.js Framework Starter" template readme carried over verbatim from `aignite`. **It is inaccurate** (this repo is Vite + React, not Next.js) — treat the section below as the source of truth, not that README.
 
@@ -49,7 +49,7 @@ A **Vite + React 19 + React Router** single-page app (`src/`), built to `dist/` 
 
 ### CI
 
-- `.github/workflows/deploy.yml` deploys on push to `main` (and `workflow_dispatch`): Node 22 → Corepack → `yarn install --immutable` → `yarn build` → `cloudflare/wrangler-action@v3` with `command: deploy`. CI rebuilds `dist/` itself, so the committed `dist/` is a convenience for local `yarn preview`/`deploy`, not load-bearing for CI.
+- `.github/workflows/deploy.yml` deploys on push to `main` (and `workflow_dispatch`): Node 22 → Corepack → `yarn install --immutable` → `yarn build` → `cloudflare/wrangler-action@v3` with `command: deploy`. CI builds `dist/` itself — it is not in the repo.
 - CI auth uses two repo secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. Both are already set.
 - The API token needs: **Account › Workers Scripts: Edit**, **Account › Account Settings: Read**, **Zone › Workers Routes: Edit**, and **Zone › DNS: Edit** on `flopbut.pl` (DNS Edit is required whenever the custom domain is (re)created).
 
