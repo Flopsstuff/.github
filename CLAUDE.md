@@ -42,7 +42,8 @@ A **Vite + React 19 + React Router** single-page app (`src/`), built to `dist/` 
 
 - `wrangler.json`: worker name `flopsstuff`, `assets.directory: ./dist`, SPA not-found handling, and a route `stuff.flopbut.pl` with `custom_domain: true`.
 - `stuff.flopbut.pl` is a **subdomain** of the `flopbut.pl` zone (same Cloudflare account) — not a separately registered domain. `custom_domain: true` makes wrangler create the DNS record + TLS cert on first deploy.
-- The site previously lived at `fs.aignite.pl` (zone `aignite.pl`). Dropping it from `routes` and redeploying was enough: wrangler unbound the custom domain **and** deleted its DNS record. The old hostname no longer resolves. Reviving it as a **301 redirect** (still TODO) means, on the `aignite.pl` zone: a proxied `AAAA fs → 100::` record plus a Redirect Rule (`hostname eq fs.aignite.pl` → `https://stuff.flopbut.pl`, preserve path/query, 301).
+- The site previously lived at `fs.aignite.pl` (zone `aignite.pl`). Dropping it from `routes` and redeploying was enough: wrangler unbound the custom domain **and** deleted its DNS record.
+- `fs.aignite.pl` now **301-redirects** here, preserving path and query. Two pieces on the `aignite.pl` zone: a proxied `AAAA fs → 100::` record (a discard address — it only has to resolve and hit Cloudflare's edge) plus a Redirect Rule matching `hostname eq fs.aignite.pl`, action `concat("https://stuff.flopbut.pl", http.request.uri.path)`, status 301, preserve query string. The hostname filter matters: without it the rule would swallow `aignite.pl` and `soulgrep.aignite.pl` too.
 - The deploy token is scoped to `flopbut.pl` only, so anything touching the `aignite.pl` zone (that redirect included) has to go through the dashboard.
 - Cloudflare account: `serg.flop@gmail.com`, account ID `42548ca95c85a68b4ce20ad79b805334`.
 
