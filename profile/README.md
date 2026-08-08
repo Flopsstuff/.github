@@ -16,6 +16,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 | --- | --- | --- |
 | **FlopCoin** | A physical silver coin (single issuance of ~100 unique pieces) that redeems for one hour of Flop's time - an art object and collectible whose only way in is from an existing holder. | [Repo](https://github.com/Flopsstuff/flop.hr) · [Web](https://flopcoin.art) |
 | **korovany** | 3D caravan-raiding action game in the browser - a Babylon.js + React SPA with a full-window canvas, world map fast-travel, and a unit-tested win/lose loop. | [Repo](https://github.com/Flopsstuff/korovany) · [Web](https://korovany.aimost.pl/) |
+| **flopbut.pl** | Flop Butylkin's personal site and the hub the rest of Flop's Stuff hangs off - a trilingual (EN/RU/PL) Astro site on Cloudflare Workers, static by default with a dormant serverless contact endpoint. | [Repo](https://github.com/Flopsstuff/flopbut.pl) · [Web](https://flopbut.pl) |
 
 ## 🤖 AI & Developer Tooling
 
