@@ -187,6 +187,17 @@ export const projects: Project[] = [
     status: "experimental",
   },
   {
+    slug: "samtor",
+    name: "samtor",
+    category: "hardware",
+    tagline:
+      "Sideloaded Tizen web apps and device research for a Samsung Smart Monitor.",
+    description:
+      "Custom web applications for Samsung Tizen TV hardware, built and measured on a Smart Monitor M8 (Tizen 6.5, Chromium 85): a Canvas 2D runner, a DOOM port, and a benchmark app that maps what the panel can actually do. Around them sits the tooling the work needed - pairing and remote control over the Samsung WebSocket API, Developer Mode and sdb helpers, Chrome DevTools Protocol probes - plus a Cloudflare Worker rendezvous service that lets a phone fill in a TV app's settings instead of typing them with the remote.",
+    repoUrl: "https://github.com/Flopsstuff/samtor",
+    status: "experimental",
+  },
+  {
     slug: "flopcoin",
     name: "FlopCoin",
     category: "art",

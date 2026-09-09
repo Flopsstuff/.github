@@ -46,6 +46,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 | **triki** | Reverse-engineering the Żabka Triki BLE token (nRF52810 + LSM6DSL) and reusing it as a motion controller - hardware notes, BLE protocol docs, Python tooling, and a Web Bluetooth client with a live 3D orientation demo. | [Repo](https://github.com/Flopsstuff/triki) · [npm](https://www.npmjs.com/package/triki-controller) · [Web](https://flopsstuff.github.io/triki/) |
 | **huemcp** | MCP server for controlling Philips Hue smart lights - mDNS bridge discovery, API-key setup, and control of lights, rooms, zones and grouped lights. | [Repo](https://github.com/Flopsstuff/huemcp) |
 | **lg** | Liquid Glass - an iOS app implementing a realistic magnifying-glass lens effect with Metal shaders and CoreImage (displacement maps, chromatic aberration). | [Repo](https://github.com/Flopsstuff/lg) |
+| **samtor** | Sideloaded Tizen web apps and device research for a Samsung Smart Monitor (M8, Tizen 6.5) - a Canvas 2D runner, a DOOM port, and a benchmark app, plus Python pairing/remote-control tooling and a Cloudflare Worker that lets a phone fill in a TV app's settings. | [Repo](https://github.com/Flopsstuff/samtor) |
 
 ## 🍴 Forks & Contributions
 
