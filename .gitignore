@@ -20,3 +20,4 @@
 # ignore gitpmoji directory
 gitpmoji
 .playwright-mcp/
+.markdown_vault_mcp/
