@@ -133,6 +133,18 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    slug: "ambassy",
+    name: "Ambassy",
+    category: "ai-dev-tooling",
+    tagline:
+      "MCP/A2A/ACP bridge - delegate a task to a coding agent on another machine.",
+    description:
+      "A bridge that lets one agent hand a task to a coding agent living somewhere else. Ambassy wraps an ACP agent (Claude Code or codex-acp) in an A2A v1.0 server, so the agent gains a network address and a task with a real lifecycle you can resume, answer, or cancel by id, and publishes it to the calling agent as four MCP tools (a2a_ask, a2a_task, a2a_cancel, a2a_card). The permission decision is made inside the bridge and never handed to the caller, because the caller is the party that wants the work done. v0.1 is an MVP: tasks live in memory and the A2A side has no authentication yet.",
+    repoUrl: "https://github.com/Flopsstuff/ambassy",
+    webUrl: "https://flopsstuff.github.io/ambassy/",
+    status: "experimental",
+  },
+  {
     slug: "ksef-client-ts",
     name: "ksef-client-ts",
     category: "ksef",

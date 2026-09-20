@@ -29,6 +29,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 | **chaiba** | Chess AI Battle Arena - pit chess engines/AIs against each other and watch them play. | [Repo](https://github.com/Flopsstuff/chaiba) · [Web](https://flopsstuff.github.io/chaiba/) |
 | **aimaf** | AI Mafia - a client-only React SPA that runs a Mafia-style social deduction game between multiple LLM "players" via OpenRouter. | [Repo](https://github.com/Flopsstuff/aimaf) · [Web](https://flopsstuff.github.io/aimaf/) |
 | **otp** | Offline, private TOTP (2FA) code generator - computes codes locally in the browser via the Web Crypto API, nothing sent or stored. | [Repo](https://github.com/Flopsstuff/otp) · [Web](https://flopsstuff.github.io/otp/) |
+| **Ambassy** | MCP/A2A/ACP bridge for delegating a task to a coding agent on another machine - wraps Claude Code or codex-acp in an A2A v1.0 server and publishes it to the calling agent as four MCP tools, with the permission decision made inside the bridge. | [Repo](https://github.com/Flopsstuff/ambassy) · [Web](https://flopsstuff.github.io/ambassy/) |
 | **ram** | Random Agents Memories - a shared, always-on "second brain" for AI agents: a `markdown-vault-mcp` server over a git-backed vault, exposed via Cloudflare Tunnel with bearer + OAuth (Authelia) multi-auth. | [Repo](https://github.com/Flopsstuff/ram) |
 
 ## 🧾 Polish e-Invoicing (KSeF)
