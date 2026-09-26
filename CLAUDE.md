@@ -20,7 +20,7 @@ characters, so `grep -rn "—\|–"` over a change should come back empty before
 
 ## Org profile (`profile/`)
 
-- `profile/README.md` - the org landing page on GitHub. A curated, grouped table of public projects (AI & developer tooling, Polish e-Invoicing/KSeF, hardware, and forks/contributions). Each row has a one-line description and **Repo** / optional **Web** links. First line embeds the logo via `<img src="logo.svg" width="80">`.
+- `profile/README.md` - the org landing page on GitHub. A curated, grouped table of public projects (AI & developer tooling, Polish e-Invoicing/KSeF, hardware, and forks/contributions). Each row has a one-line description and **Repo** / optional **Web** links. First line embeds the logo via `<img src="logo.svg" width="80">`. Newest first here too - a new row goes at the top of its table, never appended.
 - `profile/logo.svg` - hand-built 7-segment LED display spelling the "FS" monogram in red (`#ff2d2d` lit, `#3a0c0c` dark) on a dark rounded rect. Segments are individual `<polygon>`s tagged `class="seg seg-<a-g> on|off"` + `data-seg`; the two digit groups are positioned with `transform="translate(...)"`. Toggling a segment = flip both its fill and the `on`/`off` class. No generator script - edit the SVG directly.
 - `profile/logo.png` - raster export of the SVG; keep in sync when the SVG changes.
 
@@ -29,7 +29,7 @@ characters, so `grep -rn "—\|–"` over a change should come back empty before
 A **Vite + React 19 + React Router** single-page app (`src/`), built to `dist/` and served by Cloudflare Workers' static-assets handler with SPA not-found fallback. See [ADR 0001](docs/decisions/0001-landing-spa-architecture.md) for why. Plain CSS with design tokens - no CSS framework.
 
 - `index.html` (repo root) - Vite entry; mounts `src/main.tsx` into `#root`.
-- `src/data/projects.ts` - **the project catalogue** (the source of truth for cards + links). One `Project` per public org repo: `slug`, `name`, `category`, `tagline`, `description`, `repoUrl`, optional `webUrl`/`npmUrl`, `status`. Grouped into four categories (AI & dev tooling, KSeF, hardware, forks). Keep this in sync with the org's public repos and with `profile/README.md`.
+- `src/data/projects.ts` - **the project catalogue** (the source of truth for cards + links). One `Project` per public org repo: `slug`, `name`, `category`, `tagline`, `description`, `repoUrl`, optional `webUrl`/`npmUrl`, `status`. Grouped into four categories (AI & dev tooling, KSeF, hardware, forks). Keep this in sync with the org's public repos and with `profile/README.md`. **Newest first:** the home page renders each category in this array's order (`getProjectsByCategory` filters, it never sorts), so a new project goes at the **top of its category block** and the rest shift down - see "Adding a project" in `README.md`.
 - `src/content/<slug>.md` - long-form detail-page body per project, loaded eagerly as raw strings via `import.meta.glob` (`src/content/index.ts`). A project with no `.md` (or an empty one) simply renders without a long body. Authoring structure: `docs/content-authoring.md`.
 - `src/pages/` (`Home`, `ProjectDetail`), `src/components/` (`Header`, `Footer`, `ProjectCard`, `NotFound`), `src/styles/tokens.css` - the UI. Detail pages live at `/project/<slug>`.
 - `dist/` - Vite build output; this is what `wrangler.json` deploys (`assets.directory: ./dist`). Gitignored (`.gitignore`: `/dist`), so run `yarn build` before any local `yarn deploy` - wrangler ships whatever happens to be on disk.

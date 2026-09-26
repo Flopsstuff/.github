@@ -33,7 +33,23 @@ export const CATEGORY_ORDER: ProjectCategory[] = [
   "forks",
 ];
 
+// Newest first. The home page renders each category in this array's order
+// (`getProjectsByCategory` only filters), so a new project goes at the TOP of its
+// category block, not at the end - and gets the same treatment in the matching
+// `profile/README.md` table. See "Adding a project" in README.md.
 export const projects: Project[] = [
+  {
+    slug: "ambassy",
+    name: "Ambassy",
+    category: "ai-dev-tooling",
+    tagline:
+      "MCP/A2A/ACP bridge - delegate a task to a coding agent on another machine.",
+    description:
+      "A bridge that lets one agent hand a task to a coding agent living somewhere else. Ambassy wraps an ACP agent (Claude Code or codex-acp) in an A2A v1.0 server, so the agent gains a network address and a task with a real lifecycle you can resume, answer, or cancel by id, and publishes it to the calling agent as four MCP tools (a2a_ask, a2a_task, a2a_cancel, a2a_card). The permission decision is made inside the bridge and never handed to the caller, because the caller is the party that wants the work done. v0.1 is an MVP: tasks live in memory and the A2A side has no authentication yet.",
+    repoUrl: "https://github.com/Flopsstuff/ambassy",
+    webUrl: "https://flopsstuff.github.io/ambassy/",
+    status: "experimental",
+  },
   {
     slug: "cotel",
     name: "cotel",
@@ -133,18 +149,6 @@ export const projects: Project[] = [
     status: "active",
   },
   {
-    slug: "ambassy",
-    name: "Ambassy",
-    category: "ai-dev-tooling",
-    tagline:
-      "MCP/A2A/ACP bridge - delegate a task to a coding agent on another machine.",
-    description:
-      "A bridge that lets one agent hand a task to a coding agent living somewhere else. Ambassy wraps an ACP agent (Claude Code or codex-acp) in an A2A v1.0 server, so the agent gains a network address and a task with a real lifecycle you can resume, answer, or cancel by id, and publishes it to the calling agent as four MCP tools (a2a_ask, a2a_task, a2a_cancel, a2a_card). The permission decision is made inside the bridge and never handed to the caller, because the caller is the party that wants the work done. v0.1 is an MVP: tasks live in memory and the A2A side has no authentication yet.",
-    repoUrl: "https://github.com/Flopsstuff/ambassy",
-    webUrl: "https://flopsstuff.github.io/ambassy/",
-    status: "experimental",
-  },
-  {
     slug: "ksef-client-ts",
     name: "ksef-client-ts",
     category: "ksef",
@@ -164,6 +168,18 @@ export const projects: Project[] = [
       "English translations of the official KSeF documentation. Makes the Polish National e-Invoice System accessible to non-Polish-speaking developers.",
     repoUrl: "https://github.com/Flopsstuff/ksef-docs",
     status: "active",
+  },
+  {
+    slug: "raspidr",
+    name: "raspidr",
+    category: "hardware",
+    tagline:
+      "Self-hosted voice assistant on a Raspberry Pi Zero 2 W, with its own wake word.",
+    description:
+      "A smart speaker built from a Raspberry Pi Zero 2 W, a WM8960 audio HAT, a NeoPixel ring and a rotary encoder. A custom-trained openWakeWord model listens on the device, so nothing is sent anywhere until the speaker is addressed; the question then goes to Groq for transcription, to a self-hosted Hermes LLM agent on the LAN for the answer, and back out through Groq or xAI text-to-speech, with every stage of the loop animated on the ring. A token-guarded /say endpoint lets other agents speak through the same speaker.",
+    repoUrl: "https://github.com/Flopsstuff/raspidr",
+    webUrl: "https://flopsstuff.github.io/raspidr/",
+    status: "experimental",
   },
   {
     slug: "neonka",
@@ -207,18 +223,6 @@ export const projects: Project[] = [
     description:
       "Custom web applications for Samsung Tizen TV hardware, built and measured on a Smart Monitor M8 (Tizen 6.5, Chromium 85): a Canvas 2D runner, a DOOM port, and a benchmark app that maps what the panel can actually do. Around them sits the tooling the work needed - pairing and remote control over the Samsung WebSocket API, Developer Mode and sdb helpers, Chrome DevTools Protocol probes - plus a Cloudflare Worker rendezvous service that lets a phone fill in a TV app's settings instead of typing them with the remote.",
     repoUrl: "https://github.com/Flopsstuff/samtor",
-    status: "experimental",
-  },
-  {
-    slug: "raspidr",
-    name: "raspidr",
-    category: "hardware",
-    tagline:
-      "Self-hosted voice assistant on a Raspberry Pi Zero 2 W, with its own wake word.",
-    description:
-      "A smart speaker built from a Raspberry Pi Zero 2 W, a WM8960 audio HAT, a NeoPixel ring and a rotary encoder. A custom-trained openWakeWord model listens on the device, so nothing is sent anywhere until the speaker is addressed; the question then goes to Groq for transcription, to a self-hosted Hermes LLM agent on the LAN for the answer, and back out through Groq or xAI text-to-speech, with every stage of the loop animated on the ring. A token-guarded /say endpoint lets other agents speak through the same speaker.",
-    repoUrl: "https://github.com/Flopsstuff/raspidr",
-    webUrl: "https://flopsstuff.github.io/raspidr/",
     status: "experimental",
   },
   {
