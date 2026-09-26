@@ -11,7 +11,8 @@ The landing site at **https://stuff.flopbut.pl** - a React SPA deployed on Cloud
 
 ## Adding a project
 
-All projects live in **`src/data/projects.ts`**. Add a new entry to the `projects` array:
+All projects live in **`src/data/projects.ts`**. Add a new entry to the `projects` array -
+**at the top of its category block, never at the end**:
 
 ```ts
 {
@@ -26,7 +27,18 @@ All projects live in **`src/data/projects.ts`**. Add a new entry to the `project
 }
 ```
 
-The home page and detail pages pick it up automatically - no other changes needed.
+The home page and detail pages pick it up automatically.
+
+### Newest first (house rule)
+
+A new project goes **first in its section** on https://stuff.flopbut.pl and everything else
+shifts down. The home page renders each category straight from this array's order
+(`getProjectsByCategory` only filters, it does not sort), so position in the file *is* position
+on the page: put the new entry directly above the first existing entry of the same `category`.
+
+The same rule applies to the org profile list in **`profile/README.md`** - a new row goes at the
+top of its table, not appended to the bottom. Adding a project means touching both files, plus
+an optional detail page in `src/content/<slug>.md`.
 
 ## Commands
 
