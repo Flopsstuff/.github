@@ -210,6 +210,18 @@ export const projects: Project[] = [
     status: "experimental",
   },
   {
+    slug: "raspidr",
+    name: "raspidr",
+    category: "hardware",
+    tagline:
+      "Self-hosted voice assistant on a Raspberry Pi Zero 2 W, with its own wake word.",
+    description:
+      "A smart speaker built from a Raspberry Pi Zero 2 W, a WM8960 audio HAT, a NeoPixel ring and a rotary encoder. A custom-trained openWakeWord model listens on the device, so nothing is sent anywhere until the speaker is addressed; the question then goes to Groq for transcription, to a self-hosted Hermes LLM agent on the LAN for the answer, and back out through Groq or xAI text-to-speech, with every stage of the loop animated on the ring. A token-guarded /say endpoint lets other agents speak through the same speaker.",
+    repoUrl: "https://github.com/Flopsstuff/raspidr",
+    webUrl: "https://flopsstuff.github.io/raspidr/",
+    status: "experimental",
+  },
+  {
     slug: "flopcoin",
     name: "FlopCoin",
     category: "art",

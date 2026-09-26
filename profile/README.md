@@ -48,6 +48,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 | **huemcp** | MCP server for controlling Philips Hue smart lights - mDNS bridge discovery, API-key setup, and control of lights, rooms, zones and grouped lights. | [Repo](https://github.com/Flopsstuff/huemcp) |
 | **lg** | Liquid Glass - an iOS app implementing a realistic magnifying-glass lens effect with Metal shaders and CoreImage (displacement maps, chromatic aberration). | [Repo](https://github.com/Flopsstuff/lg) |
 | **samtor** | Sideloaded Tizen web apps and device research for a Samsung Smart Monitor (M8, Tizen 6.5) - a Canvas 2D runner, a DOOM port, and a benchmark app, plus Python pairing/remote-control tooling and a Cloudflare Worker that lets a phone fill in a TV app's settings. | [Repo](https://github.com/Flopsstuff/samtor) |
+| **raspidr** | Self-hosted voice assistant on a Raspberry Pi Zero 2 W - a custom openWakeWord model listens on the device, then Groq STT, a Hermes LLM agent on the LAN and Groq/xAI TTS answer out loud, with each stage animated on a NeoPixel ring and a rotary encoder for volume, mute and interrupt. | [Repo](https://github.com/Flopsstuff/raspidr) · [Web](https://flopsstuff.github.io/raspidr/) |
 
 ## 🍴 Forks & Contributions
 
