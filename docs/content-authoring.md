@@ -2,8 +2,10 @@
 
 Every project on the landing site (https://stuff.flopbut.pl) has a detail page at
 `/projects/<slug>`. The short tagline + one-paragraph description come from
-`src/data/projects.ts`. The **long-form body** below the description is authored
-as Markdown, one file per project:
+`src/data/projects.ts`, as does the hero image at the top of the page (`image`,
+a 1200x675 file in `public/projects/` - see "Card images" in `README.md`). The
+**long-form body** below the description is authored as Markdown, one file per
+project:
 
 ```
 src/content/<slug>.md
@@ -68,7 +70,8 @@ substance - detailed, not padded.
 - Links open in a new tab automatically - just write normal Markdown links.
 - Inline code with backticks; multi-line with triple-fenced blocks. GFM tables
   and task lists are supported (remark-gfm).
-- **Images** are optional. Only use an image you can actually link to: hot-link
+- **Images** in the body are optional - the page already has its hero image from
+  `projects.ts`. Only use an image you can actually link to: hot-link
   a diagram or screenshot from the project's own repo
   (`https://raw.githubusercontent.com/Flopsstuff/<repo>/<branch>/<path>`) or its
   live site. Always include alt text: `![alt](url)`. Do not commit large binary

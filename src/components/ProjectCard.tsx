@@ -9,6 +9,20 @@ interface Props {
 export default function ProjectCard({ project }: Props) {
   return (
     <div className={styles.card}>
+      {project.image && (
+        <div className={styles.media}>
+          <img
+            src={project.image}
+            alt=""
+            width={1200}
+            height={675}
+            loading="lazy"
+            decoding="async"
+            className={styles.mediaImg}
+          />
+        </div>
+      )}
+
       <div className={styles.header}>
         {/* title link covers the whole card via ::before pseudo-element */}
         <Link to={`/projects/${project.slug}`} className={styles.name}>

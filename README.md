@@ -21,6 +21,7 @@ All projects live in **`src/data/projects.ts`**. Add a new entry to the `project
   category: "ai-dev-tooling",  // "ai-dev-tooling" | "ksef" | "hardware" | "forks"
   tagline: "One sentence.",    // shown on the card (clamped to 2 lines)
   description: "Longer…",      // shown on the detail page
+  image: "/projects/my-project.jpg",        // card + detail hero, see below
   repoUrl: "https://github.com/Flopsstuff/my-project",
   webUrl: "https://optional.example.com",   // omit if none
   status: "active",            // "active" | "experimental" | "fork" - omit if unknown
@@ -39,6 +40,32 @@ on the page: put the new entry directly above the first existing entry of the sa
 The same rule applies to the org profile list in **`profile/README.md`** - a new row goes at the
 top of its table, not appended to the bottom. Adding a project means touching both files, plus
 an optional detail page in `src/content/<slug>.md`.
+
+### Card images
+
+Every project carries one image, used both on its card and as the hero on its detail page:
+
+```
+public/projects/<slug>.jpg     1200x675 (16:9), JPEG q82, ideally under ~150 KB
+```
+
+`image` in `projects.ts` points at it (`/projects/<slug>.jpg`). The field is optional and the
+card degrades to no image, but the grid only looks right when every project has one - the frame
+is a fixed 16:9 rectangle with `object-fit: cover`, so whatever you put in is cropped to the same
+shape as everything else.
+
+Where the image comes from, in order of preference:
+
+1. **The project's own repo** - a screenshot, diagram, or photo it already ships. Copy it in and
+   resize; do not hot-link it. Hot-linking GitHub costs a 2 MB download per card, and anything
+   LFS-tracked needs `media.githubusercontent.com` (`raw.` serves the pointer file, not the image).
+2. **A screenshot of its live site**, if it has one, at 1600x900.
+3. **Generated art**, when the project has no imagery at all. The existing generated set shares one
+   art direction - near-black background, a single deep red accent light, matte materials, no text -
+   so a new one should match it rather than invent a style.
+
+Square or portrait sources (icons, phone screenshots) are centred on a blurred, darkened copy of
+themselves instead of being cropped to death; `object-fit: cover` does the rest.
 
 ## Commands
 

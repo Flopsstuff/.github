@@ -11,6 +11,8 @@ export interface Project {
   category: ProjectCategory;
   tagline: string;
   description: string;
+  /** 1200x675 card/hero image in `public/projects/`. */
+  image?: string;
   repoUrl: string;
   webUrl?: string;
   npmUrl?: string;
@@ -46,6 +48,7 @@ export const projects: Project[] = [
       "MCP/A2A/ACP bridge - delegate a task to a coding agent on another machine.",
     description:
       "A bridge that lets one agent hand a task to a coding agent living somewhere else. Ambassy wraps an ACP agent (Claude Code or codex-acp) in an A2A v1.0 server, so the agent gains a network address and a task with a real lifecycle you can resume, answer, or cancel by id, and publishes it to the calling agent as four MCP tools (a2a_ask, a2a_task, a2a_cancel, a2a_card). The permission decision is made inside the bridge and never handed to the caller, because the caller is the party that wants the work done. v0.1 is an MVP: tasks live in memory and the A2A side has no authentication yet.",
+    image: "/projects/ambassy.jpg",
     repoUrl: "https://github.com/Flopsstuff/ambassy",
     webUrl: "https://flopsstuff.github.io/ambassy/",
     status: "experimental",
@@ -58,6 +61,7 @@ export const projects: Project[] = [
       "Claude Code OpenTelemetry - single-container OTLP ingest + interactive dashboard.",
     description:
       "A single-container OTLP ingest endpoint plus an interactive dashboard for Claude Code usage: sessions, models, tools, cost, and timings. Drop it next to your Claude Code setup and get immediate observability.",
+    image: "/projects/cotel.jpg",
     repoUrl: "https://github.com/Flopsstuff/cotel",
     status: "active",
   },
@@ -68,6 +72,7 @@ export const projects: Project[] = [
     tagline: "Claude Code plugin marketplace - curated plugins repository.",
     description:
       "A curated plugins repository you can point your Claude Code install at. Browse, install, and manage community plugins for Claude Code.",
+    image: "/projects/flugins.jpg",
     repoUrl: "https://github.com/Flopsstuff/flugins",
     status: "active",
   },
@@ -78,6 +83,7 @@ export const projects: Project[] = [
     tagline: "Surface what actually matters in large bodies of text.",
     description:
       "grep the human signal from the noise - a tool for surfacing what actually matters in large bodies of text. Cut through context bloat and find the substance.",
+    image: "/projects/soulgrep.jpg",
     repoUrl: "https://github.com/Flopsstuff/soulgrep",
     webUrl: "https://soulgrep.aignite.pl",
     status: "experimental",
@@ -89,6 +95,7 @@ export const projects: Project[] = [
     tagline: "Code Query - query and explore codebases.",
     description:
       "Code Query: query and explore codebases with a structured query interface. Designed for fast, targeted code navigation.",
+    image: "/projects/coqu.jpg",
     repoUrl: "https://github.com/Flopsstuff/coqu",
     webUrl: "https://coqu.aimost.pl",
     status: "experimental",
@@ -100,6 +107,7 @@ export const projects: Project[] = [
     tagline: "Chess AI Battle Arena - pit chess engines and AIs against each other.",
     description:
       "Chess AI Battle Arena: pit chess engines and AIs against each other and watch them play. A playground for evaluating chess AI performance.",
+    image: "/projects/chaiba.jpg",
     repoUrl: "https://github.com/Flopsstuff/chaiba",
     webUrl: "https://flopsstuff.github.io/chaiba/",
     status: "experimental",
@@ -111,6 +119,7 @@ export const projects: Project[] = [
     tagline: "AI Mafia - a social-deduction game played between LLMs.",
     description:
       "A client-only React SPA that runs a Mafia-style social deduction game between multiple LLM 'players' via OpenRouter. Assign roles (Mafia, Detective, Doctor), then watch the models bluff, vote, and deduce through each game phase.",
+    image: "/projects/aimaf.jpg",
     repoUrl: "https://github.com/Flopsstuff/aimaf",
     webUrl: "https://flopsstuff.github.io/aimaf/",
     status: "experimental",
@@ -122,6 +131,7 @@ export const projects: Project[] = [
     tagline: "MCP server for controlling Philips Hue smart lights.",
     description:
       "An MCP server that lets Claude (and other MCP clients) control Philips Hue lights: automatic bridge discovery via mDNS, API-key setup, on/off/brightness/color control, and zone/room/grouped-light management. Ships as an MCPB bundle for Claude Desktop.",
+    image: "/projects/huemcp.jpg",
     repoUrl: "https://github.com/Flopsstuff/huemcp",
     status: "active",
   },
@@ -133,6 +143,7 @@ export const projects: Project[] = [
       "Offline, private TOTP (2FA) code generator that runs entirely in your browser.",
     description:
       "A secure, offline TOTP (Time-based One-Time Password) generator for two-factor authentication and trusted identity verification. All codes are computed locally in the browser with the Web Crypto API - nothing is sent to a server or stored. Generate Base32 secrets, tune algorithm/digits/period, copy codes, or scan a QR into any standard authenticator app.",
+    image: "/projects/otp.jpg",
     repoUrl: "https://github.com/Flopsstuff/otp",
     webUrl: "https://flopsstuff.github.io/otp/",
     status: "active",
@@ -145,6 +156,7 @@ export const projects: Project[] = [
       "Random Agents Memories - a shared, always-on \"second brain\" for AI agents across machines.",
     description:
       "A central, always-on shared memory (\"second brain\") for AI agents running on different machines. A single markdown-vault-mcp server owns a git-backed Markdown vault - auto-committing, pushing, and pulling - and exposes it over the public internet through a Cloudflare Tunnel, with hybrid semantic + full-text search and local embeddings. Multi-auth lets headless agents connect with a static bearer token while GUI clients (ChatGPT, Claude web/mobile) log in via OAuth 2.1 through a self-hosted Authelia identity provider, so every agent reads and writes the same knowledge across sessions.",
+    image: "/projects/ram.jpg",
     repoUrl: "https://github.com/Flopsstuff/ram",
     status: "active",
   },
@@ -155,6 +167,7 @@ export const projects: Project[] = [
     tagline: "TypeScript client for the Polish National e-Invoice System (KSeF) API.",
     description:
       "A TypeScript client for the Polish National e-Invoice System (KSeF) API. Covers the full KSeF interface for issuing, querying, and managing e-invoices.",
+    image: "/projects/ksef-client-ts.jpg",
     repoUrl: "https://github.com/Flopsstuff/ksef-client-ts",
     npmUrl: "https://www.npmjs.com/package/ksef-client-ts",
     status: "active",
@@ -166,6 +179,7 @@ export const projects: Project[] = [
     tagline: "English translations of the KSeF documentation.",
     description:
       "English translations of the official KSeF documentation. Makes the Polish National e-Invoice System accessible to non-Polish-speaking developers.",
+    image: "/projects/ksef-docs.jpg",
     repoUrl: "https://github.com/Flopsstuff/ksef-docs",
     status: "active",
   },
@@ -177,6 +191,7 @@ export const projects: Project[] = [
       "\"Hey Keryx\" voice speaker for the Hermes agent - ESP32-S3 wake word plus a Wi-Fi speech bridge.",
     description:
       "A voice speaker for the Hermes agent. A XIAO ESP32S3 on a Seeed reSpeaker Flex XVF3800 four-microphone array recognizes \"Hey Keryx\" on the device, so nothing leaves the room until the wake word is said; the request then streams over Wi-Fi to a small Python bridge next to Hermes, which runs xAI speech-to-text, asks Hermes over its OpenAI-compatible API, and streams the spoken answer back. Conversation continues without the wake word, talking over an answer stops it, and Hermes can speak first for reminders and timers. The first unit is built into an Edifier R1100 speaker.",
+    image: "/projects/keryx.jpg",
     repoUrl: "https://github.com/Flopsstuff/keryx",
     status: "experimental",
   },
@@ -188,6 +203,7 @@ export const projects: Project[] = [
       "Self-hosted voice assistant on a Raspberry Pi Zero 2 W, with its own wake word.",
     description:
       "A smart speaker built from a Raspberry Pi Zero 2 W, a WM8960 audio HAT, a NeoPixel ring and a rotary encoder. A custom-trained openWakeWord model listens on the device, so nothing is sent anywhere until the speaker is addressed; the question then goes to Groq for transcription, to a self-hosted Hermes LLM agent on the LAN for the answer, and back out through Groq or xAI text-to-speech, with every stage of the loop animated on the ring. A token-guarded /say endpoint lets other agents speak through the same speaker.",
+    image: "/projects/raspidr.jpg",
     repoUrl: "https://github.com/Flopsstuff/raspidr",
     webUrl: "https://flopsstuff.github.io/raspidr/",
     status: "experimental",
@@ -199,6 +215,7 @@ export const projects: Project[] = [
     tagline: "IBM Wheelwriter electric typewriter hacking project (embedded C++).",
     description:
       "An IBM Wheelwriter electric typewriter hacking project written in embedded C++. Connects classic electromechanical hardware to modern interfaces.",
+    image: "/projects/neonka.jpg",
     repoUrl: "https://github.com/Flopsstuff/neonka",
     status: "experimental",
   },
@@ -210,6 +227,7 @@ export const projects: Project[] = [
       "Reverse-engineering the Żabka Triki BLE token and reusing it as a motion controller.",
     description:
       "Notes, tooling, and a Web Bluetooth client for the Żabka Triki - a collectible BLE token (nRF52810 + LSM6DSL IMU) shaped like a bottle cap. Reads the token's accelerometer/gyroscope over BLE and reuses it as a motion controller, with a live in-browser 3D orientation demo and a published dependency-free TypeScript client package.",
+    image: "/projects/triki.jpg",
     repoUrl: "https://github.com/Flopsstuff/triki",
     webUrl: "https://flopsstuff.github.io/triki/",
     npmUrl: "https://www.npmjs.com/package/triki-controller",
@@ -222,6 +240,7 @@ export const projects: Project[] = [
     tagline: "iOS magnifying-glass lens effect built with Metal shaders.",
     description:
       "An iOS app implementing a realistic magnifying-glass / liquid-glass lens effect using custom Metal shaders and CoreImage: displacement-map distortion, chromatic aberration, and live-tunable lens parameters.",
+    image: "/projects/lg.jpg",
     repoUrl: "https://github.com/Flopsstuff/lg",
     status: "experimental",
   },
@@ -233,6 +252,7 @@ export const projects: Project[] = [
       "Sideloaded Tizen web apps and device research for a Samsung Smart Monitor.",
     description:
       "Custom web applications for Samsung Tizen TV hardware, built and measured on a Smart Monitor M8 (Tizen 6.5, Chromium 85): a Canvas 2D runner, a DOOM port, and a benchmark app that maps what the panel can actually do. Around them sits the tooling the work needed - pairing and remote control over the Samsung WebSocket API, Developer Mode and sdb helpers, Chrome DevTools Protocol probes - plus a Cloudflare Worker rendezvous service that lets a phone fill in a TV app's settings instead of typing them with the remote.",
+    image: "/projects/samtor.jpg",
     repoUrl: "https://github.com/Flopsstuff/samtor",
     status: "experimental",
   },
@@ -244,6 +264,7 @@ export const projects: Project[] = [
       "A physical silver coin redeemable for an hour of Flop's time - art object and collectible in one.",
     description:
       "A FlopCoin is a physical silver coin, minted as a single issuance of around 100 unique pieces. Holding one is a public promise of one hour of Flop's time, spent on whatever the owner asks for; each coin is also an art object in its own right, and the only way to get one is from someone who already has it. The accompanying site - a static Next.js export on Cloudflare Pages - explains what a FlopCoin is, how to redeem it, its limits, and who currently owns one.",
+    image: "/projects/flopcoin.jpg",
     repoUrl: "https://github.com/Flopsstuff/flop.hr",
     webUrl: "https://flopcoin.art",
     status: "active",
@@ -256,6 +277,7 @@ export const projects: Project[] = [
       "3D caravan-raiding action game in the browser, built with Babylon.js.",
     description:
       "A browser-based 3D action game: raid caravans through a forest with a full-window Babylon.js canvas, a world map with fast-travel, and a dismemberment/bleeding health system. Built as a React 19 SPA where the objective is to raid three caravans, tracked by a unit-tested win/lose state machine, with saved progress you can continue.",
+    image: "/projects/korovany.jpg",
     repoUrl: "https://github.com/Flopsstuff/korovany",
     webUrl: "https://korovany.aimost.pl",
     status: "experimental",
@@ -268,6 +290,7 @@ export const projects: Project[] = [
       "Flop Butylkin's personal site - the hub the rest of Flop's Stuff hangs off.",
     description:
       "The personal site of Flop Butylkin: a trilingual (English/Russian/Polish) Astro site on Cloudflare Workers, static by default with a single dormant serverless contact endpoint. It introduces Flop - twenty years in software, AI agent orchestration and developer tooling now, iOS/Android/React Native delivery behind it - and the crew of AI agents that run the shop. This catalogue is its `stuff.` subdomain.",
+    image: "/projects/flopbut-pl.jpg",
     repoUrl: "https://github.com/Flopsstuff/flopbut.pl",
     webUrl: "https://flopbut.pl",
     status: "active",
@@ -279,6 +302,7 @@ export const projects: Project[] = [
     tagline: "CloudCLI - open-source web UI for managing Claude Code / Cursor CLI sessions.",
     description:
       "CloudCLI: a free, open-source web UI for managing Claude Code, Cursor CLI, or Codex sessions remotely from mobile or web.",
+    image: "/projects/ccui.jpg",
     repoUrl: "https://github.com/Flopsstuff/ccui",
     webUrl: "https://cloudcli.ai",
     status: "fork",
@@ -290,6 +314,7 @@ export const projects: Project[] = [
     tagline: "Open-source orchestration for zero-human companies.",
     description:
       "Open-source orchestration for zero-human companies. Paperclip lets AI agents coordinate, plan, and execute complex multi-step work autonomously.",
+    image: "/projects/paperclip.jpg",
     repoUrl: "https://github.com/Flopsstuff/paperclip",
     webUrl: "https://paperclip.ing",
     status: "fork",
@@ -301,6 +326,7 @@ export const projects: Project[] = [
     tagline: "Headless semantic MCP server for Obsidian, Logseq, Dendron, and markdown vaults.",
     description:
       "A headless semantic MCP server for Obsidian, Logseq, Dendron, and any markdown vault. AST-based editing, hybrid vector + TF-IDF search, zero-setup local embeddings.",
+    image: "/projects/mcp-md.jpg",
     repoUrl: "https://github.com/Flopsstuff/mcp-md",
     webUrl: "https://www.npmjs.com/package/@wirux/mcp-markdown-vault",
     status: "fork",
@@ -312,6 +338,7 @@ export const projects: Project[] = [
     tagline: "MCP server that lets AI assistants control Unreal Engine.",
     description:
       "An MCP server that lets AI assistants control Unreal Engine via a native C++ automation bridge. Bridge between AI tooling and UE's editor and runtime.",
+    image: "/projects/uemcp.jpg",
     repoUrl: "https://github.com/Flopsstuff/uemcp",
     status: "fork",
   },
@@ -322,6 +349,7 @@ export const projects: Project[] = [
     tagline: "Terminal in the browser over HTTP/HTTPS.",
     description:
       "Terminal in the browser over HTTP/HTTPS - an Ajaxterm/Anyterm alternative. Provides full terminal access through any modern browser.",
+    image: "/projects/wetty.jpg",
     repoUrl: "https://github.com/Flopsstuff/wetty",
     webUrl: "https://butlerx.github.io/wetty",
     status: "fork",

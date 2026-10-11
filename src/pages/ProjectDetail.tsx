@@ -65,6 +65,19 @@ export default function ProjectDetail() {
       </header>
 
       <main className={styles.main}>
+        {project.image && (
+          <div className={styles.hero}>
+            <img
+              src={project.image}
+              alt=""
+              width={1200}
+              height={675}
+              decoding="async"
+              className={styles.heroImg}
+            />
+          </div>
+        )}
+
         <div className={styles.links}>
           <a
             href={project.repoUrl}

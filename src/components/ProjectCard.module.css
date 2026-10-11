@@ -22,6 +22,37 @@
   transform: translateY(-2px);
 }
 
+/* Full-bleed 16:9 frame: every card shows the same rectangle whatever the
+   source image's shape. Negative margins pull it out of the card padding. */
+.media {
+  margin: calc(-1 * var(--space-5)) calc(-1 * var(--space-5)) var(--space-4);
+  border-radius: calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px) 0 0;
+  overflow: hidden;
+  background: var(--color-surface-hover);
+  aspect-ratio: 16 / 9;
+}
+
+.mediaImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform var(--duration-slow) var(--ease-standard);
+}
+
+.card:has(.name:hover) .mediaImg,
+.card:has(.name:focus-visible) .mediaImg {
+  transform: scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:has(.name:hover) .mediaImg,
+  .card:has(.name:focus-visible) .mediaImg {
+    transform: none;
+  }
+}
+
 .header {
   display: flex;
   align-items: flex-start;
