@@ -44,12 +44,12 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 
 | Project | What it is | Links |
 | --- | --- | --- |
+| **Keryx** | A "Hey Keryx" voice speaker for the Hermes agent - a XIAO ESP32S3 on a reSpeaker Flex XVF3800 runs the wake word on the device, then streams the request over Wi-Fi to a bridge that does xAI speech-to-text, Hermes, and text-to-speech back. | [Repo](https://github.com/Flopsstuff/keryx) |
 | **raspidr** | Self-hosted voice assistant on a Raspberry Pi Zero 2 W - a custom openWakeWord model listens on the device, then Groq STT, a Hermes LLM agent on the LAN and Groq/xAI TTS answer out loud, with each stage animated on a NeoPixel ring and a rotary encoder for volume, mute and interrupt. | [Repo](https://github.com/Flopsstuff/raspidr) · [Web](https://flopsstuff.github.io/raspidr/) |
 | **neonka** | IBM Wheelwriter electric typewriter hacking project (embedded C++). | [Repo](https://github.com/Flopsstuff/neonka) |
 | **triki** | Reverse-engineering the Żabka Triki BLE token (nRF52810 + LSM6DSL) and reusing it as a motion controller - hardware notes, BLE protocol docs, Python tooling, and a Web Bluetooth client with a live 3D orientation demo. | [Repo](https://github.com/Flopsstuff/triki) · [npm](https://www.npmjs.com/package/triki-controller) · [Web](https://flopsstuff.github.io/triki/) |
 | **lg** | Liquid Glass - an iOS app implementing a realistic magnifying-glass lens effect with Metal shaders and CoreImage (displacement maps, chromatic aberration). | [Repo](https://github.com/Flopsstuff/lg) |
 | **samtor** | Sideloaded Tizen web apps and device research for a Samsung Smart Monitor (M8, Tizen 6.5) - a Canvas 2D runner, a DOOM port, and a benchmark app, plus Python pairing/remote-control tooling and a Cloudflare Worker that lets a phone fill in a TV app's settings. | [Repo](https://github.com/Flopsstuff/samtor) |
-| **Keryx** | A "Hey Keryx" voice speaker for the Hermes agent - a XIAO ESP32S3 on a reSpeaker Flex XVF3800 runs the wake word on the device, then streams the request over Wi-Fi to a bridge that does xAI speech-to-text, Hermes, and text-to-speech back. | [Repo](https://github.com/Flopsstuff/keryx) |
 
 ## 🍴 Forks & Contributions
 

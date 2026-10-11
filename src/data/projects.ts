@@ -170,6 +170,17 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    slug: "keryx",
+    name: "Keryx",
+    category: "hardware",
+    tagline:
+      "\"Hey Keryx\" voice speaker for the Hermes agent - ESP32-S3 wake word plus a Wi-Fi speech bridge.",
+    description:
+      "A voice speaker for the Hermes agent. A XIAO ESP32S3 on a Seeed reSpeaker Flex XVF3800 four-microphone array recognizes \"Hey Keryx\" on the device, so nothing leaves the room until the wake word is said; the request then streams over Wi-Fi to a small Python bridge next to Hermes, which runs xAI speech-to-text, asks Hermes over its OpenAI-compatible API, and streams the spoken answer back. Conversation continues without the wake word, talking over an answer stops it, and Hermes can speak first for reminders and timers. The first unit is built into an Edifier R1100 speaker.",
+    repoUrl: "https://github.com/Flopsstuff/keryx",
+    status: "experimental",
+  },
+  {
     slug: "raspidr",
     name: "raspidr",
     category: "hardware",
@@ -223,17 +234,6 @@ export const projects: Project[] = [
     description:
       "Custom web applications for Samsung Tizen TV hardware, built and measured on a Smart Monitor M8 (Tizen 6.5, Chromium 85): a Canvas 2D runner, a DOOM port, and a benchmark app that maps what the panel can actually do. Around them sits the tooling the work needed - pairing and remote control over the Samsung WebSocket API, Developer Mode and sdb helpers, Chrome DevTools Protocol probes - plus a Cloudflare Worker rendezvous service that lets a phone fill in a TV app's settings instead of typing them with the remote.",
     repoUrl: "https://github.com/Flopsstuff/samtor",
-    status: "experimental",
-  },
-  {
-    slug: "keryx",
-    name: "Keryx",
-    category: "hardware",
-    tagline:
-      "\"Hey Keryx\" voice speaker for the Hermes agent - ESP32-S3 wake word plus a Wi-Fi speech bridge.",
-    description:
-      "A voice speaker for the Hermes agent. A XIAO ESP32S3 on a Seeed reSpeaker Flex XVF3800 four-microphone array recognizes \"Hey Keryx\" on the device, so nothing leaves the room until the wake word is said; the request then streams over Wi-Fi to a small Python bridge next to Hermes, which runs xAI speech-to-text, asks Hermes over its OpenAI-compatible API, and streams the spoken answer back. Conversation continues without the wake word, talking over an answer stops it, and Hermes can speak first for reminders and timers. The first unit is built into an Edifier R1100 speaker.",
-    repoUrl: "https://github.com/Flopsstuff/keryx",
     status: "experimental",
   },
   {
