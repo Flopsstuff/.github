@@ -48,6 +48,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 | **huemcp** | MCP server for controlling Philips Hue smart lights - mDNS bridge discovery, API-key setup, and control of lights, rooms, zones and grouped lights. | [Repo](https://github.com/Flopsstuff/huemcp) |
 | **lg** | Liquid Glass - an iOS app implementing a realistic magnifying-glass lens effect with Metal shaders and CoreImage (displacement maps, chromatic aberration). | [Repo](https://github.com/Flopsstuff/lg) |
 | **samtor** | Sideloaded Tizen web apps and device research for a Samsung Smart Monitor (M8, Tizen 6.5) - a Canvas 2D runner, a DOOM port, and a benchmark app, plus Python pairing/remote-control tooling and a Cloudflare Worker that lets a phone fill in a TV app's settings. | [Repo](https://github.com/Flopsstuff/samtor) |
+| **Keryx** | A "Hey Keryx" voice speaker for the Hermes agent - a XIAO ESP32S3 on a reSpeaker Flex XVF3800 runs the wake word on the device, then streams the request over Wi-Fi to a bridge that does xAI speech-to-text, Hermes, and text-to-speech back. | [Repo](https://github.com/Flopsstuff/keryx) |
 
 ## 🍴 Forks & Contributions
 
