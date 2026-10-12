@@ -67,6 +67,26 @@ Where the image comes from, in order of preference:
 Square or portrait sources (icons, phone screenshots) are centred on a blurred, darkened copy of
 themselves instead of being cropped to death; `object-fit: cover` does the rest.
 
+#### The art direction, measurably
+
+New generated art is checked with:
+
+```
+python3 scripts/check-card-images.py public/projects/<slug>.jpg
+```
+
+The bands are derived from the accepted generated set, not invented: mean sRGB luma 10-25%, under
+1.5% of pixels above 90% luma, and bright saturated red under 5% of the frame. The grid is dark by
+default and light under `prefers-color-scheme: light`, so images outside that band hold up in one
+theme and fall apart in the other; `#ff2d2d` is the logo's, so no card out-shouts the header mark.
+
+Two things the script cannot check, and they matter more than the numbers:
+
+- **The card-size read.** Downscale to 342x192 - the real card at a 1440 viewport - and look. One
+  recognisable subject, or it fails no matter what it measures.
+- **No legible or pseudo-legible text**, checked at full size: lettering that reads as texture on
+  the card resolves into garbled fake words on the detail-page hero.
+
 ## Commands
 
 | Command | Action |
