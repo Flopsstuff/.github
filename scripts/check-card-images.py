@@ -26,13 +26,7 @@ WEIGHT_MAX_KB = 150
 # be run over the whole directory.
 KNOWN = {
     "flopbut-pl.jpg": "a real face, kept on purpose",
-    "keryx.jpg": "awaiting regrade",
-    "triki.jpg": "awaiting regrade",
-    "flopcoin.jpg": "awaiting regrade",
-    "korovany.jpg": "awaiting regrade",
     "ambassy.jpg": "awaiting a dark diagram at source",
-    "paperclip.jpg": "awaiting re-source",
-    "otp.jpg": "awaiting replacement",
 }
 
 
