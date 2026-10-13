@@ -32,6 +32,20 @@ on a near-black panel (`profile/logo.svg`). The whole system extends that one ob
 > button or large surface, never mark body links. If you're reaching for red for emphasis, you're
 > wrong - reach for cyan (`--color-primary`) or weight/space instead.
 
+**Imagery is carved out of this rule.** The rule above governs the UI: chrome, type, controls,
+state. Photography and generated art are built on red - it is the accent light the whole card-image
+direction is lit by - and pretending otherwise would mean a brand rule the work openly ignores.
+
+The carve-out has a ceiling rather than a prohibition. Image red lives at the darker end of the
+ramp, nearer `--red-900` than `--red-500`, and never uses `#ff2d2d` itself; bright saturated red
+stays under 5% of any frame. The point is proportion, not purity: the header mark is 28px, so a
+card with an eighth of its area glowing at full chroma out-shouts the logo it is supposed to sit
+beneath. Enforced by `scripts/check-card-images.py`; see "Card images" in the root `README.md`.
+
+The split that falls out of this is worth stating plainly, because it is doing real work: **cyan
+carries interactivity, red carries imagery.** Red never lands on anything clickable, so it never
+competes with an affordance, and the two never have to argue about the same pixel.
+
 ### Primary: electric cyan
 
 Cyan is the **complement of the reserved red** - the red/cyan pairing is literally the relationship
@@ -52,7 +66,7 @@ buttons, focus, active states.
 | `--color-text-subtle` | `#71717a` | Meta, mono labels. |
 | **`--color-primary` (dark)** | **`#34d3ee`** | **Links, primary CTA, focus, active.** |
 | `--color-primary` (light) | `#0e7490` | Same role on white (AA text, ~4.8:1). |
-| `--color-accent` | `#ff2d2d` | Logo + sparing accent **only**. |
+| `--color-accent` | `#ff2d2d` | Logo + sparing UI accent **only**. Imagery is carved out - see the red rule. |
 | `--color-status-active` | `#34d399` | "active" project badge. |
 | `--color-status-experimental` | `#fbbf24` | "experimental" badge. |
 | `--color-status-fork` | `#a78bfa` | "fork" badge. |
