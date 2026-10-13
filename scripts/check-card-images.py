@@ -26,7 +26,6 @@ WEIGHT_MAX_KB = 150
 # be run over the whole directory.
 KNOWN = {
     "flopbut-pl.jpg": "a real face, kept on purpose",
-    "ambassy.jpg": "awaiting a dark diagram at source",
 }
 
 
