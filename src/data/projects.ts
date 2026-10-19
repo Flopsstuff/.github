@@ -41,6 +41,18 @@ export const CATEGORY_ORDER: ProjectCategory[] = [
 // `profile/README.md` table. See "Adding a project" in README.md.
 export const projects: Project[] = [
   {
+    slug: "otomoto-mcp",
+    name: "otomoto-mcp",
+    category: "ai-dev-tooling",
+    tagline:
+      "MCP server for searching used-car listings on Otomoto.pl - no API key, no browser.",
+    description:
+      "An MCP server that lets an AI agent search used-car listings on Otomoto.pl and read individual offers. Otomoto has no public API, so the server fetches the same public pages a browser would and reads the Next.js SSR payload embedded in them, exposing four stdio tools: search, one listing in full, price and mileage statistics over a bounded sample, and the filter vocabulary. Two decisions shape it. Filters are validated against Otomoto's own vocabulary before any request, because the site answers an unrecognised filter with HTTP 200 and quietly ignores it; and ads that are not a car for sale - lease transfers, brokers advertising cars they do not have - are recognised and dropped, with the evidence for every verdict returned alongside the results. An unofficial research project, not affiliated with Otomoto or OLX Group.",
+    image: "/projects/otomoto-mcp.jpg",
+    repoUrl: "https://github.com/Flopsstuff/otomoto-mcp",
+    status: "experimental",
+  },
+  {
     slug: "ambassy",
     name: "Ambassy",
     category: "ai-dev-tooling",
