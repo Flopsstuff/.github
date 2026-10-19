@@ -22,6 +22,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 
 | Project | What it is | Links |
 | --- | --- | --- |
+| **otomoto-mcp** | MCP server for searching used-car listings on Otomoto.pl - reads the site's own SSR payload (no API key, no browser), validates every filter before it asks, and screens out lease transfers and import-to-order ads. | [Repo](https://github.com/Flopsstuff/otomoto-mcp) |
 | **Ambassy** | MCP/A2A/ACP bridge for delegating a task to a coding agent on another machine - wraps Claude Code or codex-acp in an A2A v1.0 server and publishes it to the calling agent as four MCP tools, with the permission decision made inside the bridge. | [Repo](https://github.com/Flopsstuff/ambassy) · [Web](https://flopsstuff.github.io/ambassy/) |
 | **cotel** | Claude Code OpenTelemetry - a single-container OTLP ingest endpoint plus an interactive dashboard for Claude Code usage (sessions, models, tools, cost, timings). | [Repo](https://github.com/Flopsstuff/cotel) |
 | **flugins** | Claude Code plugin marketplace - a curated plugins repository you can point your Claude Code install at. | [Repo](https://github.com/Flopsstuff/flugins) |
