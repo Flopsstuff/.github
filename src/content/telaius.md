@@ -1,14 +1,18 @@
 ## Overview
 
-**Telaius** gives an AI agent a telephone: a small piece of hardware and the software that drives
-it, sitting on your own desk. You hand it an errand in plain words - book a haircut on Saturday
-after 12:00, ask whether the part is in stock, find out when they close - and it dials a real
-number, talks to whoever picks up, and comes back with the answer.
+Three parts make a call. A 4G modem with an ordinary registered SIM, plugged into a small Linux
+host - a Raspberry Pi is enough. The software on that host, which dials, supervises the call and
+writes the result. And a realtime voice model, which does the talking.
 
-The conversation is held by a realtime voice model, not by a menu tree or a recording. The call
-itself goes out over an ordinary SIM in your own device, so the numbers you dial and the words
-spoken on them never pass through anyone else's service. The name is *telephone* plus *Aius
-Locutius*, the Roman disembodied voice that warned of the Gauls.
+The telephony is yours, physically: the call is a normal mobile call from a normal number, with no
+cloud telephony provider between the host and the network. The audio of the conversation is
+streamed to the voice model you configure - that model is the one external service in the path,
+and swapping it is a configuration change, not a rewrite.
+
+What it can do today: place an outbound call with a goal and the context around it, talk in Russian
+or Polish, be interrupted mid-sentence and carry on, tell a refusal from a voicemail from a busy
+line, decide for itself that the errand is finished and hang up, and leave a per-call record behind.
+The name is *telephone* plus *Aius Locutius*, the Roman disembodied voice that warned of the Gauls.
 
 ## Why it exists
 
@@ -16,10 +20,10 @@ An agent can read, write and book anything that has a web form. It cannot ring t
 only takes bookings by phone, or the private seller who answers a call but never an email. That is
 a large part of the real world, and it is closed to an agent that has no voice.
 
-The usual way to open it is a cloud telephony API, which means a third party sees every number you
-dial and hears every call you make, billed by the minute. Telaius takes the other road: the
-telephony is yours, physically. A modem, a SIM and a small Linux host - a Raspberry Pi is enough -
-make an ordinary mobile call from an ordinary number.
+The usual way to open it is a cloud telephony API: a third party provisions the number, carries
+every call and bills it by the minute, and your call records live in their account. Telaius takes
+the other road - the line is your own SIM in your own device, and the only thing that leaves the
+host is the call audio going to the voice model that holds the conversation.
 
 ## How it works
 
@@ -32,9 +36,10 @@ python -m telaius.voicebridge +48XXXXXXXXX --lang pl \
 ```
 
 It dials, waits for an answer, and introduces itself as an AI assistant calling on your behalf -
-it does not pretend to be a person. From there the voice model carries the conversation: it
-pursues the goal, answers questions, handles being interrupted, and recognises a refusal, a
-voicemail or a busy line for what it is. It decides when the errand is finished and hangs up.
+it does not pretend to be a person. From there the voice model has the floor: it hears the far
+side and speaks back over the same live call. When the errand is finished it says goodbye and
+reports the outcome through a tool call of its own; if the callee hangs up first, it is asked for
+the result afterwards instead.
 
 Every call leaves a folder behind:
 
