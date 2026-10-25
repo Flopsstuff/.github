@@ -196,6 +196,18 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    slug: "telaius",
+    name: "Telaius",
+    category: "hardware",
+    tagline:
+      "Self-hosted outbound phone calls for AI agents - a SIM7600G-H modem dials, a realtime voice model talks.",
+    description:
+      "A telephone for AI agents that owns its own hardware. A SIMCom SIM7600G-H modem on a USB port places an ordinary mobile call with a regular SIM card, and the xAI Realtime voice API holds the conversation on the other end of it - no cloud telephony provider, no SIP trunk, no microphone or speaker anywhere in the loop, because call audio is carried as raw PCM over a USB interface of the modem itself. A call can be given a goal (\"book a haircut for Saturday after 12:00\"), and it ends with a folder on disk: the recording, a readable transcript, and a structured result with the outcome and a summary. M0 (a real call with two-way USB audio) and M1 (a live AI conversation) run as CLI prototypes; the MCP interface that will let another agent delegate a call is not built yet.",
+    image: "/projects/telaius.jpg",
+    repoUrl: "https://github.com/Flopsstuff/telaius",
+    status: "experimental",
+  },
+  {
     slug: "keryx",
     name: "Keryx",
     category: "hardware",

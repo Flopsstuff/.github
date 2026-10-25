@@ -45,6 +45,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 
 | Project | What it is | Links |
 | --- | --- | --- |
+| **Telaius** | Self-hosted outbound telephone calling for AI agents - a SIMCom SIM7600G-H modem places a real mobile call over USB and the xAI Realtime voice API carries the conversation, which ends in a recording, a transcript and a structured result. | [Repo](https://github.com/Flopsstuff/telaius) |
 | **Keryx** | A "Hey Keryx" voice speaker for the Hermes agent - a XIAO ESP32S3 on a reSpeaker Flex XVF3800 runs the wake word on the device, then streams the request over Wi-Fi to a bridge that does xAI speech-to-text, Hermes, and text-to-speech back. | [Repo](https://github.com/Flopsstuff/keryx) |
 | **raspidr** | Self-hosted voice assistant on a Raspberry Pi Zero 2 W - a custom openWakeWord model listens on the device, then Groq STT, a Hermes LLM agent on the LAN and Groq/xAI TTS answer out loud, with each stage animated on a NeoPixel ring and a rotary encoder for volume, mute and interrupt. | [Repo](https://github.com/Flopsstuff/raspidr) · [Web](https://flopsstuff.github.io/raspidr/) |
 | **neonka** | IBM Wheelwriter electric typewriter hacking project (embedded C++). | [Repo](https://github.com/Flopsstuff/neonka) |
