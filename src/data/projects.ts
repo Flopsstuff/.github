@@ -196,6 +196,18 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    slug: "voistic",
+    name: "voistic",
+    category: "hardware",
+    tagline:
+      "A physical Wi-Fi button for voice input - hold it, speak, and the text appears.",
+    description:
+      "A battery-powered Wi-Fi button that types what you say. Hold it and the ESP32-S3 streams your voice to a single Go binary on your LAN, which saves the recording, transcribes it with Groq Whisper and pastes the text into whatever window has focus; short presses run whatever you bind to them, Enter, Tab and Esc by default, as a command or an HTTP call. The board sleeps between presses and starts recording the moment it wakes, before it knows which gesture you meant, so nothing said while Wi-Fi comes up is lost. Requests are signed with HMAC-SHA256 under a per-device key, and five presses pull a new firmware over the air. The image above is a concept render: that enclosure does not exist yet. The working prototype is a stack of boards wrapped in tape, photographed further down this page.",
+    image: "/projects/voistic.jpg",
+    repoUrl: "https://github.com/Flopsstuff/voistic",
+    status: "experimental",
+  },
+  {
     slug: "telaius",
     name: "Telaius",
     category: "hardware",
