@@ -75,7 +75,13 @@ substance - detailed, not padded.
   a diagram or screenshot from the project's own repo
   (`https://raw.githubusercontent.com/Flopsstuff/<repo>/<branch>/<path>`) or its
   live site. Always include alt text: `![alt](url)`. Do not commit large binary
-  assets into this repo for this.
+  assets into this repo for this. A file kept in Git LFS has to come from
+  `https://media.githubusercontent.com/media/...` - the `raw.` host serves the
+  130-byte pointer, not the image.
+- **Two images on consecutive lines of one paragraph** (no blank line between
+  them) are laid out side by side, wrapping to full width on a narrow screen.
+  That is how to show a pair of portrait photos without giving each one a whole
+  screen. A blank line between them stacks them as usual.
 
 ## Verify before you open the PR
 

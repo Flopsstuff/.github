@@ -300,6 +300,20 @@
   margin: var(--space-5) 0;
 }
 
+/* Images written on consecutive lines of one Markdown paragraph share a row,
+   so a pair of portrait photos doesn't take a screen each. */
+.body p:has(img + img) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.body p:has(img + img) img {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
 .body table {
   width: 100%;
   border-collapse: collapse;
