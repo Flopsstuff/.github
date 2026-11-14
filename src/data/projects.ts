@@ -165,9 +165,9 @@ export const projects: Project[] = [
     name: "ram",
     category: "ai-dev-tooling",
     tagline:
-      "Random Agents Memories - a shared, always-on \"second brain\" for AI agents across machines.",
+      "Random Agents Memories - a shared, always-on \"second brain\" for AI agents across machines, with a wiki for the human who owns it.",
     description:
-      "A central, always-on shared memory (\"second brain\") for AI agents running on different machines. A single markdown-vault-mcp server owns a git-backed Markdown vault - auto-committing, pushing, and pulling - and exposes it over the public internet through a Cloudflare Tunnel, with hybrid semantic + full-text search and local embeddings. Multi-auth lets headless agents connect with a static bearer token while GUI clients (ChatGPT, Claude web/mobile) log in via OAuth 2.1 through a self-hosted Authelia identity provider, so every agent reads and writes the same knowledge across sessions.",
+      "One always-on shared memory for AI agents running on different machines, plus a wiki in the browser for the person who owns it. A single markdown-vault-mcp server owns a git-backed Markdown vault, commits and pushes every write, and finds a note from a question asked in plain language with semantic search on Google's gemini-embedding-2 - keyword mode stays for exact identifiers. The same notes are editable in SilverBullet on its own git clone, the vault follows Open Knowledge Format v0.2 with a nightly job that keeps it valid, and everything sits behind one Cloudflare Tunnel with no published ports and one Authelia login: a bearer token for headless agents, OAuth 2.1 for GUI clients. An INSTALL.md walks through standing up your own instance.",
     image: "/projects/ram.jpg",
     repoUrl: "https://github.com/Flopsstuff/ram",
     status: "active",
