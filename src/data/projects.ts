@@ -196,6 +196,18 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    slug: "shariki",
+    name: "ShaRiki",
+    category: "hardware",
+    tagline:
+      "Shake a Żabka Triki token and play maracas, cabasa or a rainstick in real time.",
+    description:
+      "Digital shaker instruments played by shaking a Żabka Triki BLE token. A Rust CLI connects to the token, reads its IMU at up to 416 Hz, turns the stream into shake energy and per-hit impulses, and drives a physically informed stochastic synth - PhISEM, ported from Perry Cook's STK Shakers - so the sound follows how hard and how sharply you shake: a sharp stop clicks loudly, a slow sweep rattles softly. Six presets ship (maracas, cabasa, shekere, egg shaker, ganzá, rainstick), each a JSON model you can edit while playing and reload with one key. A demo mode plays a synthetic gesture without a token, and a render command writes a WAV without an audio device. Runs on macOS and Linux.",
+    image: "/projects/shariki.jpg",
+    repoUrl: "https://github.com/Flopsstuff/ShaRiki",
+    status: "experimental",
+  },
+  {
     slug: "voistic",
     name: "voistic",
     category: "hardware",
