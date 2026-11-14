@@ -121,7 +121,7 @@ export const projects: Project[] = [
       "Chess AI Battle Arena: pit chess engines and AIs against each other and watch them play. A playground for evaluating chess AI performance.",
     image: "/projects/chaiba.jpg",
     repoUrl: "https://github.com/Flopsstuff/chaiba",
-    webUrl: "https://flopsstuff.github.io/chaiba/",
+    webUrl: "https://chaiba.flopbut.pl/",
     status: "experimental",
   },
   {

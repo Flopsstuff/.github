@@ -31,6 +31,6 @@ The project is built as a Single Page Application (SPA), ensuring all game logic
 ## Links
 
 - [Repository](https://github.com/Flopsstuff/chaiba)
-- [Live Demo](https://flopsstuff.github.io/chaiba/)
+- [Live Demo](https://chaiba.flopbut.pl/)
 - [OpenRouter](https://openrouter.ai/)
 - [Vercel AI SDK](https://sdk.vercel.ai/docs)
