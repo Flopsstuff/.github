@@ -9,8 +9,6 @@ is committed and pushed. You browse and edit the same notes in
 pull interval. The whole thing sits behind one Cloudflare Tunnel and one
 [Authelia](https://www.authelia.com/) login.
 
-![Agents on many machines feed one shared memory; a person reads it by the window](https://raw.githubusercontent.com/Flopsstuff/ram/main/assets/hero.jpg)
-
 ## Why it exists
 
 Agents are stateless between sessions, and agents on separate machines cannot see each other's
@@ -24,6 +22,8 @@ notes stay plain Markdown, a human can read and edit them in a wiki rather than 
 database.
 
 ## How it works
+
+![Agents on many machines feed one shared memory; a person reads it by the window](https://raw.githubusercontent.com/Flopsstuff/ram/main/assets/hero.jpg)
 
 Six containers on one Docker host, published through a single tunnel:
 
