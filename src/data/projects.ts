@@ -293,6 +293,19 @@ export const projects: Project[] = [
     status: "experimental",
   },
   {
+    slug: "chat-flopbut-pl",
+    name: "chat.flopbut.pl",
+    category: "art",
+    tagline:
+      "Flop Butylkin's private AI assistant for recruiters - open by invitation only.",
+    description:
+      "An invitation-only chat where recruiters and hiring managers ask an AI assistant about Flop Butylkin. Visitors sign in with Google, and an invite link with a limited number of places lets them in; each member gets one conversation and a spending allowance. The bot answers from a private knowledge base of notes and photos about Flop, read with file tools, and speaks first in the visitor's language. When the notes have no answer and it matters, it asks Flop himself in Telegram and brings his reply back to the chat, at once or later. A Node and Hono server with a React client on Google Cloud Run, Firebase Authentication and Realtime Database, the model reached through OpenRouter with the Vercel AI SDK. The code is open; the knowledge base is not.",
+    image: "/projects/chat-flopbut-pl.jpg",
+    repoUrl: "https://github.com/Flopsstuff/chat.flopbut.pl",
+    webUrl: "https://chat.flopbut.pl",
+    status: "active",
+  },
+  {
     slug: "flopcoin",
     name: "FlopCoin",
     category: "art",
