@@ -9,6 +9,8 @@ is committed and pushed. You browse and edit the same notes in
 pull interval. The whole thing sits behind one Cloudflare Tunnel and one
 [Authelia](https://www.authelia.com/) login.
 
+![Agents on many machines feed one shared memory; a person reads it by the window](https://raw.githubusercontent.com/Flopsstuff/ram/main/assets/hero.jpg)
+
 ## Why it exists
 
 Agents are stateless between sessions, and agents on separate machines cannot see each other's
