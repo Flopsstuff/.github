@@ -35,4 +35,4 @@ Agent behavior is driven by role-specific prompt templates and a tool-call loop.
 ## Links
 
 - [Repository](https://github.com/Flopsstuff/aimaf)
-- [Live site](https://flopsstuff.github.io/aimaf/)
+- [Live site](https://aimaf.flopbut.pl/)

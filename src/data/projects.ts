@@ -133,7 +133,7 @@ export const projects: Project[] = [
       "A client-only React SPA that runs a Mafia-style social deduction game between multiple LLM 'players' via OpenRouter. Assign roles (Mafia, Detective, Doctor), then watch the models bluff, vote, and deduce through each game phase.",
     image: "/projects/aimaf.jpg",
     repoUrl: "https://github.com/Flopsstuff/aimaf",
-    webUrl: "https://flopsstuff.github.io/aimaf/",
+    webUrl: "https://aimaf.flopbut.pl/",
     status: "experimental",
   },
   {
