@@ -29,7 +29,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 | **flugins** | Claude Code plugin marketplace - a curated plugins repository you can point your Claude Code install at. | [Repo](https://github.com/Flopsstuff/flugins) |
 | **soulgrep** | `grep` the human signal from the noise - a tool for surfacing what actually matters in large bodies of text. | [Repo](https://github.com/Flopsstuff/soulgrep) · [Web](https://soulgrep.aignite.pl) |
 | **coqu** | Code Query - query and explore codebases. | [Repo](https://github.com/Flopsstuff/coqu) · [Web](https://coqu.aimost.pl) |
-| **chaiba** | Chess AI Battle Arena - pit chess engines/AIs against each other and watch them play. | [Repo](https://github.com/Flopsstuff/chaiba) · [Web](https://flopsstuff.github.io/chaiba/) |
+| **chaiba** | Chess AI Battle Arena - pit chess engines/AIs against each other and watch them play. | [Repo](https://github.com/Flopsstuff/chaiba) · [Web](https://chaiba.flopbut.pl/) |
 | **aimaf** | AI Mafia - a client-only React SPA that runs a Mafia-style social deduction game between multiple LLM "players" via OpenRouter. | [Repo](https://github.com/Flopsstuff/aimaf) · [Web](https://aimaf.flopbut.pl/) |
 | **huemcp** | MCP server for controlling Philips Hue smart lights - mDNS bridge discovery, API-key setup, and control of lights, rooms, zones and grouped lights. | [Repo](https://github.com/Flopsstuff/huemcp) |
 | **otp** | Offline, private TOTP (2FA) code generator - computes codes locally in the browser via the Web Crypto API, nothing sent or stored. | [Repo](https://github.com/Flopsstuff/otp) · [Web](https://otp.flopbut.pl) |
