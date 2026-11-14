@@ -47,6 +47,6 @@ works fully offline.
 ## Links
 
 - [Repository](https://github.com/Flopsstuff/otp)
-- [Live site](https://flopsstuff.github.io/otp/)
+- [Live site](https://otp.flopbut.pl)
 - [RFC 6238 - TOTP](https://datatracker.ietf.org/doc/html/rfc6238)
 - [Key Uri Format](https://github.com/google/google-authenticator/wiki/Key-Uri-Format)

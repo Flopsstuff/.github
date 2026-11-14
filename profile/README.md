@@ -32,7 +32,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 | **chaiba** | Chess AI Battle Arena - pit chess engines/AIs against each other and watch them play. | [Repo](https://github.com/Flopsstuff/chaiba) · [Web](https://flopsstuff.github.io/chaiba/) |
 | **aimaf** | AI Mafia - a client-only React SPA that runs a Mafia-style social deduction game between multiple LLM "players" via OpenRouter. | [Repo](https://github.com/Flopsstuff/aimaf) · [Web](https://flopsstuff.github.io/aimaf/) |
 | **huemcp** | MCP server for controlling Philips Hue smart lights - mDNS bridge discovery, API-key setup, and control of lights, rooms, zones and grouped lights. | [Repo](https://github.com/Flopsstuff/huemcp) |
-| **otp** | Offline, private TOTP (2FA) code generator - computes codes locally in the browser via the Web Crypto API, nothing sent or stored. | [Repo](https://github.com/Flopsstuff/otp) · [Web](https://flopsstuff.github.io/otp/) |
+| **otp** | Offline, private TOTP (2FA) code generator - computes codes locally in the browser via the Web Crypto API, nothing sent or stored. | [Repo](https://github.com/Flopsstuff/otp) · [Web](https://otp.flopbut.pl) |
 | **ram** | Random Agents Memories - a shared, always-on "second brain" for AI agents plus a browser wiki: a `markdown-vault-mcp` server over a git-backed vault, semantic search on `gemini-embedding-2`, SilverBullet editing, exposed via Cloudflare Tunnel with bearer + OAuth (Authelia) multi-auth. | [Repo](https://github.com/Flopsstuff/ram) |
 
 ## 🧾 Polish e-Invoicing (KSeF)

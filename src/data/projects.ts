@@ -157,7 +157,7 @@ export const projects: Project[] = [
       "A secure, offline TOTP (Time-based One-Time Password) generator for two-factor authentication and trusted identity verification. All codes are computed locally in the browser with the Web Crypto API - nothing is sent to a server or stored. Generate Base32 secrets, tune algorithm/digits/period, copy codes, or scan a QR into any standard authenticator app.",
     image: "/projects/otp.jpg",
     repoUrl: "https://github.com/Flopsstuff/otp",
-    webUrl: "https://flopsstuff.github.io/otp/",
+    webUrl: "https://otp.flopbut.pl",
     status: "active",
   },
   {
