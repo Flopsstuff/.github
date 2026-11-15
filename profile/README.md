@@ -46,6 +46,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 
 | Project | What it is | Links |
 | --- | --- | --- |
+| **n8n** | Self-hosted n8n behind a Cloudflare Tunnel, no ports forwarded on the router - Docker Compose with PostgreSQL 15 and cloudflared, deployed by a self-hosted GitHub Actions runner that pulls first, dumps the database, then restarts, plus a weekly update run. Redis is up but unused: queue mode is not set up. | [Repo](https://github.com/Flopsstuff/n8n) |
 | **ShaRiki** | Shake a Żabka Triki BLE token and play maracas, cabasa, shekere, egg shaker, ganzá or a rainstick - a Rust CLI that turns the token's IMU into shake energy and hits and drives a real-time PhISEM synth (after Perry Cook's STK), with presets in editable JSON. | [Repo](https://github.com/Flopsstuff/ShaRiki) |
 | **voistic** | A physical Wi-Fi button for voice input - hold the ESP32-S3 button and your voice streams to a Go server on the LAN, which transcribes it with Groq Whisper and pastes the text into the active window; short presses run bound actions, and the board sleeps between them. | [Repo](https://github.com/Flopsstuff/voistic) |
 | **Telaius** | A phone line for an AI agent - hardware and software that let it call a real number over your own SIM, hold the conversation and run an errand (book a haircut, ask if the part is in stock), then hand back a recording, a transcript and a structured result. | [Repo](https://github.com/Flopsstuff/telaius) |

@@ -199,6 +199,18 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    slug: "n8n",
+    name: "n8n",
+    category: "hardware",
+    tagline:
+      "Self-hosted n8n behind a Cloudflare Tunnel - no ports forwarded on the router.",
+    description:
+      "The deployment for one self-hosted n8n instance: Docker Compose runs n8n, PostgreSQL 15 and cloudflared, and the public hostname reaches the editor and webhooks through a Cloudflare Tunnel, so nothing is forwarded on the router. A push to master deploys: a self-hosted GitHub Actions runner on the production host pulls the new images while the old stack is still serving, dumps the database, then restarts the stack, and a Saturday cron runs the same pipeline to pick up new n8n releases. Redis is in the compose file too, but nothing uses it - queue mode and a worker were never set up, so executions run in regular mode inside the main n8n container, and the README says so.",
+    image: "/projects/n8n.jpg",
+    repoUrl: "https://github.com/Flopsstuff/n8n",
+    status: "active",
+  },
+  {
     slug: "shariki",
     name: "ShaRiki",
     category: "hardware",
