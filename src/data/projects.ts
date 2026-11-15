@@ -372,6 +372,18 @@ export const projects: Project[] = [
     status: "active",
   },
   {
+    slug: "markdown-vault-mcp",
+    name: "markdown-vault-mcp",
+    category: "forks",
+    tagline: "MCP server over a Markdown vault with hybrid search - the memory server behind ram.",
+    description:
+      "Our fork of pvliesdonk's markdown-vault-mcp, an MCP server that lets Claude or any MCP client search, read and write a folder of Markdown notes, with hybrid keyword and semantic search, links and git. It is the server ram runs on; the fork carries the fixes we send upstream.",
+    image: "/projects/markdown-vault-mcp.jpg",
+    repoUrl: "https://github.com/Flopsstuff/markdown-vault-mcp",
+    webUrl: "https://pvliesdonk.github.io/markdown-vault-mcp/",
+    status: "fork",
+  },
+  {
     slug: "ccui",
     name: "ccui",
     category: "forks",
