@@ -70,9 +70,9 @@ export const projects: Project[] = [
     name: "cotel",
     category: "ai-dev-tooling",
     tagline:
-      "Claude Code OpenTelemetry - single-container OTLP ingest + interactive dashboard.",
+      "Self-hosted telemetry for Claude Code, Codex and Grok CLI - sessions, tokens and spend per actor.",
     description:
-      "A single-container OTLP ingest endpoint plus an interactive dashboard for Claude Code usage: sessions, models, tools, cost, and timings. Drop it next to your Claude Code setup and get immediate observability.",
+      "Self-hosted telemetry for coding agents: sessions, models, tokens and cost from Claude Code, Codex and Grok CLI, for every sender - people, AI agents and hosts, each an actor with its own page and spend. One ingest key serves a whole agent fleet while actor tokens say who is who, and Paperclip agents are attributed natively by their agent id. One Docker container: OTLP ingest plus a dashboard, no cloud dependencies.",
     image: "/projects/cotel.jpg",
     repoUrl: "https://github.com/Flopsstuff/cotel",
     status: "active",
@@ -241,7 +241,7 @@ export const projects: Project[] = [
     tagline:
       "Hardware plus software that let an AI agent call a real number and run the errand.",
     description:
-      "A telephone an AI agent can actually use, running on hardware you own. Hand it an errand in plain words - book a haircut on Saturday after 12:00, ask whether the part is in stock - and it calls the number, holds the conversation itself, and hands back the recording, a transcript and a structured result.",
+      "A telephone an AI agent can actually use, running on hardware you own. Hand it an errand in plain words - book a haircut on Saturday after 12:00, ask whether the part is in stock - and it calls the number, holds the conversation itself, and hands back the recording, a transcript and a structured result. Other agents hand it calls through an MCP server, and the same modem sends and reads SMS.",
     image: "/projects/telaius.jpg",
     repoUrl: "https://github.com/Flopsstuff/telaius",
     status: "experimental",
@@ -253,7 +253,7 @@ export const projects: Project[] = [
     tagline:
       "\"Hey Keryx\" voice speaker for the Hermes agent - ESP32-S3 wake word plus a Wi-Fi speech bridge.",
     description:
-      "A voice speaker for the Hermes agent. A XIAO ESP32S3 on a Seeed reSpeaker Flex XVF3800 four-microphone array recognizes \"Hey Keryx\" on the device, so nothing leaves the room until the wake word is said; the request then streams over Wi-Fi to a small Python bridge next to Hermes, which runs xAI speech-to-text, asks Hermes over its OpenAI-compatible API, and streams the spoken answer back. Conversation continues without the wake word, talking over an answer stops it, and Hermes can speak first for reminders and timers. The first unit is built into an Edifier R1100 speaker.",
+      "A voice speaker for the Hermes agent. A XIAO ESP32S3 on a Seeed reSpeaker Flex XVF3800 four-microphone array recognizes \"Hey Keryx\" on the device, so nothing leaves the room until the wake word is said; the request then streams over Wi-Fi to a small Python bridge next to Hermes, which runs xAI speech-to-text, asks Hermes over its OpenAI-compatible API, and streams the spoken answer back. Conversation continues without the wake word, talking over an answer stops it, a stop phrase or the end command closes it, a wake that turns out to be noise is ended after a second check by xAI, and Hermes can speak first for reminders and timers. The first unit is built into an Edifier R1100 speaker.",
     image: "/projects/keryx.jpg",
     repoUrl: "https://github.com/Flopsstuff/keryx",
     status: "experimental",

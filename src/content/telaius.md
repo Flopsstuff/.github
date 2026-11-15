@@ -9,9 +9,10 @@ cloud telephony provider between the host and the network. The audio of the conv
 streamed to the voice model you configure - that model is the one external service in the path,
 and swapping it is a configuration change, not a rewrite.
 
-What it can do today: place an outbound call with a goal and the context around it, talk in Russian
-or Polish, be interrupted mid-sentence and carry on, tell a refusal from a voicemail from a busy
-line, decide for itself that the errand is finished and hang up, and leave a per-call record behind.
+What it can do today: place an outbound call with a goal and the context around it, talk in Russian,
+Polish or English, be interrupted mid-sentence and carry on, tell a refusal from a voicemail from a busy
+line, decide for itself that the errand is finished and hang up, and leave a per-call record behind. The same modem also sends and reads SMS, and another agent can
+hand Telaius a call or a text through an MCP server.
 The name is *telephone* plus *Aius Locutius*, the Roman disembodied voice that warned of the Gauls.
 
 ## Why it exists
@@ -30,7 +31,7 @@ host is the call audio going to the voice model that holds the conversation.
 You give the agent's call a goal and the context it needs, and the system does the rest:
 
 ```bash
-python -m telaius.voicebridge +48XXXXXXXXX --lang pl \
+telaius call +48XXXXXXXXX --lang pl \
     --task "Book a haircut on Saturday after 12:00" \
     --callee "Brzytwa barbershop"
 ```
@@ -46,17 +47,30 @@ Every call leaves a folder behind:
 - the recording of both sides;
 - a readable transcript;
 - a structured result - the outcome (done, partial, failed, nothing asked), a short summary written
-  for you, and why the call ended.
+  for you, and why the call ended. Give the call a JSON Schema and the result also carries the
+  answers in that shape, with a list of what the call did not find out instead of a guess.
+
+The folder exists from the moment the call starts, with a status file that follows it from dialing
+through ringing and talking to the end, so a long call can be watched from outside, and ended early
+by any process that drops a cancel flag into it. One modem means one operation at a time: a second
+call or text while one is running is refused as busy rather than disturbing the live one.
+
+Outbound calls and texts go only to numbers on an allowlist unless that is switched off explicitly,
+and a policy caps the calls and texts per day, keeps quiet hours and sets a hard limit on call
+length.
 
 What the agent says is configuration, not code: each language is a text file with its own
-introductions, task template and rules, so adding a language is adding a file. Russian and Polish
-ship today.
+introductions, task template and rules, so adding a language is adding a file. Russian, Polish and
+English ship today.
 
 ## Status
 
-Placing a real call and holding a live conversation on it both work, and are driven from the
-command line. The next step is the interface that lets another agent delegate a call on its own
-and collect the report without touching telephony at all - that part is not built yet.
+Placing a real call and holding a live conversation on it both work, driven by a single `telaius`
+command that also sends, lists, reads and deletes SMS. The agent-facing interface is built too:
+`telaius-mcp` is a stdio MCP server with tools to start a call, follow and end it, read its result,
+and send or list texts. A call started through it keeps running after the agent's own run ends, so
+the agent collects the report later. An agent on the Pi has already delegated a live call this way
+with a result schema and got the filled answers back, and sent an SMS through it.
 
 The hardware side is honest about what is proven and what depends on your carrier: the repository
 keeps those notes next to the code, including which network features were verified on real calls
@@ -69,7 +83,8 @@ and which are still open.
 | What you need | A 4G modem with a registered SIM, plugged into a Linux host (a Raspberry Pi is enough) |
 | Software | Python 3.11+, installed as a package |
 | Voice | A realtime speech-to-speech model, about 0.6-0.9 s from the end of your sentence to its first word |
-| Interface | Command line today; agent-facing interface planned |
+| Interface | The `telaius` command line, and `telaius-mcp`, an MCP server over stdio for agents |
+| SMS | PDU mode through the same modem, long messages split and joined |
 | Audio | Handled digitally over the modem itself - no microphone, no speaker, nothing in the room to overhear |
 
 Recordings, transcripts and credentials stay on your machine and out of the repository. The

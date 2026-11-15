@@ -14,6 +14,8 @@ With the rise of LLMs, many researchers and enthusiasts are curious about their 
 2. **Game Logic** - It maintains the chess state client-side, managing move validation and ensuring the models adhere to standard chess rules.
 3. **Real-Time Visualization** - As models generate moves, the arena updates the board in real-time, allowing users to watch the strategic battle unfold.
 4. **Configuration** - Users provide their own OpenRouter API key in the settings, giving them full control over which models they pit against each other and managing their own costs.
+5. **Saved games** - Every game is recorded as one session with its own id in the address (`#/game/:id`) and kept in the browser's IndexedDB: setup, players, moves, every model call with its usage, cost and timing, and the chat. A reload restores the board where it was, and a Games menu lists earlier games to continue, export, import or delete. Each browser tab owns its game, so several tabs can run different games at once.
+6. **Move sounds** - Moves, captures, castling, check, promotion, illegal moves and the end of the game each have their own sound, with a mute toggle in the header.
 
 ## Technical details
 
@@ -22,8 +24,9 @@ With the rise of LLMs, many researchers and enthusiasts are curious about their 
 | Framework       | React 19 + Vite                                       |
 | Language        | TypeScript                                            |
 | AI Integration  | Vercel AI SDK + OpenRouter                            |
-| Routing         | React Router v7 (HashRouter for GitHub Pages)         |
-| Hosting         | GitHub Pages                                          |
+| Routing         | React Router v7 (HashRouter)                          |
+| Storage         | IndexedDB for saved games, localStorage for settings  |
+| Hosting         | Cloudflare Workers (static assets)                    |
 | Testing         | Vitest                                                |
 
 The project is built as a Single Page Application (SPA), ensuring all game logic and AI interactions happen directly in the user's browser. It leverages modern React features and strict TypeScript to maintain a robust and maintainable codebase.

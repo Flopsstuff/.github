@@ -20,7 +20,11 @@ Gameplay is orchestrated as a phase-based state machine in the frontend (`useCha
 4. Day (public discussion rounds)
 5. Voting (all alive players vote; elimination is applied)
 
-Agent behavior is driven by role-specific prompt templates and a tool-call loop. During eligible phases, agents can invoke constrained commands such as `kill`, `check`, `save`, and `vote`, and the app applies results to game state before progressing.
+Agent behavior is driven by role-specific prompt templates and a tool-call loop. During eligible phases, agents can invoke constrained commands such as `kill`, `check`, `save`, and `vote`, and the app applies results to game state before progressing. A call made outside its own phase is dropped.
+
+Each agent message shows the usage OpenRouter reports for it: input tokens and their cached share, output tokens, cost and response time. Requests carry prompt-caching breakpoints (the system prompt and the history so far), so on models that cache only with these markers, such as Anthropic's, a later turn reads most of its prompt from the cache. An optional reasoning toggle in Settings asks models to think before answering; the reasoning is shown collapsed under the message. Roles are marked with icons on a badge in the agent's color, readable on every message background.
+
+When a game ends, **Export** downloads it as JSON: the result, every agent with its role, model and full system prompt, per-agent and total usage, and the complete message log with tool calls, timing, usage and reasoning.
 
 ## Technical details
 
@@ -29,8 +33,9 @@ Agent behavior is driven by role-specific prompt templates and a tool-call loop.
 | Frontend | React + TypeScript (CRA/react-scripts) |
 | Routing | `HashRouter` with `/` and `/settings` routes |
 | Model integration | OpenRouter provider (`@openrouter/ai-sdk-provider`) + `ai` SDK |
-| State/persistence | In-memory game state + browser `localStorage` for API key, model selection, and prompt templates |
+| State/persistence | In-memory game state + browser `localStorage` for API key, model selection, and prompt templates; finished games export to JSON |
 | Backend | None (client-only architecture) |
+| Hosting | Cloudflare Workers (static assets) at `aimaf.flopbut.pl` |
 
 ## Links
 
