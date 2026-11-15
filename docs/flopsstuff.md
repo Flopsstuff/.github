@@ -6,7 +6,7 @@ Open-source experiments and tools - AI developer tooling, agent orchestration, a
 
 ### AI & Developer Tooling
 
-**cotel** - Claude Code OpenTelemetry. A single-container OTLP ingest endpoint plus an interactive dashboard for Claude Code usage: sessions, models, tools, cost, and timings. Drop it next to your Claude Code setup and get immediate observability.
+**cotel** - Claude Code OpenTelemetry. Self-hosted telemetry for every Claude Code sender - people, AI agents and hosts: sessions, tokens, tools and cost by model per actor, in one container. Shared ingest keys cover an agent fleet, and Paperclip agents are attributed natively by their agent id.
 
 **flugins** - Claude Code plugin marketplace. A curated plugins repository you can point your Claude Code install at. Browse, install, and manage community plugins.
 
