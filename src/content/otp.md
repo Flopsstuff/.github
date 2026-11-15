@@ -41,7 +41,7 @@ works fully offline.
 | Standard    | [RFC 6238](https://datatracker.ietf.org/doc/html/rfc6238) TOTP, Key Uri `otpauth://` format |
 | QR codes    | [QRious](https://github.com/neocotic/qrious) (CDN, self-hostable) |
 | Privacy     | Offline, client-only; no analytics, tracking, or storage     |
-| Hosting     | Static site on GitHub Pages                                  |
+| Hosting     | Static site on Cloudflare Workers at `otp.flopbut.pl`        |
 | License     | MIT                                                          |
 
 ## Links

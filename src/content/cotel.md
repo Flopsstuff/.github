@@ -1,57 +1,74 @@
 ## Overview
 
-**cotel** (Claude Code OpenTelemetry) is a single-container observability stack
-for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). It exposes an
-OTLP-compatible ingest endpoint that Claude Code can emit telemetry to, stores
-that telemetry locally, and serves an interactive dashboard that breaks your
-usage down by session, model, tool, cost, and timing - all from one
-`docker run`.
+**cotel** (Claude Code Telemetry) is self-hosted telemetry for coding agents. It
+exposes an OTLP ingest endpoint, stores what arrives locally, and serves a
+dashboard that shows sessions, models, tokens and spend for every sender -
+people, AI agents and hosts alike. It started with
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code) and now also reads
+the spans of the Codex and Grok CLI agents. All of it is one Docker container,
+with no cloud dependencies and no sign-up.
 
 ## Why it exists
 
-Claude Code already emits standard OpenTelemetry (OTLP) metrics and logs, but on
-its own that data has nowhere to go. The usual answer - stand up a full
-Prometheus + Grafana + collector pipeline - is far too heavy for a single
-developer who just wants to see *where their tokens and time are going*.
+Coding agents already emit standard OpenTelemetry, but on its own that data has
+nowhere to go. The usual answer - a full Prometheus + Grafana + collector
+pipeline - is far too heavy for one person or a small team that just wants to see
+*who is spending what, on which model, in which session*.
 
-cotel exists to make that answer trivial: point Claude Code at one endpoint, open
-one dashboard, and get immediate, high-signal usage exploration without running a
-multi-service monitoring platform.
+The question also changed once the senders stopped being only people. A fleet of
+agents shares one set of OTLP headers, runs on more than one CLI, and still has
+to be told apart on the bill. cotel answers that from one endpoint and one
+dashboard, without a multi-service monitoring platform.
 
 ## How it works
 
-1. **Ingest** - cotel listens on the OTLP HTTP port (`4318`) and accepts the
-   metrics and logs Claude Code exports. Payloads are validated at the OTLP edge
-   against the documented schema, then trusted internally.
-2. **Store** - telemetry is written to a local analytical store persisted in a
-   single named Docker volume, so the deployment story stays "one container, one
-   volume." Retention and down-sampling keep that volume honest under sustained
-   use.
-3. **Explore** - a built-in dashboard (port `8080`) reads the analytics layer and
-   renders breakdowns: per-session activity, model mix, tool call frequency,
-   cost, and latency/timing distributions.
+1. **Ingest** - cotel listens for OTLP/HTTP on port `4318`. Claude Code spans are
+   read as they are; Codex and Grok CLI spans go through a small adapter per
+   harness that pulls out their session, model, tokens and tool calls without
+   counting the same event twice.
+2. **Attribute** - every sender that identifies itself is an **actor** with its
+   own page and spend; only senders that do not land together on Anonymous. An
+   **actor token** says who is sending. For a fleet that shares its headers, an
+   **ingest key** (`cotel_ik_...`) authorizes ingest while each sender still names
+   itself with its own actor token. Paperclip agents are attributed by their
+   `paperclip.agent.id`: one Agent observability setting with an ingest key, no
+   per-agent configuration.
+3. **Price** - each span gets a cost from a built-in price table that covers
+   Claude 5.5 and 5.2 as well as the Codex and Grok models. Stored spans can be
+   repriced after the fact (`--backfill-cost` previews, `--backfill-cost-apply`
+   writes).
+4. **Explore** - the dashboard on port `8080` has Overview, Sessions, History,
+   Costs, Tools, Models and Actors pages, scoped by a range switcher, plus a
+   Setup guide with copy-paste settings and a full export / import.
 
 ```bash
-docker run -p 4318:4318 -p 8080:8080 -v cotel:/data cotel:latest
-# then point Claude Code at http://localhost:4318 and open http://localhost:8080
+docker run -d --name cotel -p 4318:4318 -p 8080:8080 \
+  -v cotel-data:/data ghcr.io/flopsstuff/cotel:latest
+# then open http://localhost:8080 -> Setup
 ```
 
 ## Technical details
 
-| Aspect       | Detail                                                        |
-| ------------ | ------------------------------------------------------------- |
-| Deployment   | Single Docker image; one-service `docker-compose.yml` for dev |
-| Ingest       | OTLP/HTTP on `:4318`, reusing upstream OTLP conventions       |
-| Dashboard    | Interactive usage explorer served on `:8080`                  |
-| Storage      | Local analytical store on a single named volume               |
-| Retention    | First-class down-sampling so the volume stays bounded         |
+| Aspect       | Detail                                                                 |
+| ------------ | ---------------------------------------------------------------------- |
+| Deployment   | Single Docker image (`ghcr.io/flopsstuff/cotel`), one data volume      |
+| Ingest       | OTLP/HTTP on `:4318`, JSON or protobuf; no gRPC listener               |
+| Senders      | Claude Code, Codex, Grok CLI                                           |
+| Identity     | Actor tokens, shared ingest keys, Paperclip agent ids                  |
+| Dashboard    | Usage explorer on `:8080`                                              |
+| Storage      | DuckDB file on the data volume                                         |
+| Retention    | Raw spans 30 days, daily totals 90 days (both configurable)            |
+| Snapshots    | One a day into a second volume, fourteen kept, restored with `--db-import` |
+| Publishing   | Optional Cloudflare Tunnel; Zero Trust for the dashboard               |
 
-Designed around a few hard constraints: trivial self-host (one container, one
-volume), OTLP fidelity (reuse standard parsers, never reinvent the schema), and
-dashboard query latency that stays responsive over a year of data.
+Designed around a few hard constraints: trivial self-host (one container),
+OTLP fidelity (reuse the standard schema, never reinvent it), and a dashboard
+that stays responsive over a long history.
 
 ## Links
 
 - [Repository](https://github.com/Flopsstuff/cotel)
+- [Documentation](https://flopsstuff.github.io/cotel/)
+- [Actors and authentication](https://github.com/Flopsstuff/cotel/blob/main/docs/operations/actors-and-auth.md)
 - [Claude Code monitoring docs](https://docs.anthropic.com/en/docs/claude-code/monitoring-usage)
 - [OpenTelemetry OTLP specification](https://opentelemetry.io/docs/specs/otlp/)

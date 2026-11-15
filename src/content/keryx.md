@@ -19,8 +19,10 @@ app. The design puts the wake word on the board rather than in the cloud, so not
 the room until "Hey Keryx" is actually said, and it keeps the heavy speech models off the
 Raspberry Pi next to Hermes by calling cloud speech-to-text and text-to-speech instead.
 It is also a conversation rather than a command line: after the wake word a follow-up needs
-no wake word, talking over an answer stops it, and a few seconds of silence end the exchange.
-Hermes can also speak first, which is what makes reminders and timers work.
+no wake word, and talking over an answer stops it. It ends on a few seconds of silence, or at once
+on a stop phrase ("Arrivederci", "Всё, пока", "Отбой" and a few blunter ones) or when Hermes calls
+the end command after its goodbye; a deliberate end plays a chime and the LED ring closes. Hermes can
+also speak first, which is what makes reminders and timers work.
 
 ## How it works
 
@@ -39,7 +41,13 @@ The board handles audio and the wake word; the bridge handles speech and Hermes.
 - **On the bridge.** A Python service turns the stream into text with xAI's streaming
   speech-to-text, asks Hermes over its OpenAI-compatible API, reads the answer with xAI
   text-to-speech, and streams the audio back for playback. It also hands Hermes `say.sh` and
-  `set_volume.sh`, so the agent can start a conversation of its own.
+  `set_volume.sh`, so the agent can start a conversation of its own, and `end.sh` to finish one.
+- **Checking the wake.** At every detection the board also sends the last three seconds the
+  wake word heard to the bridge, which keeps each clip with its score. The bridge has xAI
+  speech-to-text listen to the clip too; if there is no "Keryx" in it, the conversation that
+  noise started is ended the same way a stop phrase ends it. When the user says Keryx woke up
+  by mistake, Hermes labels the clip as false, so the false wakes pile up as negatives for
+  training the wake word.
 
 End of sentence to first sound is about a second, plus Hermes' own thinking time. Speech runs
 around **$0.004 per exchange**.
