@@ -2,6 +2,8 @@
 
 **korovany** is a 3D action game that runs entirely in the browser. You play a raider in a forest whose objective is simple - *raid 3 caravans* - while a running score tracks your kills and loot. The whole game renders into a full-window 3D canvas with React overlays for the HUD, main menu, and pause screen.
 
+The project is **archived**: development has stopped, but the game and its docs stay online.
+
 ![Korovany gameplay: the in-game HUD (HP, stamina, score, carried bandage) over a low-poly forest scene with the player character, raidable caravans, and the caravan minimap.](/korovany-gameplay.png)
 
 ## Why it exists

@@ -49,14 +49,9 @@ export default function ProjectDetail() {
               active
             </span>
           )}
-          {project.status === "experimental" && (
-            <span className={styles.chip} data-status="experimental">
-              experimental
-            </span>
-          )}
-          {project.status === "fork" && (
-            <span className={styles.chip} data-status="fork">
-              fork
+          {project.status && project.status !== "active" && (
+            <span className={styles.chip} data-status={project.status}>
+              {project.status}
             </span>
           )}
         </div>

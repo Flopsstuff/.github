@@ -133,6 +133,12 @@
   border-color: var(--color-status-experimental);
 }
 
+.badge[data-status="completed"],
+.badge[data-status="archived"] {
+  color: var(--color-text-subtle);
+  border-color: var(--color-text-subtle);
+}
+
 .tagline {
   font-size: var(--text-sm);
   color: var(--color-text-muted);

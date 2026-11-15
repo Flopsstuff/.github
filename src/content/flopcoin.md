@@ -45,13 +45,14 @@ and no user input at runtime.
 | Framework   | Next.js 15 (App Router) + React 19 + TypeScript                     |
 | Styling     | Tailwind CSS 3                                                       |
 | Output      | Static export (`output: 'export'`) - no server, ISR, or middleware  |
-| Hosting     | Cloudflare Pages, custom domain `flopcoin.art`                      |
+| Hosting     | Cloudflare Workers static assets, custom domain `flopcoin.art`      |
 | Owners data | `public/owners.json`, read at build time; photos tracked in Git LFS |
 | Repository  | `github.com/Flopsstuff/flop.hr` (the domain and repo names differ)  |
 
-Because the coin photos are stored in Git LFS - which Cloudflare Pages' own build
-system does not support - the production build runs in GitHub Actions and pushes
-the finished static export to Pages on every commit to `main`.
+Because the coin photos are stored in Git LFS - which Cloudflare's own build
+system does not support - the production build runs in GitHub Actions and deploys
+the finished static export to an assets-only Cloudflare Worker with `wrangler deploy`
+on every commit to `main`.
 
 ## Links
 

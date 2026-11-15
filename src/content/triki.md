@@ -7,6 +7,9 @@ promo - into a usable motion controller. The token is built around a Nordic
 documents how to talk to it over BLE, stream its motion sensors, and drive a live
 3D orientation visualisation straight from a browser.
 
+The project is **completed**: `triki-controller` v0.3.0 on npm is the latest
+release, and the token lives on in other projects such as ShaRiki.
+
 ## Why it exists
 
 The Triki ships as a closed promotional gadget with no public protocol. It has a

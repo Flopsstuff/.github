@@ -16,7 +16,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 | --- | --- | --- |
 | **chat.flopbut.pl** | Flop Butylkin's private AI assistant for recruiters, open by invitation - answers from a private knowledge base and, when the notes run out, asks Flop in Telegram and brings his reply back to the chat. | [Repo](https://github.com/Flopsstuff/chat.flopbut.pl) · [Web](https://chat.flopbut.pl) |
 | **FlopCoin** | A physical silver coin (single issuance of ~100 unique pieces) that redeems for one hour of Flop's time - an art object and collectible whose only way in is from an existing holder. | [Repo](https://github.com/Flopsstuff/flop.hr) · [Web](https://flopcoin.art) |
-| **korovany** | 3D caravan-raiding action game in the browser - a Babylon.js + React SPA with a full-window canvas, world map fast-travel, and a unit-tested win/lose loop. | [Repo](https://github.com/Flopsstuff/korovany) · [Web](https://korovany.aimost.pl/) |
+| **korovany** *(archived)* | 3D caravan-raiding action game in the browser - a Babylon.js + React SPA with a full-window canvas, world map fast-travel, and a unit-tested win/lose loop. No longer developed; the game stays online. | [Repo](https://github.com/Flopsstuff/korovany) · [Web](https://korovany.aimost.pl/) |
 | **flopbut.pl** | Flop Butylkin's personal site and the hub the rest of Flop's Stuff hangs off - a trilingual (EN/RU/PL) Astro site on Cloudflare Workers, static by default with a dormant serverless contact endpoint. | [Repo](https://github.com/Flopsstuff/flopbut.pl) · [Web](https://flopbut.pl) |
 
 ## 🤖 AI & Developer Tooling
@@ -27,7 +27,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 | **Ambassy** | MCP/A2A/ACP bridge for delegating a task to a coding agent on another machine - wraps Claude Code or codex-acp in an A2A v1.0 server and publishes it to the calling agent as four MCP tools, with the permission decision made inside the bridge. | [Repo](https://github.com/Flopsstuff/ambassy) · [Web](https://flopsstuff.github.io/ambassy/) |
 | **cotel** | Claude Code OpenTelemetry - a single-container OTLP ingest endpoint plus an interactive dashboard for Claude Code usage (sessions, models, tools, cost, timings). | [Repo](https://github.com/Flopsstuff/cotel) |
 | **flugins** | Claude Code plugin marketplace - a curated plugins repository you can point your Claude Code install at. | [Repo](https://github.com/Flopsstuff/flugins) |
-| **soulgrep** | `grep` the human signal from the noise - a tool for surfacing what actually matters in large bodies of text. | [Repo](https://github.com/Flopsstuff/soulgrep) · [Web](https://soulgrep.aignite.pl) |
+| **soulgrep** | `grep` the human signal from the noise - a psychological portrait of the other person, built from a Telegram chat export by an LLM pipeline that runs in your browser on your own key. | [Repo](https://github.com/Flopsstuff/soulgrep) · [Web](https://soulgrep.aignite.pl) |
 | **coqu** | Code Query - query and explore codebases. | [Repo](https://github.com/Flopsstuff/coqu) · [Web](https://coqu.aimost.pl) |
 | **chaiba** | Chess AI Battle Arena - pit chess engines/AIs against each other and watch them play. | [Repo](https://github.com/Flopsstuff/chaiba) · [Web](https://chaiba.flopbut.pl/) |
 | **aimaf** | AI Mafia - a client-only React SPA that runs a Mafia-style social deduction game between multiple LLM "players" via OpenRouter. | [Repo](https://github.com/Flopsstuff/aimaf) · [Web](https://aimaf.flopbut.pl/) |
@@ -40,7 +40,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 | Project | What it is | Links |
 | --- | --- | --- |
 | **ksef-client-ts** | TypeScript client for the Polish National e-Invoice System (KSeF) API. | [Repo](https://github.com/Flopsstuff/ksef-client-ts) · [npm](https://www.npmjs.com/package/ksef-client-ts) |
-| **ksef-docs** | English translations of the KSeF documentation. | [Repo](https://github.com/Flopsstuff/ksef-docs) |
+| **ksef-docs** | KSeF 2.0 documentation translated into English, Russian, and Ukrainian by an LLM pipeline that follows upstream changes, published as a VitePress site. | [Repo](https://github.com/Flopsstuff/ksef-docs) · [Web](https://flopsstuff.github.io/ksef-docs/) |
 
 ## 🔧 Hardware & Systems
 
@@ -52,7 +52,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 | **Keryx** | A "Hey Keryx" voice speaker for the Hermes agent - a XIAO ESP32S3 on a reSpeaker Flex XVF3800 runs the wake word on the device, then streams the request over Wi-Fi to a bridge that does xAI speech-to-text, Hermes, and text-to-speech back. | [Repo](https://github.com/Flopsstuff/keryx) |
 | **raspidr** | Self-hosted voice assistant on a Raspberry Pi Zero 2 W - a custom openWakeWord model listens on the device, then Groq STT, a Hermes LLM agent on the LAN and Groq/xAI TTS answer out loud, with each stage animated on a NeoPixel ring and a rotary encoder for volume, mute and interrupt. | [Repo](https://github.com/Flopsstuff/raspidr) · [Web](https://flopsstuff.github.io/raspidr/) |
 | **neonka** | IBM Wheelwriter electric typewriter hacking project (embedded C++). | [Repo](https://github.com/Flopsstuff/neonka) |
-| **triki** | Reverse-engineering the Żabka Triki BLE token (nRF52810 + LSM6DSL) and reusing it as a motion controller - hardware notes, BLE protocol docs, Python tooling, and a Web Bluetooth client with a live 3D orientation demo. | [Repo](https://github.com/Flopsstuff/triki) · [npm](https://www.npmjs.com/package/triki-controller) · [Web](https://flopsstuff.github.io/triki/) |
+| **triki** *(completed)* | Reverse-engineering the Żabka Triki BLE token (nRF52810 + LSM6DSL) and reusing it as a motion controller - hardware notes, BLE protocol docs, Python tooling, and a Web Bluetooth client with a live 3D orientation demo. | [Repo](https://github.com/Flopsstuff/triki) · [npm](https://www.npmjs.com/package/triki-controller) · [Web](https://flopsstuff.github.io/triki/) |
 | **lg** | Liquid Glass - an iOS app implementing a realistic magnifying-glass lens effect with Metal shaders and CoreImage (displacement maps, chromatic aberration). | [Repo](https://github.com/Flopsstuff/lg) |
 | **samtor** | Sideloaded Tizen web apps and device research for a Samsung Smart Monitor (M8, Tizen 6.5) - a Canvas 2D runner, a DOOM port, and a benchmark app, plus Python pairing/remote-control tooling and a Cloudflare Worker that lets a phone fill in a TV app's settings. | [Repo](https://github.com/Flopsstuff/samtor) |
 

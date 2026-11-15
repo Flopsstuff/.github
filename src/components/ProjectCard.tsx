@@ -32,14 +32,9 @@ export default function ProjectCard({ project }: Props) {
           {project.status === "active" && (
             <span className={styles.dot} aria-label="active" />
           )}
-          {project.status === "experimental" && (
-            <span className={styles.badge} data-status="experimental">
-              experimental
-            </span>
-          )}
-          {project.status === "fork" && (
-            <span className={styles.badge} data-status="fork">
-              fork
+          {project.status && project.status !== "active" && (
+            <span className={styles.badge} data-status={project.status}>
+              {project.status}
             </span>
           )}
         </div>

@@ -16,7 +16,7 @@ export interface Project {
   repoUrl: string;
   webUrl?: string;
   npmUrl?: string;
-  status?: "active" | "experimental" | "fork";
+  status?: "active" | "experimental" | "fork" | "completed" | "archived";
 }
 
 export const CATEGORY_LABELS: Record<ProjectCategory, string> = {
@@ -92,9 +92,10 @@ export const projects: Project[] = [
     slug: "soulgrep",
     name: "soulgrep",
     category: "ai-dev-tooling",
-    tagline: "Surface what actually matters in large bodies of text.",
+    tagline:
+      "A psychological portrait of the other person, built from a Telegram chat export by an LLM in your browser.",
     description:
-      "grep the human signal from the noise - a tool for surfacing what actually matters in large bodies of text. Cut through context bloat and find the substance.",
+      "grep the human signal from the noise. Load a one-on-one Telegram Desktop export (result.json) and soulgrep cleans it, strips names and system noise, splits it into chunks, and runs a parallel LLM pipeline that extracts signals and synthesizes a portrait of one chosen participant: behavioral patterns, communication style, emotional dynamics, with quotes and confidence. There is no backend - everything runs in the browser, and the chat goes only to the LLM provider you pick (OpenAI, Anthropic, or OpenRouter) under your own key.",
     image: "/projects/soulgrep.jpg",
     repoUrl: "https://github.com/Flopsstuff/soulgrep",
     webUrl: "https://soulgrep.aignite.pl",
@@ -188,11 +189,13 @@ export const projects: Project[] = [
     slug: "ksef-docs",
     name: "ksef-docs",
     category: "ksef",
-    tagline: "English translations of the KSeF documentation.",
+    tagline:
+      "KSeF 2.0 documentation translated into English, Russian, and Ukrainian.",
     description:
-      "English translations of the official KSeF documentation. Makes the Polish National e-Invoice System accessible to non-Polish-speaking developers.",
+      "LLM translations of the official KSeF 2.0 documentation into English, Russian, and Ukrainian, published next to the Polish original as a VitePress site. A lock file tracks which upstream commit each file was translated from, and a scheduled workflow syncs the upstream docs and re-translates whatever changed, OpenAPI spec included.",
     image: "/projects/ksef-docs.jpg",
     repoUrl: "https://github.com/Flopsstuff/ksef-docs",
+    webUrl: "https://flopsstuff.github.io/ksef-docs/",
     status: "active",
   },
   {
@@ -279,7 +282,7 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/Flopsstuff/triki",
     webUrl: "https://flopsstuff.github.io/triki/",
     npmUrl: "https://www.npmjs.com/package/triki-controller",
-    status: "experimental",
+    status: "completed",
   },
   {
     slug: "lg",
@@ -324,7 +327,7 @@ export const projects: Project[] = [
     tagline:
       "A physical silver coin redeemable for an hour of Flop's time - art object and collectible in one.",
     description:
-      "A FlopCoin is a physical silver coin, minted as a single issuance of around 100 unique pieces. Holding one is a public promise of one hour of Flop's time, spent on whatever the owner asks for; each coin is also an art object in its own right, and the only way to get one is from someone who already has it. The accompanying site - a static Next.js export on Cloudflare Pages - explains what a FlopCoin is, how to redeem it, its limits, and who currently owns one.",
+      "A FlopCoin is a physical silver coin, minted as a single issuance of around 100 unique pieces. Holding one is a public promise of one hour of Flop's time, spent on whatever the owner asks for; each coin is also an art object in its own right, and the only way to get one is from someone who already has it. The accompanying site - a static Next.js export on Cloudflare Workers - explains what a FlopCoin is, how to redeem it, its limits, and who currently owns one.",
     image: "/projects/flopcoin.jpg",
     repoUrl: "https://github.com/Flopsstuff/flop.hr",
     webUrl: "https://flopcoin.art",
@@ -341,7 +344,7 @@ export const projects: Project[] = [
     image: "/projects/korovany.jpg",
     repoUrl: "https://github.com/Flopsstuff/korovany",
     webUrl: "https://korovany.aimost.pl",
-    status: "experimental",
+    status: "archived",
   },
   {
     slug: "flopbut-pl",

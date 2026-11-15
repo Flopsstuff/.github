@@ -78,6 +78,12 @@
   border-color: var(--color-status-fork);
 }
 
+.chip[data-status="completed"],
+.chip[data-status="archived"] {
+  color: var(--color-text-subtle);
+  border-color: var(--color-text-subtle);
+}
+
 .chipDot {
   display: inline-block;
   width: 6px;

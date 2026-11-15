@@ -30,7 +30,7 @@ A **Vite + React 19 + React Router** single-page app (`src/`), built to `dist/` 
 
 - `index.html` (repo root) - Vite entry; mounts `src/main.tsx` into `#root`.
 - `src/main.tsx` - the `createBrowserRouter` route table and the shared `Layout` (`Header` / `Outlet` / `Footer`). `Layout` also renders React Router's `<ScrollRestoration />`: without it a `Link` from a card half-way down the home page opens the detail page already scrolled to that offset. It keeps new navigations at the top and restores the previous offset on back/forward, so don't drop it or replace it with a bare scroll-to-top effect.
-- `src/data/projects.ts` - **the project catalogue** (the source of truth for cards + links). One `Project` per public org repo: `slug`, `name`, `category`, `tagline`, `description`, `repoUrl`, optional `webUrl`/`npmUrl`, `status`. Grouped into four categories (AI & dev tooling, KSeF, hardware, forks). Keep this in sync with the org's public repos and with `profile/README.md`. **Newest first:** the home page renders each category in this array's order (`getProjectsByCategory` filters, it never sorts), so a new project goes at the **top of its category block** and the rest shift down - see "Adding a project" in `README.md`.
+- `src/data/projects.ts` - **the project catalogue** (the source of truth for cards + links). One `Project` per public org repo: `slug`, `name`, `category`, `tagline`, `description`, `repoUrl`, optional `webUrl`/`npmUrl`, `status` (`active` | `experimental` | `fork` | `completed` | `archived`; every non-`active` status renders as a badge). Grouped into five categories (AI & dev tooling, KSeF, hardware, art, forks). Keep this in sync with the org's public repos and with `profile/README.md`. **Newest first:** the home page renders each category in this array's order (`getProjectsByCategory` filters, it never sorts), so a new project goes at the **top of its category block** and the rest shift down - see "Adding a project" in `README.md`.
 - `public/projects/<slug>.jpg` - **the card/hero image** for each project: 1200x675 (16:9), referenced from `projects.ts` as `image: "/projects/<slug>.jpg"`. Sourced from the project's own repo or live site where one exists, generated art otherwise. Copied in and resized, never hot-linked. See "Card images" in `README.md` for the rules, including the blurred-backdrop treatment for square/portrait sources.
 - `src/content/<slug>.md` - long-form detail-page body per project, loaded eagerly as raw strings via `import.meta.glob` (`src/content/index.ts`). A project with no `.md` (or an empty one) simply renders without a long body. Authoring structure: `docs/content-authoring.md`.
 - `src/pages/` (`Home`, `ProjectDetail`), `src/components/` (`Header`, `Footer`, `ProjectCard`, `NotFound`), `src/styles/tokens.css` - the UI. Detail pages live at `/projects/<slug>`.
@@ -66,6 +66,10 @@ A **Vite + React 19 + React Router** single-page app (`src/`), built to `dist/` 
 
 - Local: `.env` (gitignored) holds `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`. `.env.example` is the committed template documenting both.
 - CI: the same two vars live as GitHub Actions secrets. Actions does not read `.env`, so the two stores are maintained separately (e.g. `gh secret set --env-file .env`).
+
+## Git LFS
+
+Images and media (`*.jpg`, `*.png`, `*.mp3`, `*.mp4`) are stored in Git LFS (`.gitattributes`). The deploy workflow checks out with `lfs: true`; without it the build would ship LFS pointer files instead of the images. Run `git lfs install` once on a new machine before cloning.
 
 ## Validation
 

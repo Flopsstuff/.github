@@ -24,7 +24,7 @@ All projects live in **`src/data/projects.ts`**. Add a new entry to the `project
   image: "/projects/my-project.jpg",        // card + detail hero, see below
   repoUrl: "https://github.com/Flopsstuff/my-project",
   webUrl: "https://optional.example.com",   // omit if none
-  status: "active",            // "active" | "experimental" | "fork" - omit if unknown
+  status: "active",            // "active" | "experimental" | "fork" | "completed" | "archived" - omit if unknown
 }
 ```
 
