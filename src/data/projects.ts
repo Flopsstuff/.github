@@ -70,11 +70,12 @@ export const projects: Project[] = [
     name: "cotel",
     category: "ai-dev-tooling",
     tagline:
-      "Claude Code OpenTelemetry - single-container OTLP ingest + interactive dashboard.",
+      "Claude Code OpenTelemetry - self-hosted usage and cost for people, AI agents and hosts.",
     description:
-      "A single-container OTLP ingest endpoint plus an interactive dashboard for Claude Code usage: sessions, models, tools, cost, and timings. Drop it next to your Claude Code setup and get immediate observability.",
+      "Self-hosted telemetry for every Claude Code sender, whether a person, an AI agent or a host: sessions, tokens, tools and cost by model per actor, in one container. Shared ingest keys cover an agent fleet with one set of OTLP headers, and Paperclip agents are attributed natively by their agent id.",
     image: "/projects/cotel.jpg",
     repoUrl: "https://github.com/Flopsstuff/cotel",
+    webUrl: "https://flopsstuff.github.io/cotel/",
     status: "active",
   },
   {
