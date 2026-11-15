@@ -63,6 +63,7 @@ Projects we maintain forks of or contribute to. Each **Web** link points to the 
 
 | Project | What it is | Links |
 | --- | --- | --- |
+| **markdown-vault-mcp** | Fork of pvliesdonk's MCP server over a Markdown vault - hybrid keyword + semantic search, links, OKF and managed git. The server our ram runs on; the fork carries fixes we send upstream. | [Repo](https://github.com/Flopsstuff/markdown-vault-mcp) · [Web](https://pvliesdonk.github.io/markdown-vault-mcp/) |
 | **ccui** | CloudCLI - a free, open-source web UI for managing Claude Code, Cursor CLI or Codex sessions remotely from mobile or web. | [Repo](https://github.com/Flopsstuff/ccui) · [Web](https://cloudcli.ai) |
 | **paperclip** | Open-source orchestration for zero-human companies. | [Repo](https://github.com/Flopsstuff/paperclip) · [Web](https://paperclip.ing) |
 | **mcp-md** | Headless semantic MCP server for Obsidian, Logseq, Dendron and any markdown vault - AST-based editing, hybrid vector + TF-IDF search, zero-setup local embeddings. | [Repo](https://github.com/Flopsstuff/mcp-md) · [Web](https://www.npmjs.com/package/@wirux/mcp-markdown-vault) |
