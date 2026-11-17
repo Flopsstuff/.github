@@ -33,7 +33,7 @@ The **Repo** link takes you to the source; where a hosted version or package exi
 | **aimaf** | AI Mafia - a client-only React SPA that runs a Mafia-style social deduction game between multiple LLM "players" via OpenRouter. | [Repo](https://github.com/Flopsstuff/aimaf) · [Web](https://aimaf.flopbut.pl/) |
 | **huemcp** | MCP server for controlling Philips Hue smart lights - mDNS bridge discovery, API-key setup, and control of lights, rooms, zones and grouped lights. | [Repo](https://github.com/Flopsstuff/huemcp) |
 | **otp** | Offline, private TOTP (2FA) code generator - computes codes locally in the browser via the Web Crypto API, nothing sent or stored. | [Repo](https://github.com/Flopsstuff/otp) · [Web](https://otp.flopbut.pl) |
-| **ram** | Random Agents Memories - a shared, always-on "second brain" for AI agents plus a browser wiki: a `markdown-vault-mcp` server over a git-backed vault, semantic search on `gemini-embedding-2`, SilverBullet editing, exposed via Cloudflare Tunnel with bearer + OAuth (Authelia) multi-auth. | [Repo](https://github.com/Flopsstuff/ram) |
+| **ram** | Random Agents Memories - a shared, always-on "second brain" for AI agents plus a browser wiki: a `markdown-vault-mcp` server over a vault with optional git and S3 backup, semantic search on `gemini-embedding-2`, SilverBullet editing, one hostname behind Cloudflare Tunnel with bearer + OAuth (Authelia) multi-auth. | [Repo](https://github.com/Flopsstuff/ram) |
 
 ## 🧾 Polish e-Invoicing (KSeF)
 
