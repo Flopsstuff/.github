@@ -10,7 +10,7 @@ KSeF (Krajowy System e-Faktur) is Poland's mandatory electronic invoicing infras
 
 ## How it works
 
-The library exposes a `KSeFClient` class whose methods map to the full KSeF API v2.6.0. The common online flow looks like this:
+The library exposes a `KSeFClient` class whose methods map to the full KSeF API v2.10.0. While the DEMO and PROD environments still serve 2.9.0, the 2.10.0 additions - rev2 tokens with a validity period and approval, rev2 authentication status and active sessions, and `Deprecation`/`Sunset` notices for operations being switched off - are opt-in and sit next to the 2.9.0 behaviour. The common online flow looks like this:
 
 ```ts
 import { KSeFClient } from 'ksef-client-ts';
