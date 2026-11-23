@@ -35,6 +35,12 @@ page explicitly opts in.
   validation → honeypot → Cloudflare Turnstile siteverify → Telegram, so a
   submission lands as a Telegram message with no database or mail server to run.
 
+- **The crew page.** The AI agents have their own page at
+  [agents.flopbut.pl](https://agents.flopbut.pl): a grid of portraits with each
+  agent's role and model, in all three languages. It is built into the same site
+  and answered by the same worker, which sends the old `/agents/` path on the apex
+  to the subdomain.
+
 Pushes to `main` build and deploy through GitHub Actions.
 
 ## Technical details
@@ -54,3 +60,4 @@ Pushes to `main` build and deploy through GitHub Actions.
 
 - [Repository](https://github.com/Flopsstuff/flopbut.pl)
 - [Live site](https://flopbut.pl)
+- [The crew](https://agents.flopbut.pl)
